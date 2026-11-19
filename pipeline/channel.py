@@ -39,6 +39,28 @@ def paused(s=None):
     return (ROOT / "state" / "PAUSE").exists() or (state_dir(s) / "PAUSE").exists()
 
 
+AUDIO_EXTS = (".wav", ".m4a", ".mp3", ".ogg", ".opus", ".aac", ".flac", ".webm", ".mp4")
+
+
+def config(s=None):
+    f = channel_dir(s) / "channel.json"
+    return json.loads(f.read_text()) if f.exists() else {}
+
+
+def voice_source(s=None):
+    """"human" = the owner records the voice (channels/<slug>/voice/<id>.<audio ext>); default = Kokoro TTS."""
+    return config(s).get("voice_source", "tts")
+
+
+def voice_file(script_id, s=None):
+    d = channel_dir(s) / "voice"
+    for ext in AUDIO_EXTS:
+        f = d / f"{script_id}{ext}"
+        if f.exists():
+            return f
+    return None
+
+
 def all_channels():
     out = [{"slug": "main", "secret": secret_name("main")}]
     for p in sorted((ROOT / "channels").glob("*/channel.json")) if (ROOT / "channels").exists() else []:
@@ -48,5 +70,10 @@ def all_channels():
     return out
 
 
-if __name__ == "__main__":  # used by the workflow to build the matrix
-    print(json.dumps({"include": all_channels()}))
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) > 2 and sys.argv[1] == "voice":  # python3 pipeline/channel.py voice <script id> -> path or empty
+        f = voice_file(sys.argv[2])
+        print(f.relative_to(ROOT) if f else "")
+    else:  # used by the workflow to build the matrix
+        print(json.dumps({"include": all_channels()}))

@@ -49,7 +49,8 @@ def build_description(script):
         parts.append(cta)
 
     if script.get("contains_synthetic_media", True):
-        parts.append("🤖 Voices and animation are AI-generated.")
+        from channel import voice_source
+        parts.append("🎙 Voiced by a real human. Animation and visuals are AI-generated." if voice_source() == "human" else "🤖 Voices and animation are AI-generated.")
 
     tags = re.findall(r"#\w+", script.get("description", ""))
     if tags:
