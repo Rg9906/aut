@@ -1,0 +1,33 @@
+{
+ "name": "Plot Twist Club",
+ "handle": "PlotTwistClub",
+ "niche": "Fun, opinionated reviews and facts about books, anime, manga, movies and all fiction",
+ "description": "Books, anime, manga, movies and everything fiction: quick reviews, origin stories and hot takes in under a minute. New Short every day. Voices and animation are AI-generated; sources in every description.",
+ "tagline": "quick, funny takes on books, anime, manga and movies.",
+ "category": "24",
+ "enabled": false,
+ "names": {
+  "byte": "Panel",
+  "compy": "Plot"
+ },
+ "speakers": {
+  "byte": {
+   "voice": "bf_emma",
+   "speed": 1.06
+  },
+  "compy": {
+   "voice": "am_fenrir",
+   "speed": 1.0
+  }
+ },
+ "theme": {
+  "bg": "#140A1F",
+  "bg2": "#26103C",
+  "card": "#321752",
+  "text": "#FFF1F5",
+  "dim": "#C7A2D8",
+  "accent": "#FB7185",
+  "accent2": "#FACC15",
+  "amber": "#34D399"
+ }
+}

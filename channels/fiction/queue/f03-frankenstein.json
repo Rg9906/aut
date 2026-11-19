@@ -1,0 +1,309 @@
+{
+ "id": "f03-frankenstein",
+ "series": "Plot Twist Club",
+ "episode": 3,
+ "title": "Frankenstein was started by an eighteen year old",
+ "description": "#books #anime #manga #movies #shorts #frankenstein #maryshelley",
+ "tags": [
+  "frankenstein",
+  "mary shelley",
+  "horror",
+  "book facts",
+  "classic books",
+  "fiction shorts"
+ ],
+ "angle": "Mary Shelley began Frankenstein at eighteen after a ghost story challenge in 1816.",
+ "hook": "A teenager started Frankenstein during a ghost story contest.",
+ "speakers": {},
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "Frankenstein started as a dare! And the writer was only eighteen!",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 1.0,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "BOOK ORIGIN STORY",
+     "title": "Frankenstein",
+     "chips": [
+      "Horror",
+      "1816"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "A rainy summer. A group of writers. One challenge: write a ghost story.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "pop"
+    },
+    {
+     "t": 1.4,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "The rainy summer",
+      "The challenge",
+      "The book that won"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "So they were stuck inside and said, let us write scary stories? Peak vibes.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Scary story contest",
+     "sub": "summer of 1816"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Mary Shelley began the story at eighteen. It was published in eighteen eighteen.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "pop"
+    },
+    {
+     "t": 1.5,
+     "name": "pop"
+    },
+    {
+     "t": 2.7,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "timeline",
+    "props": {
+     "heading": "Frankenstein",
+     "events": [
+      {
+       "when": "1816",
+       "what": "Ghost story challenge"
+      },
+      {
+       "when": "1818",
+       "what": "Published anonymously"
+      },
+      {
+       "when": "Today",
+       "what": "Still a classic"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Published anonymously? Why would you hide a masterpiece?",
+   "emotions": {
+    "byte": "confused",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "scratch"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Anonymous",
+     "sub": "at first"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Plenty of authors then did that. The book still became a sensation.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "boom"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "stat",
+    "props": {
+     "value": "18",
+     "label": "age when she began",
+     "sub": "a teenager wrote a classic"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "My biggest project at eighteen was a playlist. I feel behind.",
+   "emotions": {
+    "byte": "sad",
+    "compy": "happy"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 1.0,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "verdict",
+    "props": {
+     "title": "Our hot take",
+     "score": 9.5,
+     "pros": [
+      "Big ideas",
+      "Still scary"
+     ],
+     "cons": [
+      "Old language"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Rule of the day. A strange challenge can start a masterpiece.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "A tiny dare can start a classic"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Follow for more! Next up, an animated film that won an Oscar.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 0.8,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "Spirited Away: worth the hype?",
+     "hint": "Books, anime, manga and movies"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "burst",
+     "text": "FOLLOW!",
+     "t": 0.3,
+     "x": 850,
+     "y": 190
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "Mary Shelley began writing Frankenstein in 1816 at age 18 and it was first published anonymously in 1818",
+   "source": "https://en.wikipedia.org/wiki/Frankenstein"
+  }
+ ],
+ "contains_synthetic_media": true
+}

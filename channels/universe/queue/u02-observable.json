@@ -1,0 +1,311 @@
+{
+ "id": "u02-observable",
+ "series": "Cosmic Secrets",
+ "episode": 2,
+ "title": "The observable universe is 93 billion light years wide",
+ "description": "#space #universe #science #shorts #universe #cosmology",
+ "tags": [
+  "space",
+  "universe",
+  "cosmology",
+  "big bang",
+  "science facts",
+  "space shorts"
+ ],
+ "angle": "Space itself stretched while the light was traveling, so the observable universe is much wider than its age suggests.",
+ "hook": "How can the universe be 93 billion light years wide if it is only 13.8 billion years old?",
+ "speakers": {},
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "The universe is thirteen point eight billion years old. So why is it ninety three billion light years wide?",
+   "emotions": {
+    "byte": "confused",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 1.0,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "COSMIC PUZZLE",
+     "title": "Wider Than Its Age",
+     "chips": [
+      "Universe",
+      "Expansion"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Light speed is a limit. But space itself is not obeying that limit. Buckle up.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "pop"
+    },
+    {
+     "t": 1.4,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "The age",
+      "The width",
+      "Stretching space"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Light has traveled thirteen point eight billion years. So it should cover just that many light years, right?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "stat",
+    "props": {
+     "value": "13.8 billion",
+     "label": "years old",
+     "sub": "the universe"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "But the universe was expanding the whole time. The space under the light kept stretching.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "whoosh"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Space stretches",
+     "sub": "while light travels"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Like walking on a treadmill that is also growing longer?",
+   "emotions": {
+    "byte": "confused",
+    "compy": "happy"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "boing"
+    },
+    {
+     "t": 1.0,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "Light travel time",
+      "value": "13.8 B years"
+     },
+     "right": {
+      "title": "Distance today",
+      "value": "46 B light years"
+     },
+     "footer": "to the edge in every direction"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Exactly. Count both directions and the whole thing spans about ninety three billion light years.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "boom"
+    },
+    {
+     "t": 0.9,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "stat",
+    "props": {
+     "value": "93 billion",
+     "label": "light years across",
+     "sub": "the observable universe"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "shake"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "exclaim",
+     "t": 0.3,
+     "x": 800,
+     "y": 420
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "So the universe is not breaking physics. It is just stretching the road?",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "happy"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Road is stretching",
+     "sub": "not light speeding"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Rule of the day. Nothing moves through space faster than light. But space itself can stretch.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Space itself can stretch"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Follow for more! Next up, a spacecraft that is nearly a light day away.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 0.8,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "Voyager 1: a day away",
+     "hint": "A new cosmic secret every day"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "burst",
+     "text": "FOLLOW!",
+     "t": 0.3,
+     "x": 850,
+     "y": 190
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "The observable universe has a diameter of about 93 billion light years",
+   "source": "https://en.wikipedia.org/wiki/Observable_universe"
+  },
+  {
+   "text": "The universe is about 13.8 billion years old",
+   "source": "https://en.wikipedia.org/wiki/Age_of_the_universe"
+  }
+ ],
+ "contains_synthetic_media": true
+}

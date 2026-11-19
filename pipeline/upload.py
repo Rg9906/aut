@@ -16,11 +16,16 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from channel import paused, state_dir
+from channel import channel_dir, paused, state_dir
 from desc import build_description
 
 ROOT = Path(__file__).resolve().parent.parent
 TOKEN_URI = "https://oauth2.googleapis.com/token"
+
+
+def _category():
+    cf = channel_dir() / "channel.json"
+    return str((json.loads(cf.read_text()).get("category") if cf.exists() else None) or "27")  # 27 Education, 24 Entertainment
 
 
 def main(script_path):
@@ -48,7 +53,7 @@ def main(script_path):
             "title": script["title"][:100],
             "description": build_description(script),
             "tags": script.get("tags", []),
-            "categoryId": "27",  # Education
+            "categoryId": _category(),
         },
         "status": {
             "privacyStatus": os.environ.get("PRIVACY", "private"),

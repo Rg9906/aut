@@ -1,0 +1,33 @@
+{
+ "name": "History But Chaotic",
+ "handle": "HistoryButChaotic",
+ "niche": "Playful, funny history facts and myth busting as two-character sketches",
+ "description": "History, but make it chaotic. Wild true stories, myth busting and mind-bending timelines in under a minute. New Short every day. Voices and animation are AI-generated; sources are in every description.",
+ "tagline": "tiny comedy sketches about history's weirdest true stories.",
+ "category": "27",
+ "enabled": false,
+ "names": {
+  "byte": "Chrono",
+  "compy": "Dusty"
+ },
+ "speakers": {
+  "byte": {
+   "voice": "am_puck",
+   "speed": 1.1
+  },
+  "compy": {
+   "voice": "bm_fable",
+   "speed": 0.98
+  }
+ },
+ "theme": {
+  "bg": "#1A120B",
+  "bg2": "#2E1F12",
+  "card": "#36261A",
+  "text": "#FFF4E0",
+  "dim": "#C9A97C",
+  "accent": "#F97316",
+  "accent2": "#EF4444",
+  "amber": "#FDE68A"
+ }
+}

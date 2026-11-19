@@ -1,0 +1,296 @@
+{
+ "id": "u04-saturn",
+ "series": "Cosmic Secrets",
+ "episode": 4,
+ "title": "Saturn is less dense than water",
+ "description": "#space #universe #science #shorts #saturn #planets",
+ "tags": [
+  "space",
+  "saturn",
+  "planets",
+  "density",
+  "science facts",
+  "space shorts"
+ ],
+ "angle": "Saturn is so fluffy on average that it is less dense than water.",
+ "hook": "Could Saturn really float in a bathtub?",
+ "speakers": {},
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "Is it true that Saturn would float in water? That sounds fake.",
+   "emotions": {
+    "byte": "confused",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 1.0,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "FLOATING PLANET",
+     "title": "Saturn in a Bathtub",
+     "chips": [
+      "Planets",
+      "Density"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Fake? No. Physics. Saturn is mostly gas, and gas is not very dense.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "pop"
+    },
+    {
+     "t": 1.4,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "What density means",
+      "Saturn's number",
+      "The bathtub problem"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Density sounds boring. But I will allow it. What is it?",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Density",
+     "sub": "stuff packed in space"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Water is one gram per cubic centimeter. That is the line between floating and sinking.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "stat",
+    "props": {
+     "value": "1.0",
+     "label": "water density",
+     "sub": "grams per cubic centimeter"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Saturn averages about point six nine. Lower than water.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 1.0,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "Water",
+      "value": "1.00"
+     },
+     "right": {
+      "title": "Saturn",
+      "value": "0.69"
+     },
+     "footer": "Saturn floats!"
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "So I could throw Saturn into a bath and it would float? I need a bigger bathtub.",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "happy"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "boing"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Saturn floats",
+     "sub": "in a very big bathtub"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "shake"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "exclaim",
+     "t": 0.3,
+     "x": 800,
+     "y": 420
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "You would need a tub wider than the entire Solar System. Bring snacks.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Giant tub",
+     "sub": "bring a very long towel"
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Rule of the day. Big does not mean heavy. Saturn is huge and fluffy.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Big is not the same as dense"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Follow for more. Next up, a planet with a very slow day.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 0.8,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "Venus has a day longer than its year",
+     "hint": "A new cosmic secret every day"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "burst",
+     "text": "FOLLOW!",
+     "t": 0.3,
+     "x": 850,
+     "y": 190
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "Saturn has an average density of about 0.687 g/cm3, less than water",
+   "source": "https://en.wikipedia.org/wiki/Saturn"
+  }
+ ],
+ "contains_synthetic_media": true
+}

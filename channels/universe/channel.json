@@ -1,0 +1,33 @@
+{
+ "name": "Cosmic Secrets",
+ "handle": "CosmicSecretsDaily",
+ "niche": "Easy, awe-inspiring explanations of space and the universe's strangest facts",
+ "description": "The universe's weirdest secrets, explained in under a minute. Planets, black holes, light and time in plain English with cool animation. New Short every day. Voices and animation are AI-generated; sources in every description.",
+ "tagline": "60-second sketches that make the universe click.",
+ "category": "27",
+ "enabled": false,
+ "names": {
+  "byte": "Nova",
+  "compy": "Orbit"
+ },
+ "speakers": {
+  "byte": {
+   "voice": "af_nova",
+   "speed": 1.04
+  },
+  "compy": {
+   "voice": "am_onyx",
+   "speed": 0.95
+  }
+ },
+ "theme": {
+  "bg": "#05030F",
+  "bg2": "#14093A",
+  "card": "#1B1047",
+  "text": "#F1EEFF",
+  "dim": "#9C93D6",
+  "accent": "#22D3EE",
+  "accent2": "#C084FC",
+  "amber": "#F472B6"
+ }
+}

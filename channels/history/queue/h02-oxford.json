@@ -1,0 +1,321 @@
+{
+ "id": "h02-oxford",
+ "series": "History But Chaotic",
+ "episode": 2,
+ "title": "Oxford University is older than the Aztec Empire",
+ "description": "#history #facts #shorts #oxford #aztecs",
+ "tags": [
+  "history",
+  "oxford",
+  "aztecs",
+  "tenochtitlan",
+  "history facts",
+  "history shorts"
+ ],
+ "angle": "Oxford was already teaching students more than two hundred years before the Aztec capital was founded.",
+ "hook": "Which came first, Oxford University or the Aztec capital?",
+ "speakers": {},
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "Plot twist time! Which is older, Oxford University or the Aztec capital city?",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 1.0,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "TIME TRAVEL TRIVIA",
+     "title": "Oxford vs the Aztecs",
+     "chips": [
+      "Europe",
+      "Mexico"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Most people say Aztecs. Most people are wrong. Sit down. This gets awkward.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "pop"
+    },
+    {
+     "t": 1.4,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "When Oxford started",
+      "When Tenochtitlan began",
+      "Who wins the race"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Oxford is a classic old building university. But Aztecs sound way more ancient!",
+   "emotions": {
+    "byte": "confused",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Old vs Older?",
+     "sub": "Oxford or Aztecs"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "There has been teaching at Oxford since around ten ninety six. Remember that number.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "stat",
+    "props": {
+     "value": "1096",
+     "label": "teaching begins at Oxford",
+     "sub": "already a school"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "The Aztec capital, Tenochtitlan, was founded in thirteen twenty five. Over two hundred years later.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "pop"
+    },
+    {
+     "t": 1.6,
+     "name": "pop"
+    },
+    {
+     "t": 2.9,
+     "name": "buzz"
+    }
+   ],
+   "visual": {
+    "type": "timeline",
+    "props": {
+     "heading": "Who showed up first",
+     "events": [
+      {
+       "when": "1096",
+       "what": "Teaching at Oxford"
+      },
+      {
+       "when": "1325",
+       "what": "Tenochtitlan founded"
+      },
+      {
+       "when": "1521",
+       "what": "Spanish take the city"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "So Oxford students were already grumpy about exams before the Aztec capital even existed?",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "boing"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Exams first",
+     "sub": "then the Aztec capital"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "shake"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "exclaim",
+     "t": 0.3,
+     "x": 800,
+     "y": 420
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Exactly. The Aztec Empire grew in the fifteenth century. Oxford was a veteran by then.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "Oxford teaching",
+      "value": "since 1096"
+     },
+     "right": {
+      "title": "Tenochtitlan",
+      "value": "since 1325"
+     },
+     "footer": "Oxford wins by 229 years"
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "History is not a neat line. Different places had different eras at the same time.",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "happy"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Old is not the same as ancient"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Follow for more. Next up, the myth about Napoleon being tiny.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 0.8,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "Napoleon was not actually short",
+     "hint": "More chaotic history every day"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "burst",
+     "text": "FOLLOW!",
+     "t": 0.3,
+     "x": 850,
+     "y": 190
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "Teaching at Oxford existed in some form as early as 1096",
+   "source": "https://en.wikipedia.org/wiki/University_of_Oxford"
+  },
+  {
+   "text": "The Aztec city of Tenochtitlan was founded in 1325",
+   "source": "https://en.wikipedia.org/wiki/Tenochtitlan"
+  }
+ ],
+ "contains_synthetic_media": true
+}

@@ -1,0 +1,306 @@
+{
+ "id": "u01-venus",
+ "series": "Cosmic Secrets",
+ "episode": 1,
+ "title": "A day on Venus is longer than its year",
+ "description": "#space #universe #science #shorts #venus #planets",
+ "tags": [
+  "space",
+  "venus",
+  "planets",
+  "astronomy",
+  "science facts",
+  "space shorts"
+ ],
+ "angle": "Venus spins so slowly that one rotation takes longer than one trip around the Sun.",
+ "hook": "Which is longer on Venus: a day or a year?",
+ "speakers": {},
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "Here is a space riddle. On Venus, what is longer, a day or a year?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 1.0,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "SPACE RIDDLE",
+     "title": "Venus: Day vs Year",
+     "chips": [
+      "Planets",
+      "Space"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Gravity of the situation: the day wins. Venus is a very slow spinner.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "pop"
+    },
+    {
+     "t": 1.4,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "How long a day lasts",
+      "How long a year lasts",
+      "The backwards twist"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "A day is one spin. A year is one trip around the Sun. Simple, right?",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Day = spin",
+     "sub": "Year = lap around the Sun"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Venus takes about two hundred forty three Earth days to spin once.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "stat",
+    "props": {
+     "value": "243",
+     "label": "Earth days per Venus day",
+     "sub": "one slow spin"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "But it circles the Sun in only two hundred twenty five Earth days.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 1.1,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "One Venus day",
+      "value": "243 days"
+     },
+     "right": {
+      "title": "One Venus year",
+      "value": "225 days"
+     },
+     "footer": "The day is longer than the year!"
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "So Venus finishes a whole lap around the Sun before one single day ends?",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "boing"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Year < Day",
+     "sub": "only on Venus"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "shake"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "exclaim",
+     "t": 0.3,
+     "x": 800,
+     "y": 420
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "And it gets weirder. Venus spins backwards, so the Sun rises in the west.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "whoosh"
+    },
+    {
+     "t": 0.9,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Sun rises WEST",
+     "sub": "Venus spins backwards"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Space just keeps winning. Backwards spin, long days, short years.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S FACT",
+     "rule": "Venus day is longer than its year"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Follow for more. Next up, how the universe can be wider than its age allows.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 0.8,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "The universe is bigger than its age",
+     "hint": "A new cosmic secret every day"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "burst",
+     "text": "FOLLOW!",
+     "t": 0.3,
+     "x": 850,
+     "y": 190
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "Venus rotates once every about 243 Earth days and orbits the Sun in about 225 Earth days, rotating in the retrograde direction",
+   "source": "https://en.wikipedia.org/wiki/Venus"
+  }
+ ],
+ "contains_synthetic_media": true
+}

@@ -15,7 +15,15 @@ export const theme = {
   sans: '"Inter", "DejaVu Sans", "Helvetica Neue", Arial, sans-serif',
 };
 
-export const speakerColor = {byte: theme.accent, compy: theme.amber} as const;
+export const speakerColor: {byte: string; compy: string} = {byte: theme.accent, compy: theme.amber};
+
+// Per-channel re-skin: channel.json -> props.theme. One video per render process, so mutating is safe.
+export const applyTheme = (o?: Partial<typeof theme>) => {
+  if (!o) return;
+  Object.assign(theme, o);
+  speakerColor.byte = theme.accent;
+  speakerColor.compy = theme.amber;
+};
 
 // Shorts safe zones (px, 1080x1920): leave room for YouTube UI.
 export const safe = {top: 230, bottom: 430, side: 70};
