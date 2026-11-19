@@ -1,0 +1,403 @@
+{
+ "id": "2026-11-23-big-o",
+ "series": "Byte & Compy",
+ "episode": 4,
+ "title": "Big O in one minute (a race through a million names)",
+ "description": "Byte races Compy to find one name in a million. Big O is just how the work grows when the list grows.\n\n#coding #python #bigo #shorts",
+ "tags": [
+  "big o",
+  "algorithms",
+  "binary search",
+  "python",
+  "computer science",
+  "coding shorts"
+ ],
+ "angle": "Big O does not measure seconds, it measures how the amount of work grows as the input grows.",
+ "hook": "Ever wondered why some code is fast and some is painfully slow?",
+ "speakers": {
+  "byte": {
+   "voice": "af_heart",
+   "speed": 1.08
+  },
+  "compy": {
+   "voice": "bm_george",
+   "speed": 0.98
+  }
+ },
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "Ever wondered why some code is fast and some is painfully slow?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "sparkle",
+     "gain": 0.6
+    }
+   ],
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "TODAY'S QUESTION",
+     "title": "Big O in one minute",
+     "chips": [
+      "Algorithms",
+      "Python"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Stick around. One idea makes you a faster programmer.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "pop"
+    },
+    {
+     "t": 0.85,
+     "name": "pop"
+    },
+    {
+     "t": 1.3,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "A race through a million names",
+      "Counting steps, not seconds",
+      "What Big O really says"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Race time! Find one name in a million names. I start at the top and check each one.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.0,
+     "name": "whoosh"
+    },
+    {
+     "t": 2.8,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "1,000,000 names",
+     "sub": "find just one"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Checking one by one can take a million steps. I cut the list in half every time.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "pop"
+    },
+    {
+     "t": 3.2,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "Byte: one by one",
+      "value": "up to 1,000,000 steps"
+     },
+     "right": {
+      "title": "Compy: cut in half",
+      "value": "about 20 steps"
+     },
+     "footer": "same answer, same list"
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Twenty?! You win by a mile!",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.0,
+     "name": "boom"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "20 vs 1,000,000",
+     "sub": "not even close"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "shake"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "burst",
+     "text": "WAIT WHAT?!",
+     "t": 0.15,
+     "x": 830,
+     "y": 190
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "That gap is Big O. Not seconds. It tracks how the work grows when the list grows.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "pop"
+    },
+    {
+     "t": 3.6,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "code",
+    "props": {
+     "code": "# one by one: O(n)\n# halve each time: O(log n)"
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "So if the list doubles, my way takes twice as long?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "pop"
+    },
+    {
+     "t": 2.4,
+     "name": "boing"
+    }
+   ],
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "One by one",
+      "value": "2x the work"
+     },
+     "right": {
+      "title": "Halving",
+      "value": "just 1 more step"
+     },
+     "footer": "when the list doubles"
+    }
+   },
+   "stickers": [
+    {
+     "type": "qmarks",
+     "t": 0.5,
+     "x": 330,
+     "y": 880
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Exactly. Do not take my word for it. Ask Python how many halvings a million needs.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "pop"
+    },
+    {
+     "t": 4.3,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": ">>> import math",
+       "kind": "cmd"
+      },
+      {
+       "text": ">>> math.log2(1_000_000)",
+       "kind": "cmd"
+      },
+      {
+       "text": "19.93156856932",
+       "kind": "hl"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "A million items, twenty steps. That is wild.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.0,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "20 halvings",
+     "sub": "for a million items"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Rule of the day: ask how the work grows, not how long it takes.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.2,
+     "name": "sparkle"
+    },
+    {
+     "t": -1.0,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Ask how the work grows",
+     "code": "O(log n) beats O(n)"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Follow for more! Next up: git, the undo button for code.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 1.6,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "Git, the undo button for code",
+     "hint": "More Byte & Compy sketches coming"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "burst",
+     "text": "FOLLOW!",
+     "t": 0.3,
+     "x": 850,
+     "y": 190
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "Binary search finds an item in a sorted list in O(log n) time by halving the search range",
+   "source": "https://en.wikipedia.org/wiki/Binary_search_algorithm"
+  },
+  {
+   "text": "Big O notation describes how an algorithm's work grows with input size",
+   "source": "https://en.wikipedia.org/wiki/Big_O_notation"
+  }
+ ],
+ "contains_synthetic_media": true
+}
