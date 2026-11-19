@@ -1,0 +1,424 @@
+{
+ "id": "2026-11-21-array-zero",
+ "series": "Byte & Compy",
+ "episode": 2,
+ "title": "Why arrays start at zero (not one)",
+ "description": "Byte asks Compy why the first item in a list is number zero. The answer is about distance, not tradition.\n\n#coding #python #programming #shorts",
+ "tags": [
+  "python",
+  "arrays",
+  "zero-indexing",
+  "programming",
+  "computer science",
+  "coding shorts"
+ ],
+ "angle": "An index is not a position, it is a distance from the start, so the first item is zero steps away.",
+ "hook": "Ever wondered why arrays start counting at zero?",
+ "speakers": {
+  "byte": {
+   "voice": "af_heart",
+   "speed": 1.08
+  },
+  "compy": {
+   "voice": "bm_george",
+   "speed": 0.98
+  }
+ },
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "Ever wondered why arrays start counting at zero?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "sparkle",
+     "gain": 0.6
+    }
+   ],
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "TODAY'S QUESTION",
+     "title": "Why arrays start at zero",
+     "chips": [
+      "Python",
+      "Arrays"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Stick around. It is not tradition. It is a ruler.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "pop"
+    },
+    {
+     "t": 0.85,
+     "name": "pop"
+    },
+    {
+     "t": 1.3,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "The off by one trap",
+      "What an index really is",
+      "Why zero wins"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Easy. Three snacks. Pizza, tacos, fries. Give me snack number one.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.0,
+     "name": "pop"
+    },
+    {
+     "t": 3.6,
+     "name": "buzz"
+    }
+   ],
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": ">>> snacks = [\"pizza\", \"tacos\", \"fries\"]",
+       "kind": "cmd"
+      },
+      {
+       "text": ">>> snacks[1]",
+       "kind": "cmd"
+      },
+      {
+       "text": "'tacos'",
+       "kind": "err"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Tacos?! I asked for the FIRST snack!",
+   "emotions": {
+    "byte": "angry",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.0,
+     "name": "scratch"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Tacos?!",
+     "sub": "I wanted pizza"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "shake"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "exclaim",
+     "t": 0.2,
+     "x": 800,
+     "y": 400
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "You asked for position one. I only know distance. Pizza is zero steps from the start.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "pop"
+    },
+    {
+     "t": 2.6,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "Position (you)",
+      "value": "1st  2nd  3rd"
+     },
+     "right": {
+      "title": "Distance (me)",
+      "value": "0  1  2"
+     },
+     "footer": "steps from the start"
+    }
+   },
+   "stickers": [
+    {
+     "type": "qmarks",
+     "t": 0.5,
+     "x": 330,
+     "y": 880
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Memory is a street. Pizza lives at the start. Tacos are one house down. Fries, two.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "pop"
+    },
+    {
+     "t": 3.0,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "Address of item",
+      "value": "start + index"
+     },
+     "right": {
+      "title": "Pizza",
+      "value": "start + 0"
+     },
+     "footer": "zero houses down the street"
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Ohh. So the index is how many steps to walk. Zero steps gets you pizza!",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.0,
+     "name": "sparkle"
+    },
+    {
+     "t": 2.2,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "index = steps",
+     "sub": "not a position"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "If we started at one, I would do extra math on every single access. Wasteful.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "pop"
+    },
+    {
+     "t": 3.8,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "code",
+    "props": {
+     "code": "# starting at 1 would cost\naddr = start + (i - 1)\n\n# starting at 0 is free\naddr = start + i"
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "So the last snack is number two. Not three. Classic.",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.0,
+     "name": "pop"
+    },
+    {
+     "t": 3.0,
+     "name": "buzz"
+    }
+   ],
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": ">>> len(snacks)",
+       "kind": "cmd"
+      },
+      {
+       "text": "3",
+       "kind": "out"
+      },
+      {
+       "text": ">>> snacks[len(snacks)]",
+       "kind": "cmd"
+      },
+      {
+       "text": "IndexError",
+       "kind": "err"
+      }
+     ]
+    }
+   },
+   "stickers": [
+    {
+     "type": "sweat",
+     "t": 0.6,
+     "x": 380,
+     "y": 930
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Rule of the day: the last index is length minus one. Or just use negative one.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.2,
+     "name": "sparkle"
+    },
+    {
+     "t": -1.0,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Index = distance. Last is len - 1",
+     "code": "snacks[-1]"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Follow for more! Next up: recursion, a function that calls itself.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 1.6,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "Recursion, explained by a loop",
+     "hint": "More Byte & Compy sketches coming"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "burst",
+     "text": "FOLLOW!",
+     "t": 0.3,
+     "x": 850,
+     "y": 190
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "Zero-based numbering is common in programming because an index is an offset from the first element",
+   "source": "https://en.wikipedia.org/wiki/Zero-based_numbering"
+  },
+  {
+   "text": "Dijkstra argued for zero-based numbering in his 1982 note 'Why numbering should start at zero'",
+   "source": "https://www.cs.utexas.edu/~EWD/transcriptions/EWD08xx/EWD831.html"
+  }
+ ],
+ "contains_synthetic_media": true
+}

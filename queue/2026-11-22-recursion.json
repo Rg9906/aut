@@ -1,0 +1,418 @@
+{
+ "id": "2026-11-22-recursion",
+ "series": "Byte & Compy",
+ "episode": 3,
+ "title": "Recursion explained (a function that calls itself)",
+ "description": "Byte keeps asking Compy what recursion is. Compy says: see recursion. A two-rule recipe for functions that call themselves.\n\n#coding #python #recursion #shorts",
+ "tags": [
+  "python",
+  "recursion",
+  "base case",
+  "programming",
+  "computer science",
+  "coding shorts"
+ ],
+ "angle": "Every recursive function needs a base case that stops it and a step that makes the problem smaller.",
+ "hook": "Ever wondered what recursion actually means?",
+ "speakers": {
+  "byte": {
+   "voice": "af_heart",
+   "speed": 1.08
+  },
+  "compy": {
+   "voice": "bm_george",
+   "speed": 0.98
+  }
+ },
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "Ever wondered what recursion actually means?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "sparkle",
+     "gain": 0.6
+    }
+   ],
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "TODAY'S QUESTION",
+     "title": "What is recursion?",
+     "chips": [
+      "Python",
+      "Functions"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Stick around. Two rules. That is all recursion is.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "pop"
+    },
+    {
+     "t": 0.85,
+     "name": "pop"
+    },
+    {
+     "t": 1.3,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "The infinite loop trap",
+      "Rule one: a stopping point",
+      "Rule two: shrink the problem"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Compy. What is recursion?",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.0,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "What is recursion?",
+     "sub": ""
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Recursion. See: recursion.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.0,
+     "name": "boing"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "See: recursion",
+     "sub": "see: recursion"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "qmarks",
+     "t": 0.4,
+     "x": 330,
+     "y": 880
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "That is not an answer. That is a loop!",
+   "emotions": {
+    "byte": "angry",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.0,
+     "name": "scratch"
+    },
+    {
+     "t": 3.2,
+     "name": "buzz"
+    }
+   ],
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": ">>> def countdown(n):",
+       "kind": "cmd"
+      },
+      {
+       "text": "...     countdown(n - 1)",
+       "kind": "cmd"
+      },
+      {
+       "text": "RecursionError: maximum depth",
+       "kind": "err"
+      }
+     ]
+    }
+   },
+   "fx": [
+    {
+     "t": 3.2,
+     "type": "shake"
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Exactly. It never stops. Rule one: give it a base case, a place to stop.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "pop"
+    },
+    {
+     "t": 3.8,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "code",
+    "props": {
+     "code": "def countdown(n):\n    if n == 0:      # base case\n        return\n    countdown(n - 1)"
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "So when n hits zero, it just stops. Like a staircase with a floor.",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "pop"
+    },
+    {
+     "t": 3.0,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "No base case",
+      "value": "3  2  1  0  -1  -2 ..."
+     },
+     "right": {
+      "title": "With base case",
+      "value": "3  2  1  0  stop"
+     },
+     "footer": "always have a floor"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Rule two: every call must make the problem smaller. Three, two, one. Closer to the floor.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.0,
+     "name": "pop"
+    },
+    {
+     "t": 2.4,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "n - 1",
+     "sub": "smaller every time"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Wait. So a function can hire a smaller copy of itself to do the job?",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.0,
+     "name": "boom"
+    },
+    {
+     "t": 4.0,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": ">>> def fact(n):",
+       "kind": "cmd"
+      },
+      {
+       "text": "...     return 1 if n <= 1 else n * fact(n - 1)",
+       "kind": "cmd"
+      },
+      {
+       "text": ">>> fact(5)",
+       "kind": "cmd"
+      },
+      {
+       "text": "120",
+       "kind": "hl"
+      }
+     ]
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "shake"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "burst",
+     "text": "WAIT WHAT?!",
+     "t": 0.15,
+     "x": 830,
+     "y": 190
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Correct. A tiny intern who hires a smaller intern, until one intern just knows the answer.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.2,
+     "name": "sparkle"
+    },
+    {
+     "t": -1.0,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Base case + smaller problem",
+     "code": "if n == 0: return"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Follow for more! Next up: why Big O notation matters.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 1.6,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "Big O in one minute",
+     "hint": "More Byte & Compy sketches coming"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "burst",
+     "text": "FOLLOW!",
+     "t": 0.3,
+     "x": 850,
+     "y": 190
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "A recursive function needs a base case to terminate; Python limits recursion depth and raises RecursionError",
+   "source": "https://docs.python.org/3/library/sys.html#sys.getrecursionlimit"
+  },
+  {
+   "text": "The factorial of 5 is 120",
+   "source": "https://en.wikipedia.org/wiki/Factorial"
+  }
+ ],
+ "contains_synthetic_media": true
+}

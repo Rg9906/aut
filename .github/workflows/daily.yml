@@ -18,9 +18,11 @@ jobs:
       YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
       YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
       YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
-      PRIVACY: ${{ vars.PRIVACY || 'private' }}   # private (L0) | unlisted (L1) | public (L2)
     steps:
       - uses: actions/checkout@v4
+
+      - name: Read privacy level (state/privacy: private | unlisted | public)
+        run: echo "PRIVACY=$(tr -d '[:space:]' < state/privacy 2>/dev/null || echo private)" >> "$GITHUB_ENV"
 
       - name: Kill switch
         run: test ! -f state/PAUSE || (echo "paused"; exit 78)
