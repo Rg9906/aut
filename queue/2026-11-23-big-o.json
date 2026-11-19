@@ -32,17 +32,6 @@
     "byte": "thinking",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.1,
-     "name": "pop"
-    },
-    {
-     "t": 0.9,
-     "name": "sparkle",
-     "gain": 0.6
-    }
-   ],
    "visual": {
     "type": "titleCard",
     "props": {
@@ -53,29 +42,16 @@
       "Python"
      ]
     }
-   }
+   },
+   "fx": []
   },
   {
    "speaker": "compy",
-   "narration": "Stick around. One idea makes you a faster programmer.",
+   "narration": "Stick around. One idea will change how you look at slow code.",
    "emotions": {
     "byte": "happy",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.4,
-     "name": "pop"
-    },
-    {
-     "t": 0.85,
-     "name": "pop"
-    },
-    {
-     "t": 1.3,
-     "name": "pop"
-    }
-   ],
    "visual": {
     "type": "agenda",
     "props": {
@@ -86,25 +62,16 @@
       "What Big O really says"
      ]
     }
-   }
+   },
+   "fx": []
   },
   {
    "speaker": "byte",
-   "narration": "Race time! Find one name in a million names. I start at the top and check each one.",
+   "narration": "Race. I find one name in a million names. I start at the top and check every single one.",
    "emotions": {
     "byte": "happy",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.0,
-     "name": "whoosh"
-    },
-    {
-     "t": 2.8,
-     "name": "pop"
-    }
-   ],
    "visual": {
     "type": "bigText",
     "props": {
@@ -121,21 +88,11 @@
   },
   {
    "speaker": "compy",
-   "narration": "Checking one by one can take a million steps. I cut the list in half every time.",
+   "narration": "That could take a million steps. I'll just cut the list in half each time.",
    "emotions": {
     "byte": "smug",
     "compy": "neutral"
    },
-   "sfx": [
-    {
-     "t": 0.3,
-     "name": "pop"
-    },
-    {
-     "t": 3.2,
-     "name": "ding"
-    }
-   ],
    "visual": {
     "type": "compare",
     "props": {
@@ -149,85 +106,47 @@
      },
      "footer": "same answer, same list"
     }
-   }
+   },
+   "fx": []
   },
   {
    "speaker": "byte",
-   "narration": "Twenty?! You win by a mile!",
+   "narration": "Twenty steps. You win by a mile. I'd ask for a rematch, but I'm scared of the result.",
    "emotions": {
     "byte": "shocked",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.0,
-     "name": "boom"
-    }
-   ],
    "visual": {
     "type": "bigText",
     "props": {
      "text": "20 vs 1,000,000",
-     "sub": "not even close"
+     "sub": "not close"
     }
    },
-   "fx": [
-    {
-     "t": 0.0,
-     "type": "shake"
-    }
-   ],
-   "stickers": [
-    {
-     "type": "burst",
-     "text": "WAIT WHAT?!",
-     "t": 0.15,
-     "x": 830,
-     "y": 190
-    }
-   ]
+   "fx": []
   },
   {
    "speaker": "compy",
-   "narration": "That gap is Big O. Not seconds. It tracks how the work grows when the list grows.",
+   "narration": "That gap is Big O. It's not about seconds. It's about how the work grows as the list grows.",
    "emotions": {
     "byte": "neutral",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.3,
-     "name": "pop"
-    },
-    {
-     "t": 3.6,
-     "name": "ding"
-    }
-   ],
    "visual": {
     "type": "code",
     "props": {
      "code": "# one by one: O(n)\n# halve each time: O(log n)"
     }
-   }
+   },
+   "fx": []
   },
   {
    "speaker": "byte",
-   "narration": "So if the list doubles, my way takes twice as long?",
+   "narration": "So if the list doubles, my way takes twice as long, and yours takes one extra step?",
    "emotions": {
     "byte": "thinking",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.3,
-     "name": "pop"
-    },
-    {
-     "t": 2.4,
-     "name": "boing"
-    }
-   ],
    "visual": {
     "type": "compare",
     "props": {
@@ -242,32 +161,15 @@
      "footer": "when the list doubles"
     }
    },
-   "stickers": [
-    {
-     "type": "qmarks",
-     "t": 0.5,
-     "x": 330,
-     "y": 880
-    }
-   ]
+   "fx": []
   },
   {
    "speaker": "compy",
-   "narration": "Exactly. Do not take my word for it. Ask Python how many halvings a million needs.",
+   "narration": "Yes. Don't trust me. Ask Python how many halvings a million needs.",
    "emotions": {
     "byte": "smug",
     "compy": "neutral"
    },
-   "sfx": [
-    {
-     "t": 0.3,
-     "name": "pop"
-    },
-    {
-     "t": 4.3,
-     "name": "ding"
-    }
-   ],
    "visual": {
     "type": "terminal",
     "props": {
@@ -286,21 +188,16 @@
       }
      ]
     }
-   }
+   },
+   "fx": []
   },
   {
    "speaker": "byte",
-   "narration": "A million items, twenty steps. That is wild.",
+   "narration": "Twenty. A million items, twenty steps. That feels illegal.",
    "emotions": {
     "byte": "happy",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.0,
-     "name": "sparkle"
-    }
-   ],
    "visual": {
     "type": "bigText",
     "props": {
@@ -322,16 +219,6 @@
     "byte": "happy",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.2,
-     "name": "sparkle"
-    },
-    {
-     "t": -1.0,
-     "name": "ding"
-    }
-   ],
    "visual": {
     "type": "recap",
     "props": {
@@ -349,21 +236,11 @@
   },
   {
    "speaker": "byte",
-   "narration": "Follow for more! Next up: git, the undo button for code.",
+   "narration": "That's it. Follow for more. Next up: git, the undo button for code.",
    "emotions": {
     "byte": "happy",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.1,
-     "name": "sparkle"
-    },
-    {
-     "t": 1.6,
-     "name": "pop"
-    }
-   ],
    "visual": {
     "type": "endCard",
     "props": {
@@ -376,15 +253,6 @@
     {
      "t": 0.0,
      "type": "zoom"
-    }
-   ],
-   "stickers": [
-    {
-     "type": "burst",
-     "text": "FOLLOW!",
-     "t": 0.3,
-     "x": 850,
-     "y": 190
     }
    ]
   }

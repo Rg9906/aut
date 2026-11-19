@@ -32,6 +32,51 @@ const EMO: Record<Emotion, EP> = {
 
 const INK = '#1a1230';
 
+type Arms = {l: number; r: number};
+
+const Arm: React.FC<{px: number; py: number; side: 'l' | 'r'; out: number; fill: string; stroke: string; hand: string; len?: number}> = ({px, py, side, out, fill, stroke, hand, len = 58}) => (
+  <g transform={`rotate(${side === 'l' ? out : -out} ${px} ${py})`}>
+    <rect x={px - 10} y={py - 4} width={20} height={len} rx={10} fill={fill} stroke={stroke} strokeWidth={5} />
+    <circle cx={px} cy={py + len} r={17} fill={hand} stroke={stroke} strokeWidth={5} />
+  </g>
+);
+
+// outward raise angle per arm (0 = hanging, ~150 = overhead), driven by emotion + speech
+const armsFor = (who: 'byte' | 'compy', emotion: Emotion, speaking: boolean, mouth: number, frame: number): Arms => {
+  const ph = who === 'byte' ? 0 : 1.7;
+  let l = 24 + 6 * Math.sin(frame / 17 + ph);
+  let r = 24 + 6 * Math.sin(frame / 17 + ph + 1);
+  if (speaking) {
+    l = 46 + 30 * Math.sin(frame / 5 + ph) + mouth * 18;
+    r = 40 + 26 * Math.sin(frame / 5.7 + ph + 1.2) + mouth * 14;
+  }
+  switch (emotion) {
+    case 'shocked':
+      l = r = 135 + 8 * Math.sin(frame * 1.1);
+      break;
+    case 'happy':
+      if (speaking) {
+        l = 105 + 28 * Math.sin(frame / 3.4);
+        r = 105 + 28 * Math.sin(frame / 3.4 + Math.PI);
+      }
+      break;
+    case 'thinking':
+      l = 14;
+      r = 118;
+      break;
+    case 'confused':
+      r = 128 + 8 * Math.sin(frame / 4);
+      break;
+    case 'angry':
+      l = r = 30 + (speaking ? 14 * Math.sin(frame / 3) : 0);
+      break;
+    case 'smug':
+      l = r = 14;
+      break;
+  }
+  return {l, r};
+};
+
 type CharProps = {
   who: Who;
   emotion: Emotion;
@@ -42,7 +87,7 @@ type CharProps = {
 };
 
 /* ---------------- Byte: excitable teal blob ---------------- */
-const Byte: React.FC<{e: EP; speaking: boolean; mouth: number; frame: number}> = ({e, speaking, mouth, frame}) => {
+const Byte: React.FC<{e: EP; speaking: boolean; mouth: number; frame: number; arms: Arms}> = ({e, speaking, mouth, frame, arms}) => {
   const blink = frame % 110 < 4 ? 0.1 : 1;
   const eyeRy = 38 * e.eye * blink;
   const eyeRx = 31 * e.eye;
@@ -125,6 +170,9 @@ const Byte: React.FC<{e: EP; speaking: boolean; mouth: number; frame: number}> =
       {/* antenna */}
       <line x1={150} y1={72} x2={150 + Math.sin(frame / 12) * 6} y2={30} stroke="#0f766e" strokeWidth={8} strokeLinecap="round" />
       <circle cx={150 + Math.sin(frame / 12) * 6} cy={24} r={13} fill={theme.amber} />
+      {/* arms (behind the body so the shoulders tuck in) */}
+      <Arm px={46} py={196} side="l" out={arms.l} fill="#2dd4bf" stroke="#0f766e" hand="#5eead4" />
+      <Arm px={254} py={196} side="r" out={arms.r} fill="#2dd4bf" stroke="#0f766e" hand="#5eead4" />
       {/* legs */}
       <rect x={95} y={268} width={30} height={40} rx={14} fill="#0f766e" />
       <rect x={175} y={268} width={30} height={40} rx={14} fill="#0f766e" />
@@ -156,7 +204,7 @@ const COMPY_EYES: Record<Emotion, [EyeShape, EyeShape]> = {
   dead: ['x', 'x'],
 };
 
-const Compy: React.FC<{emotion: Emotion; speaking: boolean; mouth: number; frame: number}> = ({emotion, speaking, mouth, frame}) => {
+const Compy: React.FC<{emotion: Emotion; speaking: boolean; mouth: number; frame: number; arms: Arms}> = ({emotion, speaking, mouth, frame, arms}) => {
   const C = theme.amber;
   const blink = frame % 130 < 4;
   const shapes = COMPY_EYES[emotion];
@@ -229,6 +277,9 @@ const Compy: React.FC<{emotion: Emotion; speaking: boolean; mouth: number; frame
       <line x1={188} y1={66} x2={222 - Math.sin(frame / 15) * 4} y2={18} stroke="#94a3b8" strokeWidth={7} strokeLinecap="round" />
       <circle cx={78 + Math.sin(frame / 15) * 4} cy={16} r={8} fill="#cbd5e1" />
       <circle cx={222 - Math.sin(frame / 15) * 4} cy={16} r={8} fill="#cbd5e1" />
+      {/* arms */}
+      <Arm px={30} py={178} side="l" out={arms.l} fill="#94a3b8" stroke="#1e293b" hand="#fbbf24" len={54} />
+      <Arm px={270} py={178} side="r" out={arms.r} fill="#94a3b8" stroke="#1e293b" hand="#fbbf24" len={54} />
       {/* stand */}
       <rect x={112} y={276} width={76} height={20} rx={6} fill="#334155" />
       <rect x={78} y={294} width={144} height={16} rx={8} fill="#1e293b" />
@@ -253,23 +304,42 @@ export const Character: React.FC<CharProps> = ({who, emotion, speaking, mouth, f
   const e = EMO[emotion];
   const phase = who === 'byte' ? 0 : 2;
   const bob = Math.sin(frame / 9 + phase) * (speaking ? 7 : 3.5);
+  const jump = emotion === 'shocked' && speaking ? -14 * Math.abs(Math.sin(frame / 3.2)) : 0;
   const scale = (speaking ? 1.08 : 0.93) + 0.05 * hit;
   const squash = speaking ? 1 - 0.035 * mouth : 1;
   const tilt = (speaking ? Math.sin(frame / 7) * 2.2 : 0) + (who === 'byte' ? -1 : 1);
+  const arms = armsFor(who, emotion, speaking, mouth, frame);
+  const lift = bob - (speaking ? 12 : 0) + jump;
   return (
-    <div
-      style={{
-        transform: `translateY(${bob - (speaking ? 12 : 0)}px) rotate(${tilt}deg) scale(${scale}, ${scale * squash})`,
-        transformOrigin: '50% 100%',
-        opacity: speaking ? 1 : 0.88,
-        filter: speaking ? 'none' : 'saturate(0.85)',
-      }}
-    >
-      {who === 'byte' ? (
-        <Byte e={e} speaking={speaking} mouth={mouth} frame={frame} />
-      ) : (
-        <Compy emotion={emotion} speaking={speaking} mouth={mouth} frame={frame} />
-      )}
+    <div style={{position: 'relative'}}>
+      {/* ground shadow shrinks as the character hops */}
+      <div
+        style={{
+          position: 'absolute',
+          left: '14%',
+          width: '72%',
+          bottom: 4,
+          height: 30,
+          borderRadius: '50%',
+          background: 'radial-gradient(ellipse, #000c 0%, #0000 70%)',
+          transform: `scale(${1 - lift / 160})`,
+          opacity: 0.8,
+        }}
+      />
+      <div
+        style={{
+          transform: `translateY(${lift}px) rotate(${tilt}deg) scale(${scale}, ${scale * squash})`,
+          transformOrigin: '50% 100%',
+          opacity: speaking ? 1 : 0.9,
+          filter: speaking ? 'drop-shadow(0 10px 26px #0009)' : 'saturate(0.85) drop-shadow(0 6px 16px #0007)',
+        }}
+      >
+        {who === 'byte' ? (
+          <Byte e={e} speaking={speaking} mouth={mouth} frame={frame} arms={arms} />
+        ) : (
+          <Compy emotion={emotion} speaking={speaking} mouth={mouth} frame={frame} arms={arms} />
+        )}
+      </div>
     </div>
   );
 };

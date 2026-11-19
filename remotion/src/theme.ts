@@ -12,7 +12,9 @@ export const theme = {
   bad: '#FB7185',
   warn: '#FBBF24',
   mono: '"JetBrains Mono", "DejaVu Sans Mono", Menlo, Consolas, monospace',
-  sans: '"Inter", "DejaVu Sans", "Helvetica Neue", Arial, sans-serif',
+  sans: '"Lilita One", "Fredoka", "DejaVu Sans", Arial, sans-serif',
+  display: '"Lilita One", "Fredoka", "DejaVu Sans", Arial, sans-serif',
+  body: '"Fredoka", "DejaVu Sans", Arial, sans-serif',
 };
 
 export const speakerColor = {byte: theme.accent, compy: theme.amber} as const;

@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {theme, safe} from './theme';
+import {Confetti} from './Fx';
 
 export type TermLine = {text: string; kind?: 'cmd' | 'out' | 'err' | 'hl'};
 
@@ -44,7 +45,9 @@ const BigText: React.FC<{text: string; sub?: string}> = ({text, sub}) => {
           lineHeight: 1.05,
           transform: `translateY(${(1 - e) * 60}px) scale(${0.92 + 0.08 * e})`,
           opacity: e,
-          background: `linear-gradient(90deg, ${theme.accent}, ${theme.accent2})`,
+          background: `linear-gradient(90deg, ${theme.accent}, ${theme.accent2}, ${theme.amber}, ${theme.accent})`,
+          backgroundSize: '250% 100%',
+          backgroundPosition: `${(useCurrentFrame() * 1.6) % 250}% 0`,
           WebkitBackgroundClip: 'text',
           color: 'transparent',
         }}
@@ -89,7 +92,9 @@ const TitleCard: React.FC<{kicker: string; title: string; chips?: string[]}> = (
           lineHeight: 1.06,
           opacity: e2,
           transform: `translateY(${(1 - e2) * 60}px) scale(${0.94 + 0.06 * e2})`,
-          background: `linear-gradient(90deg, ${theme.accent}, ${theme.accent2})`,
+          background: `linear-gradient(90deg, ${theme.accent}, ${theme.accent2}, ${theme.amber}, ${theme.accent})`,
+          backgroundSize: '250% 100%',
+          backgroundPosition: `${(useCurrentFrame() * 1.6) % 250}% 0`,
           WebkitBackgroundClip: 'text',
           color: 'transparent',
         }}
@@ -417,10 +422,15 @@ const Compare: React.FC<{left: {title: string; value: string}; right: {title: st
   );
 };
 
-export const SceneVisual: React.FC<{visual: Visual; index: number}> = ({visual}) => {
+export const SceneVisual: React.FC<{visual: Visual; index: number}> = ({visual, index}) => {
   const frame = useCurrentFrame();
-  // subtle slow zoom on every scene so no frame is static
+  const {fps, durationInFrames} = useVideoConfig();
+  // slow push-in so no frame is ever static
   const zoom = interpolate(frame, [0, 240], [1, 1.035], {extrapolateRight: 'clamp'});
+  // scene entrance: slide in from alternating sides with a springy settle; soft fade out
+  const enter = spring({frame, fps, config: {damping: 13, stiffness: 150}});
+  const dir = index % 2 === 0 ? 1 : -1;
+  const out = interpolate(frame, [durationInFrames - 6, durationInFrames - 1], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const inner = (() => {
     switch (visual.type) {
       case 'titleCard':
@@ -441,5 +451,16 @@ export const SceneVisual: React.FC<{visual: Visual; index: number}> = ({visual})
         return <Compare {...visual.props} />;
     }
   })();
-  return <AbsoluteFill style={{transform: `scale(${zoom})`}}>{inner}</AbsoluteFill>;
+  const party = visual.type === 'recap' || visual.type === 'endCard';
+  return (
+    <AbsoluteFill
+      style={{
+        transform: `translateX(${(1 - enter) * 140 * dir}px) rotate(${(1 - enter) * 2.5 * dir}deg) scale(${zoom * (0.94 + 0.06 * enter)})`,
+        opacity: Math.min(1, enter * 1.4) * out,
+      }}
+    >
+      {inner}
+      {party ? <Confetti delay={4} /> : null}
+    </AbsoluteFill>
+  );
 };

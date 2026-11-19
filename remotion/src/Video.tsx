@@ -5,6 +5,7 @@ import {Captions, Word} from './Captions';
 import {SceneVisual, Visual} from './scenes';
 import {Character, Emotion, Who} from './Characters';
 import {BinaryRain, StickerSpec, Stickers} from './Extras';
+import {Floaters, Glow} from './Fx';
 
 export type FxSpec = {t: number; type: 'shake' | 'zoom'};
 
@@ -47,7 +48,10 @@ const Background: React.FC = () => {
           opacity: 0.5,
         }}
       />
+      <div style={{position: 'absolute', left: -200 + Math.sin(frame / 90) * 80, top: 150, width: 700, height: 700, borderRadius: '50%', background: `radial-gradient(circle, ${theme.accent}22, transparent 65%)`}} />
+      <div style={{position: 'absolute', right: -240 + Math.cos(frame / 110) * 90, top: 800, width: 800, height: 800, borderRadius: '50%', background: `radial-gradient(circle, ${theme.accent2}26, transparent 65%)`}} />
       <BinaryRain />
+      <Floaters />
     </AbsoluteFill>
   );
 };
@@ -57,7 +61,7 @@ const ProgressBar: React.FC<{total: number}> = ({total}) => {
   const pct = Math.min(1, frame / total);
   return (
     <div style={{position: 'absolute', left: 0, right: 0, bottom: 0, height: 10, background: '#ffffff12'}}>
-      <div style={{width: `${pct * 100}%`, height: '100%', background: theme.accent}} />
+      <div style={{width: `${pct * 100}%`, height: '100%', background: `linear-gradient(90deg, ${theme.accent}, ${theme.accent2}, ${theme.amber})`, boxShadow: `0 0 18px ${theme.accent}`}} />
     </div>
   );
 };
@@ -67,9 +71,10 @@ const NameTag: React.FC<{who: Who; active: boolean}> = ({who, active}) => (
     style={{
       marginTop: 6,
       textAlign: 'center',
-      fontSize: 34,
-      fontWeight: 900,
-      letterSpacing: 4,
+      fontSize: 38,
+      letterSpacing: 5,
+      fontFamily: theme.display,
+      boxShadow: active ? `0 6px 22px ${speakerColor[who]}77` : 'none',
       color: active ? '#0B0F1A' : speakerColor[who],
       background: active ? speakerColor[who] : 'transparent',
       border: `3px solid ${speakerColor[who]}`,
@@ -124,7 +129,7 @@ export const Video: React.FC<VideoProps> = (props) => {
   });
 
   return (
-    <AbsoluteFill style={{fontFamily: theme.sans, color: theme.text, background: theme.bg}}>
+    <AbsoluteFill style={{fontFamily: theme.display, fontSynthesis: 'none', color: theme.text, background: theme.bg}}>
       {props.audio ? <Audio src={staticFile(props.audio)} /> : null}
       <AbsoluteFill style={{transform: `translate(${shakeX}px, ${shakeY}px) scale(${zoom})`}}>
         <Background />
@@ -134,9 +139,9 @@ export const Video: React.FC<VideoProps> = (props) => {
             position: 'absolute',
             top: safe.top - 100,
             left: safe.side,
-            fontSize: 40,
-            fontWeight: 800,
-            letterSpacing: 3,
+            fontSize: 42,
+            letterSpacing: 4,
+            textShadow: `0 0 24px ${theme.accent}88`,
             color: theme.accent,
             textTransform: 'uppercase',
           }}
@@ -149,8 +154,7 @@ export const Video: React.FC<VideoProps> = (props) => {
               position: 'absolute',
               top: safe.top - 104,
               right: safe.side,
-              fontSize: 36,
-              fontWeight: 900,
+              fontSize: 38,
               letterSpacing: 3,
               color: '#0B0F1A',
               background: theme.amber,
@@ -172,10 +176,12 @@ export const Video: React.FC<VideoProps> = (props) => {
 
         {/* the cast */}
         <div style={{position: 'absolute', left: 50, top: 905, width: 360, textAlign: 'center'}}>
+          <Glow color={theme.accent} active={speaking && sc.speaker === 'byte'} frame={frame} />
           <Character {...charProps('byte')} />
           <NameTag who="byte" active={speaking && sc.speaker === 'byte'} />
         </div>
         <div style={{position: 'absolute', right: 50, top: 905, width: 360, textAlign: 'center'}}>
+          <Glow color={theme.amber} active={speaking && sc.speaker === 'compy'} frame={frame} />
           <Character {...charProps('compy')} />
           <NameTag who="compy" active={speaking && sc.speaker === 'compy'} />
         </div>

@@ -41,32 +41,40 @@ export const Captions: React.FC<{scenes: {words: Word[]; speaker: 'byte' | 'comp
   const pop = spring({frame: frame - pageStartFrame, fps, config: {damping: 12, stiffness: 240}});
 
   return (
-    <AbsoluteFill style={{justifyContent: 'flex-end', alignItems: 'center', paddingBottom: 372}}>
+    <AbsoluteFill style={{justifyContent: 'flex-end', alignItems: 'center', paddingBottom: 360}}>
       <div
         style={{
           display: 'flex',
           flexWrap: 'wrap',
           justifyContent: 'center',
-          gap: '8px 30px',
-          padding: '0 60px',
-          transform: `scale(${0.88 + 0.12 * pop}) rotate(${(1 - pop) * -2}deg)`,
+          gap: '10px 14px',
+          padding: '0 50px',
+          transform: `scale(${0.9 + 0.1 * pop}) translateY(${(1 - pop) * 24}px)`,
         }}
       >
         {page.words.map((w, i) => {
-          const active = t >= w.start && t < w.end + 0.08;
+          const active = t >= w.start && t < w.end + 0.06;
           const spoken = t >= w.end;
           const shout = /[A-Z]{3,}|[!?]$/.test(w.w);
+          const wf = Math.round(w.start * fps);
+          const wp = spring({frame: frame - wf, fps, config: {damping: 9, stiffness: 320}});
           return (
             <span
               key={i}
               style={{
-                fontSize: 86,
-                fontWeight: 900,
-                color: active ? color : spoken ? theme.text : '#ffffffaa',
-                textShadow: '0 6px 24px #000d, 0 0 3px #000',
-                WebkitTextStroke: '2.5px #000b',
+                fontFamily: theme.display,
+                fontSize: 96,
+                letterSpacing: 1,
+                lineHeight: 1.1,
+                color: active ? '#0B0F1A' : spoken ? theme.text : '#ffffffb8',
+                background: active ? color : 'transparent',
+                borderRadius: 26,
+                padding: '2px 18px 6px',
+                textShadow: active ? 'none' : '0 6px 18px #000c',
+                WebkitTextStroke: active ? '0px' : '9px #0B0F1A',
                 paintOrder: 'stroke fill',
-                transform: active ? `scale(${shout ? 1.22 : 1.08})` : 'scale(1)',
+                transform: active ? `translateY(${-6 * wp}px) rotate(${(i % 2 ? 1 : -1) * 2.2 * wp}deg) scale(${(shout ? 1.18 : 1.08) * (0.9 + 0.1 * wp)})` : 'none',
+                boxShadow: active ? `0 10px 30px ${color}66` : 'none',
                 display: 'inline-block',
               }}
             >

@@ -29,12 +29,15 @@ import sfx  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 SR = 24000
 FPS = 30
-GAP_SEC = 0.16
+GAP_SEC = 0.07
+PACE = 1.18          # global speed-up on top of each speaker's own speed
+SFX_ENABLED = False  # beeps/dings/booms removed: speech only (plus a barely-there transition swish)
+SWISH_GAIN = 0.16
 PAUSE_BONUS = 3
 
 DEFAULT_SPEAKERS = {
-    "byte": {"voice": "af_heart", "speed": 1.08},
-    "compy": {"voice": "bm_george", "speed": 0.98},
+    "byte": {"voice": "af_heart", "speed": 1.08, "pitch": 2.0},
+    "compy": {"voice": "bm_george", "speed": 0.98, "pitch": -1.5},
 }
 
 # gentle polish: rumble cut, compression, presence, a hint of room
@@ -44,6 +47,22 @@ VOICE_FX = (
     "equalizer=f=3200:t=q:w=1.0:g=2.5,"
     "aecho=0.9:0.9:28:0.10"
 )
+
+
+def pitch_shift(x, semis):
+    """Shift pitch by `semis` semitones keeping duration (ffmpeg asetrate + atempo). Makes the two voices clearly distinct."""
+    if not semis:
+        return x
+    f = 2 ** (semis / 12.0)
+    tmp_in, tmp_out = ROOT / "out" / "_ps_in.wav", ROOT / "out" / "_ps_out.wav"
+    tmp_in.parent.mkdir(parents=True, exist_ok=True)
+    sf.write(tmp_in, x, SR)
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(tmp_in), "-af",
+                        f"asetrate={int(SR * f)},aresample={SR},atempo={1 / f:.5f}", str(tmp_out)], capture_output=True, text=True)
+    if r.returncode != 0:
+        return x
+    y, _ = sf.read(tmp_out, dtype="float32")
+    return y
 
 
 def trim_silence(x, thresh=0.01, keep=0.04):
@@ -95,7 +114,7 @@ def main(script_path):
     script = json.loads(Path(script_path).read_text())
     out_dir = ROOT / "out" / script["id"]
     out_dir.mkdir(parents=True, exist_ok=True)
-    speakers = {**DEFAULT_SPEAKERS, **script.get("speakers", {})}
+    speakers = {k: {**DEFAULT_SPEAKERS.get(k, {}), **v} for k, v in {**DEFAULT_SPEAKERS, **script.get("speakers", {})}.items()}
 
     kokoro = Kokoro(
         str(ROOT / "assets/models/kokoro-v1.0.int8.onnx"),
@@ -107,10 +126,10 @@ def main(script_path):
     for sc in script["scenes"]:
         who = sc.get("speaker", "byte")
         sp = speakers[who]
-        speed = sc.get("speed", sp["speed"])
+        speed = min(1.6, sc.get("speed", sp["speed"]) * PACE)
         samples, sr = kokoro.create(sc["narration"], voice=sp["voice"], speed=speed, lang="en-us")
         assert sr == SR, f"unexpected sample rate {sr}"
-        samples = trim_silence(samples.astype(np.float32))
+        samples = trim_silence(pitch_shift(samples.astype(np.float32), sp.get("pitch", 0)))
         dur = len(samples) / SR
         scenes.append({
             "start": round(t, 3),
@@ -145,8 +164,8 @@ def main(script_path):
     bed = np.zeros(len(voice) + SR, dtype=np.float32)
     for i, s in enumerate(scenes):
         if i > 0:
-            add_at(bed, sfx.get("whoosh"), s["start"] - 0.05, 0.9)
-        for cue in s["sfx"]:
+            add_at(bed, sfx.get("whoosh"), s["start"] - 0.05, SWISH_GAIN)
+        for cue in (s["sfx"] if SFX_ENABLED else []):
             tt = cue["t"]
             at = s["start"] + tt if tt >= 0 else s["narrationEnd"] + tt
             add_at(bed, sfx.get(cue["name"]), at, cue.get("gain", 1.0))

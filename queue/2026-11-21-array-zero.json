@@ -32,17 +32,6 @@
     "byte": "thinking",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.1,
-     "name": "pop"
-    },
-    {
-     "t": 0.9,
-     "name": "sparkle",
-     "gain": 0.6
-    }
-   ],
    "visual": {
     "type": "titleCard",
     "props": {
@@ -53,29 +42,16 @@
       "Arrays"
      ]
     }
-   }
+   },
+   "fx": []
   },
   {
    "speaker": "compy",
-   "narration": "Stick around. It is not tradition. It is a ruler.",
+   "narration": "Stick around. It's not tradition. It's the computer being lazy, in a very smart way.",
    "emotions": {
     "byte": "happy",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.4,
-     "name": "pop"
-    },
-    {
-     "t": 0.85,
-     "name": "pop"
-    },
-    {
-     "t": 1.3,
-     "name": "pop"
-    }
-   ],
    "visual": {
     "type": "agenda",
     "props": {
@@ -86,25 +62,16 @@
       "Why zero wins"
      ]
     }
-   }
+   },
+   "fx": []
   },
   {
    "speaker": "byte",
-   "narration": "Easy. Three snacks. Pizza, tacos, fries. Give me snack number one.",
+   "narration": "Okay. Three snacks: pizza, tacos, fries. Give me snack number one.",
    "emotions": {
     "byte": "happy",
     "compy": "neutral"
    },
-   "sfx": [
-    {
-     "t": 0.0,
-     "name": "pop"
-    },
-    {
-     "t": 3.6,
-     "name": "buzz"
-    }
-   ],
    "visual": {
     "type": "terminal",
     "props": {
@@ -123,60 +90,32 @@
       }
      ]
     }
-   }
+   },
+   "fx": []
   },
   {
    "speaker": "byte",
-   "narration": "Tacos?! I asked for the FIRST snack!",
+   "narration": "That's tacos. I asked for the first snack. I'm now emotionally invested in the pizza.",
    "emotions": {
-    "byte": "angry",
+    "byte": "shocked",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.0,
-     "name": "scratch"
-    }
-   ],
    "visual": {
     "type": "bigText",
     "props": {
-     "text": "Tacos?!",
-     "sub": "I wanted pizza"
+     "text": "Tacos?",
+     "sub": "I wanted the pizza"
     }
    },
-   "fx": [
-    {
-     "t": 0.0,
-     "type": "shake"
-    }
-   ],
-   "stickers": [
-    {
-     "type": "exclaim",
-     "t": 0.2,
-     "x": 800,
-     "y": 400
-    }
-   ]
+   "fx": []
   },
   {
    "speaker": "compy",
-   "narration": "You asked for position one. I only know distance. Pizza is zero steps from the start.",
+   "narration": "You asked for a position. I only track distance. Pizza is zero steps from the start.",
    "emotions": {
     "byte": "neutral",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.3,
-     "name": "pop"
-    },
-    {
-     "t": 2.6,
-     "name": "ding"
-    }
-   ],
    "visual": {
     "type": "compare",
     "props": {
@@ -191,32 +130,15 @@
      "footer": "steps from the start"
     }
    },
-   "stickers": [
-    {
-     "type": "qmarks",
-     "t": 0.5,
-     "x": 330,
-     "y": 880
-    }
-   ]
+   "fx": []
   },
   {
    "speaker": "compy",
-   "narration": "Memory is a street. Pizza lives at the start. Tacos are one house down. Fries, two.",
+   "narration": "Think of memory as a street. Pizza's at the start. Tacos are one house down. Fries, two.",
    "emotions": {
     "byte": "smug",
     "compy": "neutral"
    },
-   "sfx": [
-    {
-     "t": 0.3,
-     "name": "pop"
-    },
-    {
-     "t": 3.0,
-     "name": "pop"
-    }
-   ],
    "visual": {
     "type": "compare",
     "props": {
@@ -230,30 +152,21 @@
      },
      "footer": "zero houses down the street"
     }
-   }
+   },
+   "fx": []
   },
   {
    "speaker": "byte",
-   "narration": "Ohh. So the index is how many steps to walk. Zero steps gets you pizza!",
+   "narration": "Huh. So the index isn't which one. It's how far. That's... actually kind of obvious now.",
    "emotions": {
-    "byte": "happy",
+    "byte": "thinking",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.0,
-     "name": "sparkle"
-    },
-    {
-     "t": 2.2,
-     "name": "ding"
-    }
-   ],
    "visual": {
     "type": "bigText",
     "props": {
      "text": "index = steps",
-     "sub": "not a position"
+     "sub": "not 'which one'"
     }
    },
    "fx": [
@@ -265,45 +178,26 @@
   },
   {
    "speaker": "compy",
-   "narration": "If we started at one, I would do extra math on every single access. Wasteful.",
+   "narration": "If we started at one, I'd subtract one on every lookup. Billions of times a day. For no reason.",
    "emotions": {
     "byte": "neutral",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.4,
-     "name": "pop"
-    },
-    {
-     "t": 3.8,
-     "name": "ding"
-    }
-   ],
    "visual": {
     "type": "code",
     "props": {
      "code": "# starting at 1 would cost\naddr = start + (i - 1)\n\n# starting at 0 is free\naddr = start + i"
     }
-   }
+   },
+   "fx": []
   },
   {
    "speaker": "byte",
-   "narration": "So the last snack is number two. Not three. Classic.",
+   "narration": "So if I ask for snack three, the street just ends. Error. Fair.",
    "emotions": {
-    "byte": "thinking",
-    "compy": "smug"
+    "byte": "confused",
+    "compy": "neutral"
    },
-   "sfx": [
-    {
-     "t": 0.0,
-     "name": "pop"
-    },
-    {
-     "t": 3.0,
-     "name": "buzz"
-    }
-   ],
    "visual": {
     "type": "terminal",
     "props": {
@@ -327,32 +221,15 @@
      ]
     }
    },
-   "stickers": [
-    {
-     "type": "sweat",
-     "t": 0.6,
-     "x": 380,
-     "y": 930
-    }
-   ]
+   "fx": []
   },
   {
    "speaker": "compy",
-   "narration": "Rule of the day: the last index is length minus one. Or just use negative one.",
+   "narration": "Rule of the day: the last index is length minus one. Or just use negative one. Less to think about.",
    "emotions": {
     "byte": "happy",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.2,
-     "name": "sparkle"
-    },
-    {
-     "t": -1.0,
-     "name": "ding"
-    }
-   ],
    "visual": {
     "type": "recap",
     "props": {
@@ -370,26 +247,16 @@
   },
   {
    "speaker": "byte",
-   "narration": "Follow for more! Next up: recursion, a function that calls itself.",
+   "narration": "That's it. Follow for more. Next up: recursion, a function that calls itself.",
    "emotions": {
     "byte": "happy",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.1,
-     "name": "sparkle"
-    },
-    {
-     "t": 1.6,
-     "name": "pop"
-    }
-   ],
    "visual": {
     "type": "endCard",
     "props": {
      "cta": "Follow",
-     "next": "Recursion, explained by a loop",
+     "next": "Recursion, a function that calls itself",
      "hint": "More Byte & Compy sketches coming"
     }
    },
@@ -397,15 +264,6 @@
     {
      "t": 0.0,
      "type": "zoom"
-    }
-   ],
-   "stickers": [
-    {
-     "type": "burst",
-     "text": "FOLLOW!",
-     "t": 0.3,
-     "x": 850,
-     "y": 190
     }
    ]
   }

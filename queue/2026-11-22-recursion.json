@@ -32,17 +32,6 @@
     "byte": "thinking",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.1,
-     "name": "pop"
-    },
-    {
-     "t": 0.9,
-     "name": "sparkle",
-     "gain": 0.6
-    }
-   ],
    "visual": {
     "type": "titleCard",
     "props": {
@@ -53,29 +42,16 @@
       "Functions"
      ]
     }
-   }
+   },
+   "fx": []
   },
   {
    "speaker": "compy",
-   "narration": "Stick around. Two rules. That is all recursion is.",
+   "narration": "Stick around. It's two rules. Break either one and your computer politely falls over.",
    "emotions": {
     "byte": "happy",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.4,
-     "name": "pop"
-    },
-    {
-     "t": 0.85,
-     "name": "pop"
-    },
-    {
-     "t": 1.3,
-     "name": "pop"
-    }
-   ],
    "visual": {
     "type": "agenda",
     "props": {
@@ -86,42 +62,32 @@
       "Rule two: shrink the problem"
      ]
     }
-   }
+   },
+   "fx": []
   },
   {
    "speaker": "byte",
-   "narration": "Compy. What is recursion?",
+   "narration": "So, Compy. What is recursion?",
    "emotions": {
     "byte": "neutral",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.0,
-     "name": "pop"
-    }
-   ],
    "visual": {
     "type": "bigText",
     "props": {
      "text": "What is recursion?",
      "sub": ""
     }
-   }
+   },
+   "fx": []
   },
   {
    "speaker": "compy",
    "narration": "Recursion. See: recursion.",
    "emotions": {
-    "byte": "smug",
+    "byte": "confused",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.0,
-     "name": "boing"
-    }
-   ],
    "visual": {
     "type": "bigText",
     "props": {
@@ -134,33 +100,15 @@
      "t": 0.0,
      "type": "zoom"
     }
-   ],
-   "stickers": [
-    {
-     "type": "qmarks",
-     "t": 0.4,
-     "x": 330,
-     "y": 880
-    }
    ]
   },
   {
    "speaker": "byte",
-   "narration": "That is not an answer. That is a loop!",
+   "narration": "That's not an answer, that's a loop. And look, it even crashes.",
    "emotions": {
     "byte": "angry",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.0,
-     "name": "scratch"
-    },
-    {
-     "t": 3.2,
-     "name": "buzz"
-    }
-   ],
    "visual": {
     "type": "terminal",
     "props": {
@@ -180,54 +128,30 @@
      ]
     }
    },
-   "fx": [
-    {
-     "t": 3.2,
-     "type": "shake"
-    }
-   ]
+   "fx": []
   },
   {
    "speaker": "compy",
-   "narration": "Exactly. It never stops. Rule one: give it a base case, a place to stop.",
+   "narration": "Correct. It never stops. Rule one: a base case. A moment where it says, okay, I'm done.",
    "emotions": {
     "byte": "neutral",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.3,
-     "name": "pop"
-    },
-    {
-     "t": 3.8,
-     "name": "ding"
-    }
-   ],
    "visual": {
     "type": "code",
     "props": {
      "code": "def countdown(n):\n    if n == 0:      # base case\n        return\n    countdown(n - 1)"
     }
-   }
+   },
+   "fx": []
   },
   {
    "speaker": "byte",
-   "narration": "So when n hits zero, it just stops. Like a staircase with a floor.",
+   "narration": "So it's a staircase. Without a floor, you just keep walking down forever.",
    "emotions": {
     "byte": "thinking",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.3,
-     "name": "pop"
-    },
-    {
-     "t": 3.0,
-     "name": "ding"
-    }
-   ],
    "visual": {
     "type": "compare",
     "props": {
@@ -241,25 +165,16 @@
      },
      "footer": "always have a floor"
     }
-   }
+   },
+   "fx": []
   },
   {
    "speaker": "compy",
-   "narration": "Rule two: every call must make the problem smaller. Three, two, one. Closer to the floor.",
+   "narration": "Rule two: every step makes the problem smaller. Three, two, one. Closer to the floor.",
    "emotions": {
     "byte": "smug",
     "compy": "neutral"
    },
-   "sfx": [
-    {
-     "t": 0.0,
-     "name": "pop"
-    },
-    {
-     "t": 2.4,
-     "name": "sparkle"
-    }
-   ],
    "visual": {
     "type": "bigText",
     "props": {
@@ -276,21 +191,11 @@
   },
   {
    "speaker": "byte",
-   "narration": "Wait. So a function can hire a smaller copy of itself to do the job?",
+   "narration": "So a function hires a slightly smaller version of itself to do the work?",
    "emotions": {
-    "byte": "shocked",
+    "byte": "confused",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.0,
-     "name": "boom"
-    },
-    {
-     "t": 4.0,
-     "name": "ding"
-    }
-   ],
    "visual": {
     "type": "terminal",
     "props": {
@@ -314,39 +219,15 @@
      ]
     }
    },
-   "fx": [
-    {
-     "t": 0.0,
-     "type": "shake"
-    }
-   ],
-   "stickers": [
-    {
-     "type": "burst",
-     "text": "WAIT WHAT?!",
-     "t": 0.15,
-     "x": 830,
-     "y": 190
-    }
-   ]
+   "fx": []
   },
   {
    "speaker": "compy",
-   "narration": "Correct. A tiny intern who hires a smaller intern, until one intern just knows the answer.",
+   "narration": "Exactly. An intern who hires a smaller intern, until one intern just knows the answer. Management, basically.",
    "emotions": {
     "byte": "happy",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.2,
-     "name": "sparkle"
-    },
-    {
-     "t": -1.0,
-     "name": "ding"
-    }
-   ],
    "visual": {
     "type": "recap",
     "props": {
@@ -364,21 +245,11 @@
   },
   {
    "speaker": "byte",
-   "narration": "Follow for more! Next up: why Big O notation matters.",
+   "narration": "That's it. Follow for more. Next up: Big O, in one minute.",
    "emotions": {
     "byte": "happy",
     "compy": "smug"
    },
-   "sfx": [
-    {
-     "t": 0.1,
-     "name": "sparkle"
-    },
-    {
-     "t": 1.6,
-     "name": "pop"
-    }
-   ],
    "visual": {
     "type": "endCard",
     "props": {
@@ -391,15 +262,6 @@
     {
      "t": 0.0,
      "type": "zoom"
-    }
-   ],
-   "stickers": [
-    {
-     "type": "burst",
-     "text": "FOLLOW!",
-     "t": 0.3,
-     "x": 850,
-     "y": 190
     }
    ]
   }

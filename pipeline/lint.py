@@ -24,9 +24,9 @@ def lint(p):
         errs.append("id must equal filename")
     sc = d["scenes"]
     words = sum(len(s["narration"].split()) for s in sc)
-    est = words / 2.55
-    if not 38 <= est <= 56:
-        errs.append(f"estimated length {est:.0f}s (want 38-56)")
+    est = words / 3.0
+    if not 34 <= est <= 56:
+        errs.append(f"estimated length {est:.0f}s (want 34-56)")
     types = [(s.get("visual") or {}).get("type") for s in sc]
     for t in types:
         if t not in TYPES:
