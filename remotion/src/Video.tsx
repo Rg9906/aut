@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, Audio, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
-import {theme, safe, speakerColor} from './theme';
+import {theme, safe, speakerColor, applyTheme} from './theme';
 import {Captions, Word} from './Captions';
 import {SceneVisual, Visual} from './scenes';
 import {Character, Emotion, Who} from './Characters';
@@ -24,6 +24,8 @@ export type SceneData = {
 export type VideoProps = {
   id: string;
   series: string;
+  theme?: Record<string, string>;
+  names?: {byte: string; compy: string};
   episode?: number;
   audio: string;
   totalSec: number;
@@ -62,7 +64,7 @@ const ProgressBar: React.FC<{total: number}> = ({total}) => {
   );
 };
 
-const NameTag: React.FC<{who: Who; active: boolean}> = ({who, active}) => (
+const NameTag: React.FC<{who: Who; active: boolean; label?: string}> = ({who, active, label}) => (
   <div
     style={{
       marginTop: 6,
@@ -78,11 +80,12 @@ const NameTag: React.FC<{who: Who; active: boolean}> = ({who, active}) => (
       display: 'inline-block',
     }}
   >
-    {who.toUpperCase()}
+    {(label || who).toUpperCase()}
   </div>
 );
 
 export const Video: React.FC<VideoProps> = (props) => {
+  applyTheme(props.theme);
   const frame = useCurrentFrame();
   const {fps, durationInFrames} = useVideoConfig();
   const t = frame / fps;
@@ -171,13 +174,13 @@ export const Video: React.FC<VideoProps> = (props) => {
         )}
 
         {/* the cast */}
-        <div style={{position: 'absolute', left: 50, top: 905, width: 360, textAlign: 'center'}}>
+        <div style={{position: 'absolute', left: 50, top: 885, width: 360, textAlign: 'center'}}>
           <Character {...charProps('byte')} />
-          <NameTag who="byte" active={speaking && sc.speaker === 'byte'} />
+          <NameTag who="byte" label={props.names?.byte} active={speaking && sc.speaker === 'byte'} />
         </div>
-        <div style={{position: 'absolute', right: 50, top: 905, width: 360, textAlign: 'center'}}>
+        <div style={{position: 'absolute', right: 50, top: 885, width: 360, textAlign: 'center'}}>
           <Character {...charProps('compy')} />
-          <NameTag who="compy" active={speaking && sc.speaker === 'compy'} />
+          <NameTag who="compy" label={props.names?.compy} active={speaking && sc.speaker === 'compy'} />
         </div>
 
         <Captions scenes={props.scenes} />

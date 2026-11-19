@@ -5,6 +5,8 @@ Usage (on YOUR computer, not CI):
     python pipeline/auth.py            # expects client_secret.json in the repo root,
                                        # OR set env vars YT_CLIENT_ID and YT_CLIENT_SECRET
 Then add the printed values as GitHub Actions secrets.
+For an extra channel: python pipeline/auth.py <slug>  (pick THAT channel in the Google consent screen);
+it prints the per-channel secret name to use.
 Never commit client_secret.json or the token.
 """
 import json
@@ -19,6 +21,10 @@ SCOPES = [
 ]
 
 import os
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from channel import secret_name
+
 secret = Path(__file__).resolve().parent.parent / "client_secret.json"
 if os.environ.get("YT_CLIENT_ID") and os.environ.get("YT_CLIENT_SECRET"):
     # no JSON file needed: set these two env vars in your terminal first
@@ -35,4 +41,4 @@ creds = flow.run_local_server(port=0, access_type="offline", prompt="consent")
 print("\nAdd these as GitHub Actions secrets:\n")
 print("YT_CLIENT_ID     =", c["client_id"])
 print("YT_CLIENT_SECRET =", c["client_secret"])
-print("YT_REFRESH_TOKEN =", creds.refresh_token)
+print(secret_name(sys.argv[1] if len(sys.argv) > 1 else "main").ljust(16), "=", creds.refresh_token)

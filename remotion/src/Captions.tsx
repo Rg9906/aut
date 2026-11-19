@@ -41,7 +41,7 @@ export const Captions: React.FC<{scenes: {words: Word[]; speaker: 'byte' | 'comp
   const pop = spring({frame: frame - pageStartFrame, fps, config: {damping: 12, stiffness: 240}});
 
   return (
-    <AbsoluteFill style={{justifyContent: 'flex-end', alignItems: 'center', paddingBottom: 372}}>
+    <AbsoluteFill style={{justifyContent: 'flex-end', alignItems: 'center', paddingBottom: 345}}>
       <div
         style={{
           display: 'flex',

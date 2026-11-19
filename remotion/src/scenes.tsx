@@ -12,6 +12,9 @@ export type Visual =
   | {type: 'bigText'; props: {text: string; sub?: string}}
   | {type: 'terminal'; props: {lines: TermLine[]}}
   | {type: 'code'; props: {code: string}}
+  | {type: 'timeline'; props: {heading?: string; events: {when: string; what: string}[]}}
+  | {type: 'stat'; props: {value: string; label: string; sub?: string}}
+  | {type: 'verdict'; props: {title: string; score: number; outOf?: number; pros?: string[]; cons?: string[]}}
   | {type: 'compare'; props: {left: {title: string; value: string}; right: {title: string; value: string}; footer?: string}};
 
 // Visual area sits between the series tag and the captions.
@@ -417,6 +420,90 @@ const Compare: React.FC<{left: {title: string; value: string}; right: {title: st
   );
 };
 
+
+const Timeline: React.FC<{heading?: string; events: {when: string; what: string}[]}> = ({heading, events}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  return (
+    <div style={{...area}}>
+      {heading ? <div style={{fontSize: 40, fontWeight: 900, letterSpacing: 3, color: theme.amber, marginBottom: 22, textTransform: 'uppercase'}}>{heading}</div> : null}
+      <div style={{position: 'relative', paddingLeft: 40}}>
+        <div style={{position: 'absolute', left: 14, top: 8, bottom: 8, width: 8, borderRadius: 4, background: `linear-gradient(${theme.accent}, ${theme.accent2})`}} />
+        {events.map((ev, i) => {
+          const e = spring({frame: frame - 6 - i * 14, fps, config: {damping: 14, stiffness: 150}});
+          return (
+            <div key={i} style={{position: 'relative', display: 'flex', alignItems: 'center', gap: 22, marginBottom: 22, opacity: e, transform: `translateX(${(1 - e) * 80}px)`}}>
+              <div style={{position: 'absolute', left: -40, width: 28, height: 28, borderRadius: 14, background: theme.amber, border: `5px solid ${theme.bg}`}} />
+              <div style={{fontSize: 42, fontWeight: 900, color: theme.accent, minWidth: 190}}>{ev.when}</div>
+              <div style={{fontSize: 40, fontWeight: 700, color: theme.text, lineHeight: 1.15}}>{ev.what}</div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+const Stat: React.FC<{value: string; label: string; sub?: string}> = ({value, label, sub}) => {
+  const e = useEnter();
+  const e2 = useEnter(10);
+  const frame = useCurrentFrame();
+  return (
+    <div style={{...area, alignItems: 'center', textAlign: 'center'}}>
+      <div style={{fontSize: 40, fontWeight: 900, letterSpacing: 4, color: theme.accent2, opacity: e2, textTransform: 'uppercase'}}>{label}</div>
+      <div
+        style={{
+          fontSize: Math.min(190, Math.floor(900 / (Math.max(value.length, 3) * 0.62))),
+          fontWeight: 900,
+          lineHeight: 1.05,
+          margin: '14px 0',
+          transform: `scale(${0.7 + 0.3 * e}) rotate(${Math.sin(frame / 18) * 1.2}deg)`,
+          opacity: e,
+          background: `linear-gradient(90deg, ${theme.accent}, ${theme.amber})`,
+          WebkitBackgroundClip: 'text',
+          color: 'transparent',
+        }}
+      >
+        {value}
+      </div>
+      {sub ? <div style={{fontSize: 46, color: theme.dim, fontWeight: 600, opacity: e2}}>{sub}</div> : null}
+    </div>
+  );
+};
+
+const Verdict: React.FC<{title: string; score: number; outOf?: number; pros?: string[]; cons?: string[]}> = ({title, score, outOf = 10, pros = [], cons = []}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const e = useEnter();
+  const fill = spring({frame: frame - 8, fps, config: {damping: 20, stiffness: 60}});
+  const shown = (score * fill).toFixed(1);
+  return (
+    <div style={{...area, alignItems: 'center', textAlign: 'center'}}>
+      <div style={{fontSize: 44, fontWeight: 800, color: theme.dim, opacity: e}}>{title}</div>
+      <div style={{fontSize: 190, fontWeight: 900, lineHeight: 1.05, color: theme.amber, transform: `scale(${0.8 + 0.2 * e})`}}>
+        {shown}<span style={{fontSize: 70, color: theme.dim}}>/{outOf}</span>
+      </div>
+      <div style={{width: 820, height: 26, borderRadius: 13, background: theme.card, overflow: 'hidden', margin: '6px 0 24px'}}>
+        <div style={{width: `${(score / outOf) * fill * 100}%`, height: '100%', background: `linear-gradient(90deg, ${theme.accent}, ${theme.amber})`}} />
+      </div>
+      <div style={{display: 'flex', gap: 28, width: '100%', justifyContent: 'center'}}>
+        {[{items: pros, c: theme.good, s: '+'}, {items: cons, c: theme.bad, s: '-'}].map((col, k) => (
+          <div key={k} style={{flex: 1, textAlign: 'left'}}>
+            {col.items.map((x, i) => {
+              const a = spring({frame: frame - 18 - i * 8 - k * 4, fps, config: {damping: 14, stiffness: 140}});
+              return (
+                <div key={i} style={{fontSize: 36, fontWeight: 700, color: theme.text, marginBottom: 10, opacity: a, transform: `translateY(${(1 - a) * 20}px)`}}>
+                  <span style={{color: col.c, fontWeight: 900}}>{col.s} </span>{x}
+                </div>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export const SceneVisual: React.FC<{visual: Visual; index: number}> = ({visual}) => {
   const frame = useCurrentFrame();
   // subtle slow zoom on every scene so no frame is static
@@ -439,6 +526,12 @@ export const SceneVisual: React.FC<{visual: Visual; index: number}> = ({visual})
         return <Code {...visual.props} />;
       case 'compare':
         return <Compare {...visual.props} />;
+      case 'timeline':
+        return <Timeline {...visual.props} />;
+      case 'stat':
+        return <Stat {...visual.props} />;
+      case 'verdict':
+        return <Verdict {...visual.props} />;
     }
   })();
   return <AbsoluteFill style={{transform: `scale(${zoom})`}}>{inner}</AbsoluteFill>;

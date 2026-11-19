@@ -1,0 +1,316 @@
+{
+ "id": "h04-emu-war",
+ "series": "History But Chaotic",
+ "episode": 4,
+ "title": "The time soldiers lost a war to birds",
+ "description": "#history #facts #shorts #emuwar #australia",
+ "tags": [
+  "history",
+  "emu war",
+  "australia",
+  "weird history",
+  "history facts",
+  "history shorts"
+ ],
+ "angle": "In 1932 Australia sent soldiers with machine guns after emus and the operation is widely seen as a failure.",
+ "hook": "Did soldiers with machine guns really lose to emus?",
+ "speakers": {},
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "True story! Soldiers with machine guns went to war against birds. And lost.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 1.0,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "TRUE STORY",
+     "title": "The Great Emu War",
+     "chips": [
+      "Australia",
+      "1932"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Yes, really. Western Australia, 1932. I wish I was making this up.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "pop"
+    },
+    {
+     "t": 1.4,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "The emu problem",
+      "The army shows up",
+      "The bird victory"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Why would an army fight emus? Were they invading?",
+   "emotions": {
+    "byte": "confused",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Emu invasion?",
+     "sub": "farmers were desperate"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Thousands of emus were wrecking farmland. Farmers asked the military for help.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "pop"
+    },
+    {
+     "t": 1.4,
+     "name": "pop"
+    },
+    {
+     "t": 2.5,
+     "name": "boom"
+    }
+   ],
+   "visual": {
+    "type": "timeline",
+    "props": {
+     "heading": "Late 1932",
+     "events": [
+      {
+       "when": "Emus",
+       "what": "wreck wheat farms"
+      },
+      {
+       "when": "Farmers",
+       "what": "beg for help"
+      },
+      {
+       "when": "Army",
+       "what": "sent with machine guns"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Soldiers versus birds. This should take five minutes. Where are the highlights?",
+   "emotions": {
+    "byte": "smug",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 1.0,
+     "name": "scratch"
+    }
+   ],
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "Soldiers",
+      "value": "machine guns"
+     },
+     "right": {
+      "title": "Emus",
+      "value": "scatter and run"
+     },
+     "footer": "Round one: emus"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "The emus split into small groups and sprinted off. Hard to hit. Easy to lose to.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "boing"
+    },
+    {
+     "t": 0.8,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Emus: 1",
+     "sub": "army: 0"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "shake"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "exclaim",
+     "t": 0.3,
+     "x": 800,
+     "y": 420
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "The army retreated from a flock of birds. That is the most embarrassing report ever written.",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "happy"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "buzz"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Retreat!",
+     "sub": "from a bird"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Rule of the day. Even a professional army can lose to a very annoying problem.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Never underestimate a fast bird"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Follow for more! Next up, another history fact that breaks your brain.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 0.8,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "Cleopatra and the pyramids again?",
+     "hint": "More chaotic history every day"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "burst",
+     "text": "FOLLOW!",
+     "t": 0.3,
+     "x": 850,
+     "y": 190
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "In 1932, soldiers armed with machine guns were sent to cull emus in Western Australia, an operation widely regarded as a failure",
+   "source": "https://en.wikipedia.org/wiki/Emu_War"
+  }
+ ],
+ "contains_synthetic_media": true
+}

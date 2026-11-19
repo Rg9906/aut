@@ -1,0 +1,304 @@
+{
+ "id": "f04-spirited-away",
+ "series": "Plot Twist Club",
+ "episode": 4,
+ "title": "Spirited Away: is it worth the hype?",
+ "description": "#books #anime #manga #movies #shorts #spiritedaway #ghibli",
+ "tags": [
+  "spirited away",
+  "studio ghibli",
+  "movie review",
+  "anime",
+  "fiction shorts"
+ ],
+ "angle": "Spirited Away earns its reputation with imagination, heart, and a world that feels alive.",
+ "hook": "Spirited Away won an Oscar. Is it actually worth the hype?",
+ "speakers": {},
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "Spirited Away won an Oscar. But is it worth the hype? Let us rate it!",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 1.0,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "MOVIE REVIEW",
+     "title": "Spirited Away",
+     "chips": [
+      "Ghibli",
+      "Anime"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "No spoilers. Three things: the world, the heart, and the pacing.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "pop"
+    },
+    {
+     "t": 1.4,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "The world",
+      "The heart",
+      "The pacing"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "First fact. It won Best Animated Feature at the Oscars in two thousand three.",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "boom"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "stat",
+    "props": {
+     "value": "Oscar",
+     "label": "Best Animated Feature",
+     "sub": "2003 ceremony"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "shake"
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Point one. The world feels alive. Every strange creature has a purpose and a personality.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "A world alive",
+     "sub": "every corner has a story"
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Point two. The heart. It is about growing up, courage, and finding your name.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "happy"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Heart",
+     "sub": "courage and growing up"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Point three. The pacing is calm. If you want nonstop action, it might feel slow.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "If you like cozy wonder",
+      "value": "perfect"
+     },
+     "right": {
+      "title": "If you want non stop action",
+      "value": "slower"
+     },
+     "footer": "know what you want"
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "So the final score is?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "happy"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 1.0,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "verdict",
+    "props": {
+     "title": "Our verdict",
+     "score": 9.5,
+     "pros": [
+      "Gorgeous world",
+      "Real heart"
+     ],
+     "cons": [
+      "Calm pace"
+     ]
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Rule of the day. Judge a story by what it wants to be, not what it is not.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Judge a story by its own goals"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Follow for more! Next up, more fiction hot takes.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 0.8,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "One Piece again, and more",
+     "hint": "Books, anime, manga and movies"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "burst",
+     "text": "FOLLOW!",
+     "t": 0.3,
+     "x": 850,
+     "y": 190
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "Spirited Away won the Academy Award for Best Animated Feature at the 75th Academy Awards in 2003",
+   "source": "https://en.wikipedia.org/wiki/Spirited_Away"
+  }
+ ],
+ "contains_synthetic_media": true
+}

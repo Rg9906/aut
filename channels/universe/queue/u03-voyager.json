@@ -1,0 +1,323 @@
+{
+ "id": "u03-voyager",
+ "series": "Cosmic Secrets",
+ "episode": 3,
+ "title": "Voyager 1 is nearly a light day from Earth",
+ "description": "#space #universe #science #shorts #voyager #nasa",
+ "tags": [
+  "space",
+  "voyager",
+  "nasa",
+  "interstellar",
+  "science facts",
+  "space shorts"
+ ],
+ "angle": "A 1977 spacecraft is so far away that a radio signal takes nearly a full day to reach it.",
+ "hook": "A message to Voyager 1 takes almost a day to arrive.",
+ "speakers": {},
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "Imagine texting someone and waiting a whole day for them to get it.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 1.0,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "LONELIEST MACHINE",
+     "title": "Voyager 1",
+     "chips": [
+      "NASA",
+      "Interstellar"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "That is exactly what happens with Voyager One. Launched in nineteen seventy seven. Still talking.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "pop"
+    },
+    {
+     "t": 1.4,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "The launch",
+      "The leap out",
+      "The giant delay"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Wait. A spacecraft from nineteen seventy seven is still working?",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "pop"
+    },
+    {
+     "t": 1.4,
+     "name": "pop"
+    },
+    {
+     "t": 2.6,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "timeline",
+    "props": {
+     "heading": "Voyager 1",
+     "events": [
+      {
+       "when": "1977",
+       "what": "Launched"
+      },
+      {
+       "when": "1990",
+       "what": "Pale Blue Dot photo"
+      },
+      {
+       "when": "2012",
+       "what": "Enters interstellar space"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Yes. In twenty twelve it crossed into interstellar space. The first human made object to do it.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "whoosh"
+    },
+    {
+     "t": 0.9,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Interstellar",
+     "sub": "since 2012"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "How far is that? Like a really long road trip?",
+   "emotions": {
+    "byte": "confused",
+    "compy": "happy"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Road trip?",
+     "sub": "more like a light trip"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Radio signals move at light speed. And it still takes almost a full day to reach it.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "boom"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "stat",
+    "props": {
+     "value": "~1 day",
+     "label": "one way signal delay",
+     "sub": "at the speed of light"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "shake"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "So if I say hi now, it hears me tomorrow?",
+   "emotions": {
+    "byte": "happy",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "Message to Moon",
+      "value": "1.3 seconds"
+     },
+     "right": {
+      "title": "Message to Voyager 1",
+      "value": "about 1 day"
+     },
+     "footer": "and it keeps going"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Rule of the day. Space is so big that even light has to take a long trip.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Space is mostly distance"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Follow for more! Next up, the planet that would float in a bathtub.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 0.8,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "Saturn would float in water",
+     "hint": "A new cosmic secret every day"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "burst",
+     "text": "FOLLOW!",
+     "t": 0.3,
+     "x": 850,
+     "y": 190
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "Voyager 1 launched in 1977 and entered interstellar space in 2012",
+   "source": "https://en.wikipedia.org/wiki/Voyager_1"
+  },
+  {
+   "text": "Voyager 1 is about one light day from Earth, so radio signals take close to a day each way",
+   "source": "https://voyager.jpl.nasa.gov/mission/status/"
+  }
+ ],
+ "contains_synthetic_media": true
+}

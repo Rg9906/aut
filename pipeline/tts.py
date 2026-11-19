@@ -25,6 +25,7 @@ from kokoro_onnx import Kokoro
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import sfx  # noqa: E402
+from channel import channel_dir  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SR = 24000
@@ -95,7 +96,9 @@ def main(script_path):
     script = json.loads(Path(script_path).read_text())
     out_dir = ROOT / "out" / script["id"]
     out_dir.mkdir(parents=True, exist_ok=True)
-    speakers = {**DEFAULT_SPEAKERS, **script.get("speakers", {})}
+    cfg_file = channel_dir() / "channel.json"
+    cfg_sp = json.loads(cfg_file.read_text()).get("speakers", {}) if cfg_file.exists() else {}
+    speakers = {**DEFAULT_SPEAKERS, **cfg_sp, **script.get("speakers", {})}
 
     kokoro = Kokoro(
         str(ROOT / "assets/models/kokoro-v1.0.int8.onnx"),
@@ -166,9 +169,13 @@ def main(script_path):
     public.mkdir(parents=True, exist_ok=True)
     shutil.copy(audio_path, public / f"{script['id']}.wav")
 
+    cfg_file = channel_dir() / "channel.json"
+    cfg = json.loads(cfg_file.read_text()) if cfg_file.exists() else {}
     props = {
         "id": script["id"],
         "series": script.get("series", ""),
+        "theme": cfg.get("theme"),
+        "names": cfg.get("names"),
         "episode": script.get("episode"),
         "audio": f"{script['id']}.wav",
         "totalSec": round(total + 0.6, 3),

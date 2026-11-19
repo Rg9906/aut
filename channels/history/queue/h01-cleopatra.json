@@ -1,0 +1,331 @@
+{
+ "id": "h01-cleopatra",
+ "series": "History But Chaotic",
+ "episode": 1,
+ "title": "Cleopatra lived closer to the Moon landing than the pyramids",
+ "description": "#history #facts #shorts #cleopatra #egypt",
+ "tags": [
+  "history",
+  "cleopatra",
+  "ancient egypt",
+  "pyramids",
+  "history facts",
+  "history shorts"
+ ],
+ "angle": "Time is bigger than our brains think: the pyramids were already ancient before Cleopatra was born.",
+ "hook": "Quick: was Cleopatra closer to the pyramids or to the Moon landing?",
+ "speakers": {},
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "Quick quiz! Was Cleopatra closer in time to the pyramids, or to the Moon landing?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 1.0,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "HISTORY BRAIN BREAKER",
+     "title": "Cleopatra vs the Pyramids",
+     "chips": [
+      "Egypt",
+      "Time"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Spoiler. The pyramids lose. Badly. Let me walk you through the math.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "pop"
+    },
+    {
+     "t": 1.4,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "How old the pyramids are",
+      "When Cleopatra lived",
+      "The Moon plot twist"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Cleopatra. Iconic queen. She basically hung out with the pyramid builders, right?",
+   "emotions": {
+    "byte": "happy",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Cleopatra",
+     "sub": "queen of Egypt, 69 BC"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Wrong. The Great Pyramid was built around twenty five hundred years before she was born.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "pop"
+    },
+    {
+     "t": 1.6,
+     "name": "pop"
+    },
+    {
+     "t": 3.0,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "timeline",
+    "props": {
+     "heading": "Rough timeline",
+     "events": [
+      {
+       "when": "2560 BC",
+       "what": "Great Pyramid built"
+      },
+      {
+       "when": "69 BC",
+       "what": "Cleopatra is born"
+      },
+      {
+       "when": "1969 AD",
+       "what": "Moon landing"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Hold on. And the Moon landing is only about two thousand years after her?",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "boing"
+    },
+    {
+     "t": 1.0,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "Pyramids to Cleopatra",
+      "value": "2,500 years"
+     },
+     "right": {
+      "title": "Cleopatra to Moon",
+      "value": "2,000 years"
+     },
+     "footer": "Cleo is closer to us!"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "shake"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "exclaim",
+     "t": 0.3,
+     "x": 800,
+     "y": 420
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Correct. To Cleopatra, the pyramids were ancient history. She was basically a tourist.",
+   "emotions": {
+    "byte": "confused",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Ancient to HER",
+     "sub": "the pyramids were already old"
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "My brain just did a backflip. The pyramids are older than anything I can imagine!",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "boom"
+    },
+    {
+     "t": 0.8,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "stat",
+    "props": {
+     "value": "2,500",
+     "label": "years between pyramids and Cleopatra",
+     "sub": "longer than Cleopatra to us"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Rule of the day. Ancient people had their own ancient history. Time is a long road.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Ancient people had ancient history too"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Follow for more chaos! Next up, a university that is older than the Aztec Empire.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 0.8,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "Oxford is older than the Aztecs",
+     "hint": "More chaotic history every day"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "burst",
+     "text": "FOLLOW!",
+     "t": 0.3,
+     "x": 850,
+     "y": 190
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "The Great Pyramid of Giza was built around 2560 BC",
+   "source": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"
+  },
+  {
+   "text": "Cleopatra VII was born in 69 BC",
+   "source": "https://en.wikipedia.org/wiki/Cleopatra"
+  },
+  {
+   "text": "Apollo 11 landed on the Moon in 1969",
+   "source": "https://en.wikipedia.org/wiki/Apollo_11"
+  }
+ ],
+ "contains_synthetic_media": true
+}

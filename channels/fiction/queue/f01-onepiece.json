@@ -1,0 +1,320 @@
+{
+ "id": "f01-onepiece",
+ "series": "Plot Twist Club",
+ "episode": 1,
+ "title": "Why One Piece sold over 500 million copies",
+ "description": "#books #anime #manga #movies #shorts #onepiece #manga",
+ "tags": [
+  "one piece",
+  "manga",
+  "anime",
+  "book review",
+  "manga review",
+  "fiction shorts"
+ ],
+ "angle": "One Piece sells because of long payoffs, a huge crew, and a world that keeps growing.",
+ "hook": "How did One Piece sell more than 500 million copies?",
+ "speakers": {},
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "One Piece has sold over five hundred million copies! What is the secret?",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 1.0,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "MANGA MEGAHIT",
+     "title": "Why One Piece Hits",
+     "chips": [
+      "Manga",
+      "Adventure"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "No spoilers. Just structure. Three reasons this story keeps pulling people in.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "pop"
+    },
+    {
+     "t": 1.4,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "The big number",
+      "The long payoffs",
+      "The huge crew"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "That number is wild. That is more people than most countries!",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "boom"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "stat",
+    "props": {
+     "value": "500M+",
+     "label": "copies in circulation",
+     "sub": "One Piece manga worldwide"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "shake"
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Reason one. Long term promises. The story plants mysteries that pay off hundreds of chapters later.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "pop"
+    },
+    {
+     "t": 1.5,
+     "name": "pop"
+    },
+    {
+     "t": 2.7,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "timeline",
+    "props": {
+     "heading": "How the hook works",
+     "events": [
+      {
+       "when": "Plant",
+       "what": "a mystery early"
+      },
+      {
+       "when": "Wait",
+       "what": "hundreds of chapters"
+      },
+      {
+       "when": "Boom",
+       "what": "huge payoff"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Reason two. The crew. Every character feels like a main character.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "happy"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Every crew member",
+     "sub": "gets a big moment"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Reason three. The world keeps growing. Every island feels like a brand new story.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "Typical story",
+      "value": "one setting"
+     },
+     "right": {
+      "title": "One Piece",
+      "value": "endless islands"
+     },
+     "footer": "new world every arc"
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "So the secret is patience, friends, and a world you want to keep exploring?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 1.0,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "verdict",
+    "props": {
+     "title": "Our hot take",
+     "score": 9.0,
+     "pros": [
+      "Huge world",
+      "Big payoffs"
+     ],
+     "cons": [
+      "Very long"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Rule of the day. A great series makes you want one more chapter. Always.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Great stories earn one more chapter"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Follow for more! Next up, why a famous trilogy is not a trilogy.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 0.8,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "The Lord of the Rings is one book",
+     "hint": "Books, anime, manga and movies"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "burst",
+     "text": "FOLLOW!",
+     "t": 0.3,
+     "x": 850,
+     "y": 190
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "The One Piece manga has more than 500 million copies in circulation worldwide",
+   "source": "https://en.wikipedia.org/wiki/One_Piece"
+  }
+ ],
+ "contains_synthetic_media": true
+}

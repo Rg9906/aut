@@ -1,4 +1,5 @@
 """Build a YouTube description from the script: hook, takeaway, agenda, rule, sources, series CTA, disclosure."""
+import json
 import re
 
 
@@ -38,7 +39,11 @@ def build_description(script):
         parts.append("🔗 Sources\n" + "\n".join(f"• {c['text']}\n  {c['source']}" for c in claims))
 
     if series:
-        cta = f"🎬 {series}" + (f" · Episode {ep}" if ep else "") + " — tiny comedy sketches that explain code."
+        from channel import channel_dir
+        _cf = channel_dir() / "channel.json"
+        tagline = json.loads(_cf.read_text()).get("tagline") if _cf.exists() else None
+        tagline = tagline or "tiny comedy sketches that explain code."
+        cta = f"🎬 {series}" + (f" · Episode {ep}" if ep else "") + " — " + tagline
         if end.get("next"):
             cta += f"\n👉 Follow so you don't miss the next one: {end['next']}"
         parts.append(cta)

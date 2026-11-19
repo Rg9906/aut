@@ -1,0 +1,304 @@
+{
+ "id": "f02-lotr",
+ "series": "Plot Twist Club",
+ "episode": 2,
+ "title": "The Lord of the Rings is not a trilogy",
+ "description": "#books #anime #manga #movies #shorts #lotr #tolkien",
+ "tags": [
+  "lord of the rings",
+  "tolkien",
+  "fantasy",
+  "book facts",
+  "book review",
+  "fiction shorts"
+ ],
+ "angle": "Tolkien wrote one novel. It was split into three books for publishing reasons.",
+ "hook": "Is The Lord of the Rings actually a trilogy?",
+ "speakers": {},
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "Quick! Is The Lord of the Rings a trilogy? Yes or no?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 1.0,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "BOOK MYTH",
+     "title": "LOTR Is Not a Trilogy",
+     "chips": [
+      "Fantasy",
+      "Tolkien"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Plot twist. Tolkien called it one novel. The trilogy was a publishing decision.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "pop"
+    },
+    {
+     "t": 1.4,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "One big story",
+      "Why three books",
+      "What it changes"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "But I have three books on my shelf! Three covers! Three spines!",
+   "emotions": {
+    "byte": "angry",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "scratch"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "3 books",
+     "sub": "on my shelf!"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "shake"
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "They were published in three volumes. The reasons were practical, mostly cost.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.3,
+     "name": "pop"
+    },
+    {
+     "t": 1.5,
+     "name": "pop"
+    },
+    {
+     "t": 2.7,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "timeline",
+    "props": {
+     "heading": "Publishing dates",
+     "events": [
+      {
+       "when": "1954",
+       "what": "The Fellowship of the Ring"
+      },
+      {
+       "when": "1954",
+       "what": "The Two Towers"
+      },
+      {
+       "when": "1955",
+       "what": "The Return of the King"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "So the story is one giant book that got cut into three pieces?",
+   "emotions": {
+    "byte": "confused",
+    "compy": "happy"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "boing"
+    },
+    {
+     "t": 1.0,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "What Tolkien wrote",
+      "value": "1 novel"
+     },
+     "right": {
+      "title": "What we got",
+      "value": "3 volumes"
+     },
+     "footer": "same story, different packaging"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Yes. That is why the endings of volumes feel like pauses, not finales.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Pauses, not endings",
+     "sub": "the story flows on"
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "That actually explains why I always want to keep reading right away!",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "happy"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "One long journey",
+     "sub": "not three stories"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Rule of the day. A story can be bigger than its covers.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Stories can be bigger than the books"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Follow for more! Next up, the horror classic written by a teenager.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 0.8,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "A teenager wrote Frankenstein",
+     "hint": "Books, anime, manga and movies"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "burst",
+     "text": "FOLLOW!",
+     "t": 0.3,
+     "x": 850,
+     "y": 190
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "The Lord of the Rings was written as a single novel and published in three volumes in 1954 and 1955",
+   "source": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings"
+  }
+ ],
+ "contains_synthetic_media": true
+}

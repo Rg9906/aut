@@ -1,0 +1,301 @@
+{
+ "id": "h03-napoleon",
+ "series": "History But Chaotic",
+ "episode": 3,
+ "title": "Napoleon was not actually short",
+ "description": "#history #facts #shorts #napoleon #myths",
+ "tags": [
+  "history",
+  "napoleon",
+  "history myths",
+  "history facts",
+  "history shorts"
+ ],
+ "angle": "The short Napoleon myth comes from French versus English inches and enemy cartoons.",
+ "hook": "Was Napoleon really short? Spoiler: not really.",
+ "speakers": {},
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "Napoleon was tiny, right? Short guy, huge ego, tiny horse?",
+   "emotions": {
+    "byte": "smug",
+    "compy": "neutral"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 1.0,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "MYTH BUSTING",
+     "title": "Was Napoleon Short?",
+     "chips": [
+      "France",
+      "Myths"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Wrong. He was about average height. The real villain is a unit conversion.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.4,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "pop"
+    },
+    {
+     "t": 1.4,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "The famous number",
+      "The inch mix up",
+      "The cartoon smear"
+     ]
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "But everyone says he was five foot two! That is smaller than my cousin Dave!",
+   "emotions": {
+    "byte": "angry",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "scratch"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "5 ft 2 in",
+     "sub": "the famous number"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "shake"
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Five foot two in French units. A French inch was longer than an English inch.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "French inches",
+      "value": "5 ft 2 in"
+     },
+     "right": {
+      "title": "English inches",
+      "value": "5 ft 6 in"
+     },
+     "footer": "Same man. Different ruler."
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "Wait. So in normal units he was about five six or five seven. That is normal!",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "happy"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "boing"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "stat",
+    "props": {
+     "value": "1.69 m",
+     "label": "Napoleon, about",
+     "sub": "average for a Frenchman then"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Then British cartoonists drew him tiny on purpose. Propaganda. It stuck for two hundred years.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Cartoon propaganda",
+     "sub": "Little Boney"
+    }
+   }
+  },
+  {
+   "speaker": "byte",
+   "narration": "So the biggest empire builder got defeated by a ruler. Classic.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.7,
+     "name": "sparkle"
+    }
+   ],
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "Wrong ruler",
+     "sub": "literally"
+    }
+   }
+  },
+  {
+   "speaker": "compy",
+   "narration": "Rule of the day. Always check the units. And who drew the cartoon.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "pop"
+    },
+    {
+     "t": 0.9,
+     "name": "ding"
+    }
+   ],
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Check the units and the source"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Follow for more! Next up, the time soldiers went to war with birds.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "sfx": [
+    {
+     "t": 0.1,
+     "name": "sparkle"
+    },
+    {
+     "t": 0.8,
+     "name": "pop"
+    }
+   ],
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "The Emu War of 1932",
+     "hint": "More chaotic history every day"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ],
+   "stickers": [
+    {
+     "type": "burst",
+     "text": "FOLLOW!",
+     "t": 0.3,
+     "x": 850,
+     "y": 190
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "Napoleon's height of about 5 ft 2 in was in French units, roughly 1.69 m, close to average for the era",
+   "source": "https://en.wikipedia.org/wiki/Napoleon"
+  },
+  {
+   "text": "British caricatures portrayed Napoleon as small",
+   "source": "https://en.wikipedia.org/wiki/Napoleon_complex"
+  }
+ ],
+ "contains_synthetic_media": true
+}
