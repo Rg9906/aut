@@ -14,6 +14,9 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from desc import build_description
+
 ROOT = Path(__file__).resolve().parent.parent
 TOKEN_URI = "https://oauth2.googleapis.com/token"
 
@@ -41,7 +44,7 @@ def main(script_path):
     body = {
         "snippet": {
             "title": script["title"][:100],
-            "description": script["description"],
+            "description": build_description(script),
             "tags": script.get("tags", []),
             "categoryId": "27",  # Education
         },
