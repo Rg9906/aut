@@ -1,0 +1,5 @@
+{
+  "name": "Example channel (copy this folder to channels/<slug>/ to add a channel)",
+  "niche": "describe the niche here",
+  "enabled": false
+}

@@ -4,6 +4,8 @@ import json, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "pipeline"))
+from channel import queue_dir
 TYPES = {"titleCard", "agenda", "recap", "endCard", "bigText", "terminal", "code", "compare"}
 KINDS = {"cmd", "out", "err", "hl"}
 EMOS = {"neutral", "happy", "shocked", "angry", "confused", "thinking", "smug", "sad"}
@@ -52,7 +54,7 @@ def lint(p):
 
 
 if __name__ == "__main__":
-    files = sys.argv[1:] or sorted(str(p) for p in (ROOT / "queue").glob("*.json"))
+    files = sys.argv[1:] or sorted(str(p) for p in queue_dir().glob("*.json"))
     bad = 0
     for f in files:
         e = lint(f)
