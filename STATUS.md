@@ -1,6 +1,12 @@
 # STATUS (start here)
 
-Last updated: 2026-11-19
+Last updated: 2026-11-19 (night)
+
+## LIVE NOW (autopilot)
+- Daily 10:00 IST: GitHub Action builds the next queued episode, QC-gates it, uploads to YouTube. Visibility is set by `state/privacy` (private | unlisted | public).
+- Daily ~00:47 IST: Claude scheduled task tops the queue back up to 7 scripts (lint-checked, varied formats).
+- Kill switch: create an empty file `state/PAUSE` in the repo to stop all posting.
+- Episodes: 1 (posted, private), 2 arrays-start-at-zero, 3 recursion; the queue task writes Big-O next.
 
 ## Done
 - [x] Master plan (PLAN.md) and owner setup guide (SETUP.md)
