@@ -1,0 +1,67 @@
+name: daily-short
+
+on:
+  schedule:
+    - cron: "30 4 * * *"   # 10:00 IST daily
+  workflow_dispatch: {}
+
+concurrency: daily-short
+
+permissions:
+  contents: write   # lets the job commit state/published.json
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+      PRIVACY: ${{ vars.PRIVACY || 'private' }}   # private (L0) | unlisted (L1) | public (L2)
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Kill switch
+        run: test ! -f state/PAUSE || (echo "paused"; exit 78)
+
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+
+      - name: Setup
+        run: |
+          sudo apt-get update -y && sudo apt-get install -y ffmpeg
+          bash scripts/setup.sh
+          pip install -q google-api-python-client google-auth
+
+      - name: Pick next queued script
+        id: pick
+        run: |
+          NEXT=$(python3 pipeline/next.py)
+          echo "script=$NEXT" >> "$GITHUB_OUTPUT"
+
+      - name: Build + QC
+        if: steps.pick.outputs.script != ''
+        run: bash scripts/make.sh "${{ steps.pick.outputs.script }}"
+
+      - name: Upload to YouTube (only if secrets are set and QC passed)
+        if: steps.pick.outputs.script != '' && env.YT_REFRESH_TOKEN != ''
+        run: python3 pipeline/upload.py "${{ steps.pick.outputs.script }}"
+
+      - name: Commit state
+        if: steps.pick.outputs.script != '' && env.YT_REFRESH_TOKEN != ''
+        run: |
+          git config user.name "autochannel-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add state/
+          git diff --staged --quiet || git commit -m "state: published ${{ steps.pick.outputs.script }}"
+          git push
+
+      - name: Keep artifact
+        if: steps.pick.outputs.script != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: short
+          path: out/*/final.mp4

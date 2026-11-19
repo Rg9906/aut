@@ -1,0 +1,481 @@
+{
+  "id": "2026-11-20-float-sketch",
+  "series": "Byte & Compy",
+  "title": "Why 0.1 + 0.2 isn't 0.3 (a computer explains)",
+  "description": "Byte asks Compy the computer why 0.1 + 0.2 gives 0.30000000000000004. Floating point explained in 45 seconds, with one rule that avoids the bug.\n\n#coding #python #computerscience #shorts",
+  "tags": [
+    "python",
+    "floating point",
+    "computer science",
+    "programming",
+    "coding shorts",
+    "IEEE 754"
+  ],
+  "angle": "Your computer isn't wrong about 0.1 + 0.2; it can't store 0.1 exactly, the same way decimal can't store one third.",
+  "hook": "Ever wondered why computers are bad at basic math?",
+  "speakers": {
+    "byte": {
+      "voice": "af_heart",
+      "speed": 1.08
+    },
+    "compy": {
+      "voice": "bm_george",
+      "speed": 0.98
+    }
+  },
+  "scenes": [
+    {
+      "speaker": "byte",
+      "narration": "Ever wondered why computers are bad at basic math?",
+      "emotions": {
+        "byte": "thinking",
+        "compy": "smug"
+      },
+      "sfx": [
+        {
+          "t": 0.1,
+          "name": "pop"
+        },
+        {
+          "t": 0.9,
+          "name": "sparkle",
+          "gain": 0.6
+        }
+      ],
+      "visual": {
+        "type": "titleCard",
+        "props": {
+          "kicker": "TODAY'S QUESTION",
+          "title": "Why 0.1 + 0.2 isn't 0.3",
+          "chips": [
+            "Python",
+            "Floating point"
+          ]
+        }
+      }
+    },
+    {
+      "speaker": "compy",
+      "narration": "Stick around. One rule at the end will save you hours of debugging.",
+      "emotions": {
+        "byte": "happy",
+        "compy": "smug"
+      },
+      "sfx": [
+        {
+          "t": 0.4,
+          "name": "pop"
+        },
+        {
+          "t": 0.85,
+          "name": "pop"
+        },
+        {
+          "t": 1.3,
+          "name": "pop"
+        }
+      ],
+      "visual": {
+        "type": "agenda",
+        "props": {
+          "heading": "In this episode",
+          "items": [
+            "Why it breaks",
+            "What the computer really stores",
+            "The one rule that fixes it"
+          ]
+        }
+      }
+    },
+    {
+      "speaker": "byte",
+      "narration": "Okay, watch this. Zero point one plus zero point two... is NOT zero point three?!",
+      "emotions": {
+        "byte": "shocked",
+        "compy": "smug"
+      },
+      "sfx": [
+        {
+          "t": 0.0,
+          "name": "pop"
+        },
+        {
+          "t": 1.0,
+          "name": "buzz"
+        },
+        {
+          "t": 2.5,
+          "name": "boom"
+        }
+      ],
+      "fx": [
+        {
+          "t": 1.0,
+          "type": "shake"
+        },
+        {
+          "t": 2.5,
+          "type": "zoom"
+        }
+      ],
+      "stickers": [
+        {
+          "type": "burst",
+          "text": "WAIT WHAT?!",
+          "t": 0.15,
+          "x": 830,
+          "y": 190
+        }
+      ],
+      "visual": {
+        "type": "terminal",
+        "props": {
+          "lines": [
+            {
+              "text": ">>> 0.1 + 0.2",
+              "kind": "cmd"
+            },
+            {
+              "text": "0.30000000000000004",
+              "kind": "err"
+            },
+            {
+              "text": ">>> 0.1 + 0.2 == 0.3",
+              "kind": "cmd"
+            },
+            {
+              "text": "False",
+              "kind": "err"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "speaker": "compy",
+      "narration": "Correct. Zero point three... a whole lot of zeros... then a four. You're welcome.",
+      "emotions": {
+        "byte": "shocked",
+        "compy": "smug"
+      },
+      "sfx": [
+        {
+          "t": -0.7,
+          "name": "ding"
+        }
+      ],
+      "stickers": [
+        {
+          "type": "sweat",
+          "t": 0.6,
+          "x": 380,
+          "y": 930
+        }
+      ],
+      "visual": {
+        "type": "bigText",
+        "props": {
+          "text": "0.30000000000000004",
+          "sub": "a whole lot of zeros"
+        }
+      }
+    },
+    {
+      "speaker": "byte",
+      "narration": "Bro. Is Python just... broken?!",
+      "emotions": {
+        "byte": "angry",
+        "compy": "smug"
+      },
+      "sfx": [
+        {
+          "t": 0.0,
+          "name": "scratch"
+        }
+      ],
+      "fx": [
+        {
+          "t": 0.0,
+          "type": "zoom"
+        }
+      ],
+      "visual": {
+        "type": "bigText",
+        "props": {
+          "text": "Is Python broken?",
+          "sub": "asking for a friend"
+        }
+      }
+    },
+    {
+      "speaker": "compy",
+      "narration": "No. I count in base two. You count in base ten. We're just... different.",
+      "emotions": {
+        "byte": "confused",
+        "compy": "neutral"
+      },
+      "sfx": [
+        {
+          "t": 0.3,
+          "name": "pop"
+        },
+        {
+          "t": 1.6,
+          "name": "pop"
+        }
+      ],
+      "stickers": [
+        {
+          "type": "qmarks",
+          "t": 0.5,
+          "x": 330,
+          "y": 880
+        }
+      ],
+      "visual": {
+        "type": "compare",
+        "props": {
+          "left": {
+            "title": "You count in base 10",
+            "value": "0 1 2 3 4 5 6 7 8 9"
+          },
+          "right": {
+            "title": "I count in base 2",
+            "value": "0 1"
+          },
+          "footer": "different languages"
+        }
+      }
+    },
+    {
+      "speaker": "compy",
+      "narration": "In decimal, one third never ends. In binary, neither does zero point one.",
+      "emotions": {
+        "byte": "thinking",
+        "compy": "neutral"
+      },
+      "sfx": [
+        {
+          "t": 0.4,
+          "name": "pop"
+        },
+        {
+          "t": 2.0,
+          "name": "pop"
+        },
+        {
+          "t": 2.6,
+          "name": "boing"
+        }
+      ],
+      "visual": {
+        "type": "compare",
+        "props": {
+          "left": {
+            "title": "1/3 in decimal",
+            "value": "0.3333333333…"
+          },
+          "right": {
+            "title": "0.1 in binary",
+            "value": "0.0001100110011…"
+          },
+          "footer": "both repeat forever"
+        }
+      }
+    },
+    {
+      "speaker": "compy",
+      "narration": "So I store a rounded copy. Here is what zero point one really looks like, inside me.",
+      "emotions": {
+        "byte": "neutral",
+        "compy": "smug"
+      },
+      "sfx": [
+        {
+          "t": 2.9,
+          "name": "ding"
+        }
+      ],
+      "visual": {
+        "type": "terminal",
+        "props": {
+          "lines": [
+            {
+              "text": ">>> from decimal import Decimal",
+              "kind": "cmd"
+            },
+            {
+              "text": ">>> Decimal(0.1)",
+              "kind": "cmd"
+            },
+            {
+              "text": "0.1000000000000000055511151231257827…",
+              "kind": "hl"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "speaker": "byte",
+      "narration": "That is NOT point one!",
+      "emotions": {
+        "byte": "shocked",
+        "compy": "smug"
+      },
+      "sfx": [
+        {
+          "t": 0.0,
+          "name": "boom"
+        }
+      ],
+      "fx": [
+        {
+          "t": 0.0,
+          "type": "shake"
+        }
+      ],
+      "stickers": [
+        {
+          "type": "exclaim",
+          "t": 0.1,
+          "x": 800,
+          "y": 400
+        }
+      ],
+      "visual": {
+        "type": "bigText",
+        "props": {
+          "text": "Not exactly 0.1",
+          "sub": "a tiny bit more"
+        }
+      }
+    },
+    {
+      "speaker": "compy",
+      "narration": "Two tiny lies add up to one big bug. So ask if they're close enough.",
+      "emotions": {
+        "byte": "thinking",
+        "compy": "smug"
+      },
+      "sfx": [
+        {
+          "t": 1.7,
+          "name": "ding"
+        }
+      ],
+      "visual": {
+        "type": "code",
+        "props": {
+          "code": "import math\n\nmath.isclose(0.1 + 0.2, 0.3)\n# True"
+        }
+      }
+    },
+    {
+      "speaker": "byte",
+      "narration": "Close enough?",
+      "emotions": {
+        "byte": "confused",
+        "compy": "smug"
+      },
+      "sfx": [
+        {
+          "t": 0.0,
+          "name": "boing"
+        }
+      ],
+      "visual": {
+        "type": "bigText",
+        "props": {
+          "text": "Close enough?",
+          "sub": ""
+        }
+      }
+    },
+    {
+      "speaker": "compy",
+      "narration": "Close enough. Rule of the day: no double equals on floats. Use is close.",
+      "emotions": {
+        "byte": "happy",
+        "compy": "smug"
+      },
+      "sfx": [
+        {
+          "t": 0.2,
+          "name": "sparkle"
+        },
+        {
+          "t": -1.0,
+          "name": "ding"
+        }
+      ],
+      "fx": [
+        {
+          "t": 0.0,
+          "type": "zoom"
+        }
+      ],
+      "visual": {
+        "type": "recap",
+        "props": {
+          "label": "TODAY'S RULE",
+          "rule": "Never use == on floats",
+          "code": "math.isclose(a, b)"
+        }
+      }
+    },
+    {
+      "speaker": "byte",
+      "narration": "Follow for more! Next up: why arrays start at zero.",
+      "emotions": {
+        "byte": "happy",
+        "compy": "smug"
+      },
+      "sfx": [
+        {
+          "t": 0.1,
+          "name": "sparkle"
+        },
+        {
+          "t": 1.6,
+          "name": "pop"
+        }
+      ],
+      "fx": [
+        {
+          "t": 0.0,
+          "type": "zoom"
+        }
+      ],
+      "stickers": [
+        {
+          "type": "burst",
+          "text": "FOLLOW!",
+          "t": 0.3,
+          "x": 850,
+          "y": 190
+        }
+      ],
+      "visual": {
+        "type": "endCard",
+        "props": {
+          "cta": "Follow",
+          "next": "Why arrays start at zero",
+          "hint": "More Byte & Compy sketches coming"
+        }
+      }
+    }
+  ],
+  "claims": [
+    {
+      "text": "0.1 + 0.2 evaluates to 0.30000000000000004 in IEEE 754 double precision",
+      "source": "https://0.30000000000000004.com/"
+    },
+    {
+      "text": "math.isclose uses a default relative tolerance of 1e-09",
+      "source": "https://docs.python.org/3/library/math.html#math.isclose"
+    }
+  ],
+  "contains_synthetic_media": true,
+  "episode": 1
+}

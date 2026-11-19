@@ -1,0 +1,30 @@
+"""One-time local OAuth to obtain a YouTube refresh token.   (UNTESTED: needs real credentials)
+
+Usage (on YOUR computer, not CI):
+    pip install google-auth-oauthlib
+    python pipeline/auth.py            # expects client_secret.json in the repo root
+Then add the printed values as GitHub Actions secrets.
+Never commit client_secret.json or the token.
+"""
+import json
+from pathlib import Path
+
+from google_auth_oauthlib.flow import InstalledAppFlow
+
+SCOPES = [
+    "https://www.googleapis.com/auth/youtube.upload",
+    "https://www.googleapis.com/auth/youtube.force-ssl",
+    "https://www.googleapis.com/auth/youtube.readonly",
+    "https://www.googleapis.com/auth/yt-analytics.readonly",
+]
+
+secret = Path(__file__).resolve().parent.parent / "client_secret.json"
+flow = InstalledAppFlow.from_client_secrets_file(str(secret), SCOPES)
+creds = flow.run_local_server(port=0, access_type="offline", prompt="consent")
+
+info = json.loads(secret.read_text())
+c = info.get("installed") or info.get("web")
+print("\nAdd these as GitHub Actions secrets:\n")
+print("YT_CLIENT_ID     =", c["client_id"])
+print("YT_CLIENT_SECRET =", c["client_secret"])
+print("YT_REFRESH_TOKEN =", creds.refresh_token)

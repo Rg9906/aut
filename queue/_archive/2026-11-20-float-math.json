@@ -1,0 +1,59 @@
+{
+  "id": "2026-11-20-float-math",
+  "series": "60-Second CS",
+  "title": "Why 0.1 + 0.2 isn't 0.3 (it's not a bug)",
+  "description": "Python says 0.1 + 0.2 = 0.30000000000000004. Here's why your computer does this, what it actually stores, and the one rule that avoids the bug.\n\n#coding #python #computerscience #shorts",
+  "tags": ["python", "floating point", "computer science", "programming", "coding shorts", "IEEE 754"],
+  "angle": "Your computer isn't wrong about 0.1 + 0.2; it can't store 0.1 exactly, the same way decimal can't store one third.",
+  "hook": "Python says zero point one plus zero point two is not zero point three.",
+  "voice": "af_heart",
+  "speed": 1.05,
+  "scenes": [
+    {
+      "narration": "Python says zero point one plus zero point two is not zero point three.",
+      "visual": {"type": "terminal", "props": {"lines": [
+        {"text": ">>> 0.1 + 0.2", "kind": "cmd"},
+        {"text": "0.30000000000000004", "kind": "err"},
+        {"text": ">>> 0.1 + 0.2 == 0.3", "kind": "cmd"},
+        {"text": "False", "kind": "err"}
+      ]}}
+    },
+    {
+      "narration": "Is Python broken? No. Your computer just counts in base two.",
+      "visual": {"type": "bigText", "props": {"text": "Not a bug.", "sub": "Computers count in base 2"}}
+    },
+    {
+      "narration": "In decimal, one third never ends. In binary, zero point one never ends either.",
+      "visual": {"type": "compare", "props": {
+        "left": {"title": "1/3 in decimal", "value": "0.3333333333…"},
+        "right": {"title": "0.1 in binary", "value": "0.0001100110011…"},
+        "footer": "both repeat forever"
+      }}
+    },
+    {
+      "narration": "So the computer stores a rounded copy. Here is what zero point one really is, inside.",
+      "visual": {"type": "terminal", "props": {"lines": [
+        {"text": ">>> from decimal import Decimal", "kind": "cmd"},
+        {"text": ">>> Decimal(0.1)", "kind": "cmd"},
+        {"text": "0.1000000000000000055511151231257827…", "kind": "hl"}
+      ]}}
+    },
+    {
+      "narration": "Two tiny errors add up, and suddenly you can see the mistake.",
+      "visual": {"type": "bigText", "props": {"text": "tiny error + tiny error = visible bug", "sub": ""}}
+    },
+    {
+      "narration": "So never compare floats with double equals. Ask if they are close enough.",
+      "visual": {"type": "code", "props": {"code": "import math\n\nmath.isclose(0.1 + 0.2, 0.3)\n# True"}}
+    },
+    {
+      "narration": "Close enough. That is the whole trick.",
+      "visual": {"type": "bigText", "props": {"text": "Close enough.", "sub": "That's the whole trick."}}
+    }
+  ],
+  "claims": [
+    {"text": "0.1 + 0.2 evaluates to 0.30000000000000004 in IEEE 754 double precision", "source": "https://0.30000000000000004.com/"},
+    {"text": "math.isclose uses a default relative tolerance of 1e-09", "source": "https://docs.python.org/3/library/math.html#math.isclose"}
+  ],
+  "contains_synthetic_media": true
+}
