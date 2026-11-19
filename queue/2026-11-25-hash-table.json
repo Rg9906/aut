@@ -1,0 +1,312 @@
+{
+ "id": "2026-11-25-hash-table",
+ "series": "Byte & Compy",
+ "episode": 6,
+ "title": "Hash tables (the dictionary that never searches)",
+ "description": "Compy finds a name in a million without looking through a million. Hash tables turn a key into a location.\n\n#hashtable #python #datastructures #shorts",
+ "tags": [
+  "hash table",
+  "python dict",
+  "data structures",
+  "coding shorts",
+  "computer science"
+ ],
+ "angle": "A hash table finds a value by computing where it lives from the key, instead of searching for it.",
+ "hook": "How does Python find one key in a dictionary of a million, without checking them all?",
+ "speakers": {
+  "byte": {
+   "voice": "af_heart",
+   "speed": 1.08
+  },
+  "compy": {
+   "voice": "bm_george",
+   "speed": 0.98
+  }
+ },
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "How does Python find one key in a dictionary of a million, without checking them all?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "TODAY'S QUESTION",
+     "title": "Hash tables",
+     "chips": [
+      "Data structures",
+      "Python"
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Short version: it doesn't search. It calculates. Three parts: the hash, the bucket, the collision.",
+   "emotions": {
+    "byte": "confused",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "Turning a key into a number",
+      "Jumping straight to a bucket",
+      "When two keys collide"
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "So a hash function eats a key and spits out a number?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": ">>> hash(\"byte\") % 8",
+       "kind": "cmd"
+      },
+      {
+       "text": "5",
+       "kind": "hl"
+      },
+      {
+       "text": ">>> hash(\"compy\") % 8",
+       "kind": "cmd"
+      },
+      {
+       "text": "2",
+       "kind": "hl"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Same key, same number, every time within one run. That number picks the bucket. No scanning.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "List",
+      "value": "check each item"
+     },
+     "right": {
+      "title": "Hash table",
+      "value": "jump to bucket 5"
+     },
+     "footer": "same lookup, different path"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "Like a coat check. The ticket number is the hook.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "ticket 5",
+     "sub": "hook 5, no searching"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Fine. A tidier coat check than most. But eventually two keys land on the same hook.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "# two keys, same hash",
+       "kind": "out"
+      },
+      {
+       "text": "hash(\"a\") % 8  ->  5",
+       "kind": "hl"
+      },
+      {
+       "text": "hash(\"b\") % 8  ->  5",
+       "kind": "hl"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "That's a collision. So the whole thing breaks?",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "collision",
+     "sub": "who gets bucket 5?"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "No. The table compares keys, and keeps both. Collisions are normal, just rare when the table has room.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "code",
+    "props": {
+     "code": "# lookup, roughly\nb = hash(key) % size\nif keys match: return value\nelse: probe the next slot"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "So lookups are constant time. Basically instant.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "Average",
+      "value": "O(1)"
+     },
+     "right": {
+      "title": "Worst case",
+      "value": "O(n)"
+     },
+     "footer": "if everything collides"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "That's why a dict beats a list when you ask whether an item exists. Try it.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "name in big_list",
+       "kind": "cmd"
+      },
+      {
+       "text": "slow: scans",
+       "kind": "out"
+      },
+      {
+       "text": "name in big_dict",
+       "kind": "cmd"
+      },
+      {
+       "text": "fast: jumps",
+       "kind": "hl"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "Rule of the day: need to look things up fast? Use a dict.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Lookup by key? Use a dict",
+     "code": "key -> hash -> bucket"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Follow for more. Next: why caching is easy until the data changes.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "Caching and the hardest joke in computer science",
+     "hint": "More Byte & Compy sketches coming"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "A hash table maps keys to values by using a hash function to compute an index into an array of buckets",
+   "source": "https://en.wikipedia.org/wiki/Hash_table"
+  },
+  {
+   "text": "Python dict lookup is O(1) on average and O(n) in the worst case",
+   "source": "https://wiki.python.org/moin/TimeComplexity"
+  },
+  {
+   "text": "Python's built-in hash() of strings is randomized per process, so values differ between runs",
+   "source": "https://docs.python.org/3/reference/datamodel.html#object.__hash__"
+  }
+ ],
+ "contains_synthetic_media": true
+}

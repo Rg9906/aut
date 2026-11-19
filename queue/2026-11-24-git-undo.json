@@ -1,0 +1,301 @@
+{
+ "id": "2026-11-24-git-undo",
+ "series": "Byte & Compy",
+ "episode": 5,
+ "title": "Git in one minute (the undo button for code)",
+ "description": "Byte finally understands why Compy commits so often. Git saves snapshots you can go back to.\n\n#git #coding #programming #shorts",
+ "tags": [
+  "git",
+  "version control",
+  "reflog",
+  "coding shorts",
+  "computer science"
+ ],
+ "angle": "Git is an undo button because every commit is a full snapshot you can return to, even after a mistake.",
+ "hook": "Be honest. Have you ever named a file final_v3_REAL_final.py?",
+ "speakers": {
+  "byte": {
+   "voice": "af_heart",
+   "speed": 1.08
+  },
+  "compy": {
+   "voice": "bm_george",
+   "speed": 0.98
+  }
+ },
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "Be honest. Have you ever named a file final_v3_REAL_final.py?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "TODAY'S QUESTION",
+     "title": "Git, the undo button",
+     "chips": [
+      "Git",
+      "Workflow"
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Yes, and today's episode is for you. Three things: snapshots, undoing, and the safety net.",
+   "emotions": {
+    "byte": "confused",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "What a commit really is",
+      "Undoing a mistake",
+      "The safety net"
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "So git is just a folder of renamed copies. Final, final2, final_real.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "final_v3_REAL.py",
+     "sub": "this is not version control"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Close, but git does it properly. Each commit is a snapshot of your whole project, with a message attached.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "$ git add .",
+       "kind": "cmd"
+      },
+      {
+       "text": "$ git commit -m \"login works\"",
+       "kind": "cmd"
+      },
+      {
+       "text": "[main 3f2a1c9] login works",
+       "kind": "out"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "And when I break everything at two in the morning?",
+   "emotions": {
+    "byte": "sad",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "2:07 AM",
+     "sub": "the build is on fire"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "You go back to the last snapshot that worked. Nothing is lost, as long as you committed.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "$ git log --oneline",
+       "kind": "cmd"
+      },
+      {
+       "text": "3f2a1c9 login works",
+       "kind": "out"
+      },
+      {
+       "text": "a81b7e2 add button",
+       "kind": "out"
+      },
+      {
+       "text": "$ git restore .",
+       "kind": "cmd"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "What if I already committed the disaster?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "Uncommitted",
+      "value": "git restore"
+     },
+     "right": {
+      "title": "Committed",
+      "value": "git revert"
+     },
+     "footer": "undo it, keep the history"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Revert adds a new commit that undoes the bad one. History stays honest, and so do you.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "code",
+    "props": {
+     "code": "git revert HEAD"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "And if I delete a whole branch by accident?",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "branch deleted",
+     "sub": "oops"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "The reflog remembers where you were. Git keeps those entries for about ninety days by default.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "$ git reflog",
+       "kind": "cmd"
+      },
+      {
+       "text": "3f2a1c9 HEAD@{0}: commit: login works",
+       "kind": "out"
+      },
+      {
+       "text": "9d4e0b1 HEAD@{1}: checkout: moving",
+       "kind": "hl"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "So the rule is simple: commit early, commit small.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Commit early, commit small",
+     "code": "snapshots can be undone"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Follow for more. Next up: hash tables, or how a dictionary finds things instantly.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "Hash tables, the dictionary that never searches",
+     "hint": "More Byte & Compy sketches coming"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "Git stores a project's history as snapshots (commits) of the full set of files",
+   "source": "https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F"
+  },
+  {
+   "text": "git reflog records where HEAD and branch tips have been so lost commits can be recovered; entries expire after 90 days by default",
+   "source": "https://git-scm.com/docs/git-reflog"
+  },
+  {
+   "text": "git revert records a new commit that undoes the changes of earlier commits",
+   "source": "https://git-scm.com/docs/git-revert"
+  }
+ ],
+ "contains_synthetic_media": true
+}

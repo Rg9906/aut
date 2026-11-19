@@ -1,0 +1,289 @@
+{
+ "id": "2026-11-27-http-status",
+ "series": "Byte & Compy",
+ "episode": 8,
+ "title": "HTTP status codes (from 200 to 418)",
+ "description": "Every web request ends with a three digit number. Byte and Compy decode them, including the teapot.\n\n#http #webdev #programming #shorts",
+ "tags": [
+  "http",
+  "status codes",
+  "404",
+  "web development",
+  "coding shorts"
+ ],
+ "angle": "The first digit of an HTTP status code tells you who owns the problem: nobody, you, or the server.",
+ "hook": "You've seen 404. But what are all those other numbers a server sends back?",
+ "speakers": {
+  "byte": {
+   "voice": "af_heart",
+   "speed": 1.08
+  },
+  "compy": {
+   "voice": "bm_george",
+   "speed": 0.98
+  }
+ },
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "You've seen 404. But what are all those other numbers a server sends back?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "TODAY'S QUESTION",
+     "title": "HTTP status codes",
+     "chips": [
+      "Web",
+      "HTTP"
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Every response starts with one. We'll cover the first digit, the famous ones, and the teapot.",
+   "emotions": {
+    "byte": "confused",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "What the first digit means",
+      "Codes you already know",
+      "The teapot"
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "I'll guess. Two means good, four means bad.",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "2xx  4xx",
+     "sub": "good? bad?"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Better. Two means success, four means you sent a bad request, five means the server failed.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "4xx",
+      "value": "your fault"
+     },
+     "right": {
+      "title": "5xx",
+      "value": "server's fault"
+     },
+     "footer": "the first digit assigns blame"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "So 404 means I asked for a page that isn't there.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "GET /secret-page",
+       "kind": "cmd"
+      },
+      {
+       "text": "404 Not Found",
+       "kind": "err"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Yes. And 500 means the server broke while trying. That one is rarely your fault.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "GET /checkout",
+       "kind": "cmd"
+      },
+      {
+       "text": "500 Internal Server Error",
+       "kind": "err"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "What does the three hundred range do?",
+   "emotions": {
+    "byte": "confused",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "301",
+     "sub": "moved"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Redirects. The page lives somewhere else now, and your browser follows along without bothering you.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "301",
+      "value": "moved permanently"
+     },
+     "right": {
+      "title": "302",
+      "value": "moved for now"
+     },
+     "footer": "browser follows the new address"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "Okay, now the teapot. Is that real?",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "418",
+     "sub": "I'm a teapot"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Real, and a joke. It came from an April Fools' RFC in 1998 about brewing coffee over a network.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "BREW /pot",
+       "kind": "cmd"
+      },
+      {
+       "text": "418 I'm a teapot",
+       "kind": "hl"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "Rule of the day: read the first digit before you panic.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "The first digit assigns blame",
+     "code": "4xx you, 5xx server"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "compy",
+   "narration": "Follow for more. Next: what really happens when you type a URL.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "What happens when you type a URL",
+     "hint": "More Byte & Compy sketches coming"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "HTTP status codes are grouped by first digit: 2xx success, 3xx redirection, 4xx client error, 5xx server error",
+   "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status"
+  },
+  {
+   "text": "418 I'm a teapot comes from the April Fools' RFC 2324 (Hyper Text Coffee Pot Control Protocol), 1998",
+   "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/418"
+  }
+ ],
+ "contains_synthetic_media": true
+}

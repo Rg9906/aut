@@ -1,0 +1,284 @@
+{
+ "id": "2026-11-26-cache",
+ "series": "Byte & Compy",
+ "episode": 7,
+ "title": "Caching (the two hard things in computer science)",
+ "description": "Byte caches everything. Compy asks what happens when the data changes. A short tour of cache invalidation.\n\n#caching #webdev #programming #shorts",
+ "tags": [
+  "caching",
+  "cache invalidation",
+  "web development",
+  "coding shorts",
+  "computer science"
+ ],
+ "angle": "Caching makes things fast by remembering answers, and the hard part is knowing when a remembered answer has gone stale.",
+ "hook": "There's an old joke that computer science has two hard problems. One of them is today's topic.",
+ "speakers": {
+  "byte": {
+   "voice": "af_heart",
+   "speed": 1.08
+  },
+  "compy": {
+   "voice": "bm_george",
+   "speed": 0.98
+  }
+ },
+ "scenes": [
+  {
+   "speaker": "compy",
+   "narration": "There's an old joke that computer science has two hard problems. One of them is today's topic.",
+   "emotions": {
+    "byte": "confused",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "TODAY'S QUESTION",
+     "title": "Caching",
+     "chips": [
+      "Performance",
+      "Web"
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "Naming things and cache invalidation. Today: why the second one earns its place.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "What a cache is",
+      "Why it makes things fast",
+      "The stale data problem"
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "A cache keeps a copy of an answer close by, so you skip the slow trip to get it again.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "No cache",
+      "value": "ask the database"
+     },
+     "right": {
+      "title": "Cache",
+      "value": "ask memory"
+     },
+     "footer": "same answer, much sooner"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "I am basically a cache. I remember where I left my charger.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "cache hit",
+     "sub": "found it nearby"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "A miss means a slow trip, then you save the answer.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "code",
+    "props": {
+     "code": "def get(key):\n    if key in cache: return cache[key]\n    value = slow_lookup(key)\n    cache[key] = value\n    return value"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "Great. So we cache everything and go home early.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "cache everything",
+     "sub": "what could go wrong"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Your profile photo changes. The cache still shows the old one. Nobody told it.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "Database",
+      "value": "new photo"
+     },
+     "right": {
+      "title": "Cache",
+      "value": "old photo"
+     },
+     "footer": "both think they're right"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "Right, so we need to know when to throw the copy away.",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "stale data",
+     "sub": "a correct answer, once"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Common fix: give each copy a lifetime. When it expires, the next request fetches fresh data.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "Cache-Control: max-age=60",
+       "kind": "hl"
+      },
+      {
+       "text": "# fresh for 60 seconds",
+       "kind": "out"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "The tradeoff is speed against freshness. You pick how stale is acceptable.",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "# longer lifetime: faster, staler",
+       "kind": "out"
+      },
+      {
+       "text": "# shorter lifetime: fresher, slower",
+       "kind": "out"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Rule of the day: a cache is a bet that the answer hasn't changed.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "A cache is a bet",
+     "code": "fast now, stale later"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Follow for more. Next: why 404 means not found, and 418 means teapot.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "HTTP status codes, from 200 to 418",
+     "hint": "More Byte & Compy sketches coming"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "The saying 'two hard things in computer science: cache invalidation and naming things' is attributed to Phil Karlton",
+   "source": "https://martinfowler.com/bliki/TwoHardThings.html"
+  },
+  {
+   "text": "HTTP Cache-Control max-age sets how long a response is considered fresh",
+   "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching"
+  },
+  {
+   "text": "A cache stores copies of data so future requests can be served faster",
+   "source": "https://en.wikipedia.org/wiki/Cache_(computing)"
+  }
+ ],
+ "contains_synthetic_media": true
+}
