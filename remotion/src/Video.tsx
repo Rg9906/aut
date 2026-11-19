@@ -174,11 +174,11 @@ export const Video: React.FC<VideoProps> = (props) => {
         )}
 
         {/* the cast */}
-        <div style={{position: 'absolute', left: 50, top: 905, width: 360, textAlign: 'center'}}>
+        <div style={{position: 'absolute', left: 50, top: 885, width: 360, textAlign: 'center'}}>
           <Character {...charProps('byte')} />
           <NameTag who="byte" label={props.names?.byte} active={speaking && sc.speaker === 'byte'} />
         </div>
-        <div style={{position: 'absolute', right: 50, top: 905, width: 360, textAlign: 'center'}}>
+        <div style={{position: 'absolute', right: 50, top: 885, width: 360, textAlign: 'center'}}>
           <Character {...charProps('compy')} />
           <NameTag who="compy" label={props.names?.compy} active={speaking && sc.speaker === 'compy'} />
         </div>

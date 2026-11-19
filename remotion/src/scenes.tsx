@@ -432,8 +432,8 @@ const Timeline: React.FC<{heading?: string; events: {when: string; what: string}
         {events.map((ev, i) => {
           const e = spring({frame: frame - 6 - i * 14, fps, config: {damping: 14, stiffness: 150}});
           return (
-            <div key={i} style={{display: 'flex', alignItems: 'center', gap: 22, marginBottom: 22, opacity: e, transform: `translateX(${(1 - e) * 80}px)`}}>
-              <div style={{position: 'absolute', left: 4, width: 28, height: 28, borderRadius: 14, background: theme.amber, border: `5px solid ${theme.bg}`}} />
+            <div key={i} style={{position: 'relative', display: 'flex', alignItems: 'center', gap: 22, marginBottom: 22, opacity: e, transform: `translateX(${(1 - e) * 80}px)`}}>
+              <div style={{position: 'absolute', left: -40, width: 28, height: 28, borderRadius: 14, background: theme.amber, border: `5px solid ${theme.bg}`}} />
               <div style={{fontSize: 42, fontWeight: 900, color: theme.accent, minWidth: 190}}>{ev.when}</div>
               <div style={{fontSize: 40, fontWeight: 700, color: theme.text, lineHeight: 1.15}}>{ev.what}</div>
             </div>

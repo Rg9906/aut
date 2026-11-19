@@ -8,6 +8,13 @@ Last updated: 2026-11-19 (night)
 - Kill switch: create an empty file `state/PAUSE` in the repo to stop all posting.
 - Episodes: 1 (posted, private), 2 arrays-start-at-zero, 3 recursion; the queue task writes Big-O next.
 
+## Multi-channel (branch multi-channel / PR)
+- Extra channels live in `channels/<slug>/` (channel.json: theme, names, voices, tagline; queue/; state/). Secret per channel: `YT_REFRESH_TOKEN_<SLUG>` (HISTORY, UNIVERSE, FICTION). `enabled:false` until its secret exists.
+- Channels: history = "History But Chaotic Daily" (CREATED, @HistoryButChaoticDaily), universe = "Cosmic Secrets Daily" (not created yet), fiction = "Plot Twist Club" (not created yet; YouTube wants one-time phone verification first).
+- Each has 4 sourced seed scripts; one episode per channel test-rendered and QC-passed locally.
+- Per channel to go live: create channel, `python pipeline/auth.py <slug>`, add secret, set `enabled:true`.
+- Nightly queue-refill task only fills main; extend it to channels/*/queue.
+
 ## Done
 - [x] Master plan (PLAN.md) and owner setup guide (SETUP.md)
 - [x] Voice engine: Kokoro, two speakers, lip-sync timings, voice polish
