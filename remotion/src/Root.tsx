@@ -1,6 +1,7 @@
 import React from 'react';
 import {Composition} from 'remotion';
 import {Video, VideoProps} from './Video';
+import {Gta6, Gta6Props} from './gta6/Gta6';
 
 export const FPS = 30;
 
@@ -27,6 +28,17 @@ const defaultProps: VideoProps = {
 
 export const Root: React.FC = () => {
   return (
+    <>
+    <Composition
+      id="Gta6"
+      component={Gta6}
+      width={1080}
+      height={1920}
+      fps={FPS}
+      durationInFrames={300}
+      defaultProps={{audio: '', totalSec: 10, words: [], lines: [], mouth: []} as Gta6Props}
+      calculateMetadata={({props}) => ({durationInFrames: Math.ceil(props.totalSec * FPS)})}
+    />
     <Composition
       id="Short"
       component={Video}
@@ -39,5 +51,6 @@ export const Root: React.FC = () => {
         durationInFrames: Math.max(30, Math.ceil(props.totalSec * FPS)),
       })}
     />
+    </>
   );
 };
