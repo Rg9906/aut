@@ -1,0 +1,37 @@
+name: upload-special
+
+on:
+  workflow_dispatch:
+    inputs:
+      folder:
+        description: "specials/<slug> folder with final.mp4 + meta.json"
+        required: true
+        default: "specials/gta6-13-years"
+
+permissions:
+  contents: write
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read privacy level
+        run: echo "PRIVACY=$(tr -d '[:space:]' < state/privacy 2>/dev/null || echo private)" >> "$GITHUB_ENV"
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -q google-api-python-client google-auth
+      - name: Upload
+        run: python3 pipeline/upload_special.py "${{ inputs.folder }}"
+      - name: Commit state
+        run: |
+          git config user.name "autochannel-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add state/
+          git diff --staged --quiet || git commit -m "state: published special ${{ inputs.folder }}"
+          git push
