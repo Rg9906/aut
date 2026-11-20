@@ -7,6 +7,10 @@ on:
         description: "specials/<slug> folder with final.mp4 + meta.json"
         required: true
         default: "specials/gta6-13-years"
+      make_private:
+        description: "optional YouTube video id to switch to private before uploading"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -27,6 +31,8 @@ jobs:
         with: { python-version: "3.12" }
       - run: pip install -q google-api-python-client google-auth
       - name: Upload
+        env:
+          MAKE_PRIVATE: ${{ inputs.make_private }}
         run: python3 pipeline/upload_special.py "${{ inputs.folder }}"
       - name: Commit state
         run: |

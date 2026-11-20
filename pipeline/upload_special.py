@@ -22,6 +22,14 @@ def main(folder):
     creds = Credentials(None, refresh_token=os.environ["YT_REFRESH_TOKEN"], token_uri="https://oauth2.googleapis.com/token",
                         client_id=os.environ["YT_CLIENT_ID"], client_secret=os.environ["YT_CLIENT_SECRET"])
     yt = build("youtube", "v3", credentials=creds)
+    old = os.environ.get("MAKE_PRIVATE", "").strip()
+    if old:
+        cur = yt.videos().list(part="status", id=old).execute()["items"]
+        if cur:
+            st = cur[0]["status"]
+            st["privacyStatus"] = "private"
+            yt.videos().update(part="status", body={"id": old, "status": st}).execute()
+            print("set private:", old)
     body = {
         "snippet": {"title": meta["title"][:100], "description": meta["description"][:5000], "tags": meta.get("tags", []), "categoryId": meta.get("categoryId", "27")},
         "status": {"privacyStatus": os.environ.get("PRIVACY", "private"), "selfDeclaredMadeForKids": False,
