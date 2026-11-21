@@ -7,6 +7,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import tts
 from tts import *  # noqa
 
+DEFAULT_SPEAKERS['byte'] = {**DEFAULT_SPEAKERS['byte'], 'speed': 1.22, 'pitch': 1.5}  # faster, more energetic
+
 def main(p):
     sc = json.loads(Path(p).read_text())
     out = ROOT / "out" / sc["id"]; out.mkdir(parents=True, exist_ok=True)

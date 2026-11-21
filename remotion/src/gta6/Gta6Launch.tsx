@@ -298,16 +298,16 @@ const Coin: React.FC<{x: number; delay: number; t: number; size?: number}> = ({x
   );
 };
 
-const Hook: React.FC = () => {
+const Counter: React.FC = () => {
   const {t, f, fps} = useT();
-  const cEnd = useLE(0, 0);
-  const val = interpolate(t, [0.5, cEnd - 0.6], [0, 3790000000], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const cEnd = useLE(1, 0) - 1.3;
+  const val = interpolate(t, [0.2, cEnd], [0, 3790000000], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const pTitle = pop(f, fps, 0.05);
-  const land = t > cEnd - 0.6;
+  const land = t > cEnd;
   const pLand = pop(f, fps, cEnd - 0.6);
-  const cStart = useLT(0, 1);
-  const pStamp = pop(f, fps, cStart + 0.5, {damping: 9, stiffness: 220, mass: 0.7});
-  const clock = interpolate(t, [0.5, cEnd - 0.6], [0, 360], {extrapolateRight: 'clamp', extrapolateLeft: 'clamp'});
+  const cStart = cEnd;
+  const pStamp = pop(f, fps, cStart + 0.3, {damping: 9, stiffness: 220, mass: 0.7});
+  const clock = interpolate(t, [0.2, cEnd], [0, 360], {extrapolateRight: 'clamp', extrapolateLeft: 'clamp'});
   return (
     <Stage>
       {Array.from({length: 9}, (_, i) => <Coin key={i} x={20 + i * 125 + (i % 2) * 20} delay={i * 0.37} t={t} size={44 + (i % 3) * 14} />)}
@@ -337,12 +337,9 @@ const Hook: React.FC = () => {
 const PerSec: React.FC = () => {
   const {t, f, fps} = useT();
   const sec = Math.floor(t * 1);
-  const cs = useLT(1, 1);
   const per = 43866;
   const n = Math.floor(t * 3) * 0 + Math.floor(interpolate(t, [0, 4], [0, per * 3.9]));
   const p = pop(f, fps, 0.1);
-  const rocket = interpolate(t, [cs, cs + 2.6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const pSnail = pop(f, fps, cs + 0.2);
   return (
     <Stage>
       <div style={{transform: `scale(${p})`, textAlign: 'center'}}>
@@ -359,11 +356,7 @@ const PerSec: React.FC = () => {
           <div style={{fontFamily: MONO, fontWeight: 800, fontSize: 46, color: C.sun}}>{sec + 1}s → {money(per * (sec + 1))}</div>
         </Panel>
       </div>
-      <div style={{position: 'relative', width: 980, height: 150, marginTop: 20, opacity: Math.min(1, pSnail * 2)}}>
-        <div style={{position: 'absolute', left: 0, top: 108, width: 980, height: 10, borderRadius: 5, background: '#ffffff30'}} />
-        <div style={{position: 'absolute', left: 20 + rocket * 700, top: 22, fontFamily: DISPLAY, fontSize: 44, color: C.green, ...stroke(4)}}>MONEY 🚀</div>
-        <div style={{position: 'absolute', left: 20 + rocket * 40, top: 70, fontFamily: DISPLAY, fontSize: 36, color: C.pink, ...stroke(4)}}>🐌 my student loan payoff</div>
-      </div>
+      {Array.from({length: 10}, (_, i) => <Coin key={i} x={10 + i * 105} delay={i * 0.31} t={t * 1.6} size={46} />)}
       <SrcTag o={appear(t, 0.8)} text="$3.79B ÷ 86,400 seconds ≈ $43,866 (our math)" />
     </Stage>
   );
@@ -377,41 +370,14 @@ const Icon: React.FC<{kind: 'coin' | 'star' | 'car'; col: string; f: number}> = 
   </svg>
 );
 
-const Agenda: React.FC = () => {
-  const {t, f, fps} = useT();
-  const items = [
-    {at: 0.35, n: 'THE MONEY', col: C.sun, k: 'coin' as const},
-    {at: 0.85, n: 'THE SCORE', col: C.cyan, k: 'star' as const},
-    {at: 1.35, n: 'THE TRAFFIC JAM', col: C.pink, k: 'car' as const},
-  ];
-  return (
-    <Stage>
-      <div style={{transform: `scale(${pop(f, fps, 0.05)})`, marginBottom: 20}}><Big size={96} color={C.sun}>TODAY</Big></div>
-      {items.map((it, i) => {
-        const p = pop(f, fps, it.at);
-        return (
-          <div key={i} style={{opacity: Math.min(1, p * 1.5), transform: `translateX(${(1 - p) * (i % 2 ? 700 : -700)}px) rotate(${Math.sin(f / 8 + i) * 1.5}deg)`, marginBottom: 18}}>
-            <Panel glow={it.col} style={{display: 'flex', alignItems: 'center', gap: 26, width: 860, padding: '12px 28px'}}>
-              <Icon kind={it.k} col={it.col} f={f} />
-              <div style={{fontFamily: DISPLAY, fontSize: 64, color: C.white}}>{it.n}</div>
-            </Panel>
-          </div>
-        );
-      })}
-    </Stage>
-  );
-};
-
 const MoneyCompare: React.FC = () => {
   const {t, f, fps} = useT();
-  const cs = useLT(3, 1);
-  const g5 = interpolate(t, [0.3, 1.3], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const g6 = interpolate(t, [1.6, 3.4], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const g5 = interpolate(t, [0.1, 0.5], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const g6 = interpolate(t, [0.5, 1.6], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
   const H = 400;
   const h5 = (815.7 / 3790) * H * g5;
   const h6 = H * g6;
-  const pX = pop(f, fps, 3.5, {damping: 8, stiffness: 200, mass: 0.7});
-  const pTag = pop(f, fps, cs + 0.1, {damping: 7, stiffness: 160, mass: 0.8});
+  const pX = pop(f, fps, 1.7, {damping: 8, stiffness: 200, mass: 0.7});
   return (
     <Stage>
       <div style={{display: 'flex', alignItems: 'flex-end', gap: 90, height: H + 130, marginTop: 40}}>
@@ -429,20 +395,17 @@ const MoneyCompare: React.FC = () => {
           <div style={{position: 'absolute', left: -330, top: 150, opacity: Math.min(1, pX * 2)}}><Stamp text="≈4.6×" color={C.green} p={pX} size={84} rot={-9} /></div>
         </div>
       </div>
-      <div style={{position: 'absolute', right: 40, top: 120, transform: `scale(${pTag}) rotate(${12 + Math.sin(f / 6) * 4}deg)`, opacity: Math.min(1, pTag * 2)}}>
-        <div style={{background: C.sun, border: `6px solid ${C.ink}`, borderRadius: 18, padding: '6px 22px', fontFamily: DISPLAY, fontSize: 56, color: C.ink, boxShadow: `0 8px 0 ${C.ink}`}}>$79.99</div>
-      </div>
-      <SrcTag o={appear(t, 3.6)} text="GTA 5 day one: $815.7M (Guinness). GTA 6: company estimate" />
+      <SrcTag o={appear(t, 1.8)} text="GTA 5 day one: $815.7M (Guinness). GTA 6: company estimate" />
     </Stage>
   );
 };
 
 const Score: React.FC = () => {
   const {t, f, fps} = useT();
-  const cs = useLT(4, 1);
-  const val = Math.round(interpolate(t, [0.2, 1.8], [0, 99], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)}));
+  const cs = 1.3;
+  const val = Math.round(interpolate(t, [0.1, 1.0], [0, 99], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)}));
   const R = 150, C2 = 2 * Math.PI * R;
-  const pBan = pop(f, fps, 2.2);
+  const pBan = pop(f, fps, 1.0);
   const pCrit = appear(t, cs);
   return (
     <Stage>
@@ -469,14 +432,14 @@ const Score: React.FC = () => {
         ))}
       </div>
       <div style={{fontFamily: BODY, fontWeight: 700, fontSize: 34, color: C.green, opacity: pCrit}}>~150 critics · all positive · zero fights</div>
-      <SrcTag o={appear(t, 2.4)} text="Metacritic PS5 score, ~150 reviews (HNGN, MNEEMO)" />
+      <SrcTag o={appear(t, 1.2)} text="Metacritic PS5 score, ~150 reviews (HNGN, MNEEMO)" />
     </Stage>
   );
 };
 
 const Fps: React.FC = () => {
   const {t, f, fps} = useT();
-  const cs = useLT(5, 1);
+  const cs = 0.9;
   const frame = (Math.floor(t * 30) % 30) + 1;
   const pStamp = pop(f, fps, 0.25, {damping: 9, stiffness: 220, mass: 0.7});
   const pBook = pop(f, fps, cs);
@@ -503,7 +466,6 @@ const Fps: React.FC = () => {
           <rect x="30" y="40" width="240" height="90" rx="10" fill={C.white} stroke={C.ink} strokeWidth="6" />
           {[0, 1, 2, 3, 4].map((i) => <rect key={i} x={40 + i * 5 + flip * 150 * (i === 4 ? 1 : 0)} y={34 - i * 2} width="224" height="90" rx="8" fill="#fff" stroke={C.ink} strokeWidth="3" opacity={0.9} />)}
           <circle cx={px - 330 + 150} cy="90" r="14" fill={C.pink} stroke={C.ink} strokeWidth="4" />
-          <text x="150" y="20" textAnchor="middle" fontFamily={DISPLAY} fontSize="26" fill={C.white}>a flipbook, but expensive</text>
         </svg>
       </div>
       <SrcTag o={appear(t, 0.8)} text="30 fps on all consoles incl. PS5 Pro (HNGN, EsportNow, BivashVlog)" />
@@ -511,59 +473,108 @@ const Fps: React.FC = () => {
   );
 };
 
-const Car: React.FC<{x: number; col: string; f: number; i: number}> = ({x, col, f, i}) => (
-  <svg viewBox="0 0 200 100" width={170} style={{position: 'absolute', left: x, top: 20 + Math.sin(f / 5 + i) * 1.5}}>
-    <rect x="8" y="44" width="184" height="36" rx="14" fill={col} stroke={C.ink} strokeWidth="6" />
-    <path d="M44 46 L66 18 H130 L158 46 Z" fill={col} stroke={C.ink} strokeWidth="6" strokeLinejoin="round" />
-    <path d="M62 44 L76 26 H98 V44 Z M104 44 V26 H126 L144 44 Z" fill={C.cyan} opacity="0.8" />
-    <circle cx="50" cy="82" r="13" fill={C.ink} /><circle cx="150" cy="82" r="13" fill={C.ink} />
-    <circle cx="192" cy="60" r="6" fill={C.sun} /><circle cx="8" cy="60" r="6" fill={C.red} />
-  </svg>
-);
 
-const Traffic: React.FC = () => {
+const Hook: React.FC = () => {
   const {t, f, fps} = useT();
-  const cs = useLT(6, 1);
-  const pMsg = pop(f, fps, 0.2);
-  const pWin = pop(f, fps, cs);
-  const cols = [C.pink, C.cyan, C.sun, C.green, C.violet, C.hot];
-  const shown = t < cs;
-  const queue = Math.max(1, 47 - Math.floor(Math.max(0, t - cs) * 3));
+  const p1 = pop(f, fps, 0.0, {damping: 9, stiffness: 240, mass: 0.6});
+  const p2 = pop(f, fps, 0.55, {damping: 7, stiffness: 220, mass: 0.7});
+  const p3 = pop(f, fps, 1.7, {damping: 6, stiffness: 240, mass: 0.7});
+  const shake = t > 0.55 && t < 0.9 ? Math.sin(f * 4) * 12 : 0;
+  const rays = 14;
   return (
     <Stage>
-      {shown ? (
-        <>
-          <div style={{transform: `scale(${pMsg})`, marginBottom: 20}}>
-            <Panel glow={C.red} style={{width: 880, padding: '20px 30px', textAlign: 'center'}}>
-              <div style={{fontFamily: DISPLAY, fontSize: 46, color: C.red}}>⚠ NETWORK MESSAGE</div>
-              <div style={{fontFamily: MONO, fontWeight: 800, fontSize: 44, color: C.white, marginTop: 6}}>PlayStation services are busy</div>
-              <div style={{height: 16, background: '#ffffff22', borderRadius: 8, marginTop: 16, overflow: 'hidden'}}>
-                <div style={{width: `${25 + ((t * 20) % 8)}%`, height: '100%', background: C.red}} />
-              </div>
-            </Panel>
-          </div>
-          <div style={{position: 'relative', width: 1080, height: 150}}>
-            <div style={{position: 'absolute', left: 0, right: 0, top: 110, height: 26, background: '#2a2a3d'}} />
-            {cols.map((c, i) => <Car key={i} x={-20 + i * 175 + Math.sin(t * 2 + i) * (i % 2 ? 2 : 4)} col={c} f={f} i={i} />)}
-          </div>
-          <div style={{fontFamily: DISPLAY, fontSize: 40, color: C.pink, marginTop: 6}}>launch night download traffic jam</div>
-        </>
-      ) : (
-        <div style={{transform: `scale(${pWin})`}}>
-          <Panel glow={C.cyan} style={{width: 880, padding: 0, overflow: 'hidden'}}>
-            <div style={{background: '#223', padding: '10px 20px', display: 'flex', gap: 10, alignItems: 'center'}}>
-              <div style={{width: 18, height: 18, borderRadius: 9, background: C.red}} /><div style={{width: 18, height: 18, borderRadius: 9, background: C.sun}} /><div style={{width: 18, height: 18, borderRadius: 9, background: C.green}} />
-              <div style={{fontFamily: MONO, fontSize: 24, color: '#fffb', marginLeft: 14}}>college-registration-portal.edu</div>
-            </div>
-            <div style={{padding: '30px 30px', textAlign: 'center'}}>
-              <div style={{fontFamily: DISPLAY, fontSize: 50, color: C.white}}>Course registration is open</div>
-              <svg viewBox="0 0 80 80" width={110} style={{margin: '12px 0', transform: `rotate(${f * 12}deg)`}}><circle cx="40" cy="40" r="28" fill="none" stroke={C.cyan} strokeWidth="9" strokeDasharray="120 60" strokeLinecap="round" /></svg>
-              <div style={{fontFamily: MONO, fontWeight: 800, fontSize: 40, color: C.sun}}>Please wait… {queue} students ahead</div>
-            </div>
-          </Panel>
+      <svg viewBox="-540 -360 1080 720" width={1080} style={{position: 'absolute', opacity: 0.35, transform: `rotate(${t * 18}deg)`}}>
+        {Array.from({length: rays}, (_, i) => <polygon key={i} points="0,0 -60,-700 60,-700" fill={i % 2 ? C.pink : C.sun} transform={`rotate(${(i * 360) / rays})`} />)}
+      </svg>
+      <div style={{transform: `scale(${p1}) translateX(${shake}px)`}}><Big size={104} color={C.white}>EVER WONDERED</Big></div>
+      <div style={{transform: `scale(${p2}) translateX(${shake}px) rotate(${-3 + (1 - p2) * 10}deg)`}}>
+        <Big size={150} color={C.sun}>HOW BIG</Big>
+        <Big size={210} color={C.pink} style={{marginTop: -10}}>GTA 6</Big>
+      </div>
+      <div style={{transform: `scale(${p3}) rotate(${3 * Math.sin(f / 5)}deg)`, marginTop: 8}}>
+        <div style={{background: C.red, border: `7px solid ${C.ink}`, borderRadius: 24, padding: '2px 40px', boxShadow: `0 8px 0 ${C.ink}, 0 0 40px ${C.red}`}}>
+          <div style={{fontFamily: DISPLAY, fontSize: 96, color: C.white, ...stroke(5)}}>REALLY?!</div>
         </div>
-      )}
-      <SrcTag o={appear(t, 0.8)} text="PSN “services are busy” reports on launch night (EsportNow, MNEEMO)" />
+      </div>
+    </Stage>
+  );
+};
+
+const StreamerAvatar: React.FC<{seed: number; f: number; skin: string; hair: string; shirt: string}> = ({seed, f, skin, hair, shirt}) => {
+  const bob = Math.sin(f / 6 + seed) * 5;
+  const mouth = Math.abs(Math.sin(f / 3 + seed * 2));
+  return (
+    <svg viewBox="0 0 200 230" width={230} style={{overflow: 'visible', transform: `translateY(${bob}px) rotate(${Math.sin(f / 9 + seed) * 2}deg)`}}>
+      <g stroke={C.ink} strokeWidth="6" strokeLinejoin="round">
+        <rect x="35" y="130" width="130" height="90" rx="40" fill={shirt} />
+        <circle cx="100" cy="80" r="56" fill={skin} />
+        {seed % 2 ? <path d="M42 70 Q100 -20 158 70 Q130 40 100 42 Q70 40 42 70Z" fill={hair} /> : <path d="M44 72 Q60 14 100 20 Q146 14 156 72 Q120 38 100 40 Q70 38 44 72Z" fill={hair} />}
+        <path d="M40 84 Q40 18 100 18 Q160 18 160 84" fill="none" stroke="#222" strokeWidth="9" />
+        <rect x="26" y="74" width="22" height="38" rx="10" fill={C.pink} />
+        <rect x="152" y="74" width="22" height="38" rx="10" fill={C.pink} />
+        <path d="M40 112 Q46 140 84 134" fill="none" stroke="#222" strokeWidth="6" />
+        <circle cx="88" cy="134" r="8" fill="#222" />
+      </g>
+      <circle cx="80" cy="80" r="8" fill={C.ink} /><circle cx="120" cy="80" r="8" fill={C.ink} />
+      <ellipse cx="100" cy="106" rx="16" ry={4 + mouth * 12} fill={C.ink} />
+    </svg>
+  );
+};
+
+const Streamers: React.FC = () => {
+  const {t, f, fps} = useT();
+  const cards = [
+    {at: 1.9, name: 'KAI CENAT', note: 'marathon: aiming for 100% completion', col: C.cyan, skin: '#8D5A3B', hair: '#1a1a1a', shirt: C.violet, seed: 1},
+    {at: 3.3, name: 'ISHOWSPEED', note: 'says: ~10 hours a day until he beats it', col: C.pink, skin: '#6B4429', hair: '#0e0e0e', shirt: C.red, seed: 2},
+  ];
+  const pT = pop(f, fps, 0.05);
+  const bubbles = ['LETS GOOO', 'W GAME', 'no spoilers pls', 'first', 'KEKW', 'clip it', 'GOAT', '99?!'];
+  return (
+    <Stage>
+      <div style={{transform: `scale(${pT})`, marginBottom: 6}}><Big size={84} color={C.white}>EVERYONE’S PLAYING</Big></div>
+      <div style={{display: 'flex', gap: 30, alignItems: 'flex-start'}}>
+        {cards.map((c, i) => {
+          const p = pop(f, fps, c.at);
+          return (
+            <div key={i} style={{opacity: Math.min(1, p * 2), transform: `translateY(${(1 - p) * 120}px) scale(${0.7 + 0.3 * p})`}}>
+              <Panel glow={c.col} style={{width: 470, padding: '12px 10px', textAlign: 'center', position: 'relative'}}>
+                <div style={{position: 'absolute', top: 12, left: 14, background: C.red, borderRadius: 10, padding: '2px 14px', fontFamily: DISPLAY, fontSize: 30, color: C.white, opacity: 0.6 + 0.4 * Math.abs(Math.sin(f / 8))}}>● LIVE</div>
+                <div style={{display: 'flex', justifyContent: 'center'}}><StreamerAvatar seed={c.seed} f={f} skin={c.skin} hair={c.hair} shirt={c.shirt} /></div>
+                <div style={{fontFamily: DISPLAY, fontSize: 50, color: c.col, ...stroke(3)}}>{c.name}</div>
+                <div style={{fontFamily: BODY, fontWeight: 700, fontSize: 26, color: C.white, lineHeight: 1.1}}>{c.note}</div>
+              </Panel>
+            </div>
+          );
+        })}
+      </div>
+      {bubbles.map((b, i) => {
+        const at = 2.2 + i * 0.9;
+        const k = interpolate(t, [at, at + 2.2], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+        if (k <= 0 || k >= 1) return null;
+        return <div key={i} style={{position: 'absolute', left: 60 + ((i * 197) % 800), top: 600 - k * 520, opacity: Math.sin(k * Math.PI), background: '#ffffffee', color: C.ink, fontFamily: BODY, fontWeight: 700, fontSize: 30, padding: '4px 16px', borderRadius: 18}}>{b}</div>;
+      })}
+      <SrcTag text="Streamer plans per The Hype Magazine (Nov 20). Illustrated avatars, not real footage" />
+    </Stage>
+  );
+};
+
+const Viewers: React.FC = () => {
+  const {t, f, fps} = useT();
+  const end = useLE(5, 0);
+  const val = interpolate(t, [0.3, end - 1.6], [0, 7.91], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const crowd = Math.floor(interpolate(t, [0.3, end - 1.6], [0, 150], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}));
+  const pStamp = pop(f, fps, end - 1.6, {damping: 9, stiffness: 220, mass: 0.7});
+  return (
+    <Stage>
+      <Big size={64} color={C.white}>WATCHING AT THE SAME TIME</Big>
+      <div style={{fontFamily: MONO, fontWeight: 800, fontSize: 190, color: C.green, lineHeight: 1.05, textShadow: `0 0 40px ${C.green}`, transform: `scale(${1 + 0.02 * Math.sin(f / 3)})`}}>{val.toFixed(2)}M</div>
+      <div style={{display: 'flex', flexWrap: 'wrap', width: 900, justifyContent: 'center', gap: 4, marginTop: 6}}>
+        {Array.from({length: crowd}, (_, i) => (
+          <svg key={i} viewBox="0 0 30 30" width={44}><circle cx="15" cy="15" r="13" fill={[C.pink, C.cyan, C.sun, C.green, C.violet][i % 5]} stroke={C.ink} strokeWidth="3" /><circle cx="10" cy="13" r="2.5" fill={C.ink} /><circle cx="20" cy="13" r="2.5" fill={C.ink} /><path d="M9 19 Q15 24 21 19" fill="none" stroke={C.ink} strokeWidth="2.5" /></svg>
+        ))}
+      </div>
+      <div style={{position: 'absolute', right: 50, bottom: 40, opacity: Math.min(1, pStamp * 2)}}><Stamp text="LAUNCH RECORD" color={C.hot} p={pStamp} size={52} rot={7} /></div>
+      <SrcTag text="Streams Charts via MNEEMO. Preliminary, single report" />
     </Stage>
   );
 };
@@ -571,9 +582,9 @@ const Traffic: React.FC = () => {
 const Recap: React.FC = () => {
   const {t, f, fps} = useT();
   const items = [
-    {at: useLT(7, 0), n: '$3.79B', sub: 'publisher estimate', col: C.sun},
-    {at: useLT(7, 1) , n: '99', sub: 'Metacritic', col: C.cyan},
-    {at: useLT(7, 1) + 1.4, n: '30 FPS', sub: 'the catch', col: C.pink},
+    {at: 0.15, n: '$3.79B', sub: 'in 24 hours', col: C.sun},
+    {at: 0.85, n: 'MILLIONS', sub: 'watching live', col: C.green},
+    {at: 1.5, n: '99', sub: 'Metacritic', col: C.cyan},
   ];
   return (
     <Stage>
@@ -596,20 +607,16 @@ const Recap: React.FC = () => {
 
 const EndCard: React.FC = () => {
   const {t, f, fps} = useT();
-  const p = pop(f, fps, 1.6);
+  const p = pop(f, fps, 0.4);
   const pulse = 1 + 0.06 * Math.sin(f / 4);
-  const pPc = pop(f, fps, 0.2);
-  return (
+    return (
     <Stage>
-      <div style={{transform: `scale(${pPc}) rotate(-3deg)`, marginBottom: 24}}>
-        <Panel glow={C.violet} style={{padding: '8px 28px'}}><div style={{fontFamily: DISPLAY, fontSize: 48, color: C.white}}>PC VERSION: <span style={{color: C.sun}}>NOT YET</span></div></Panel>
-      </div>
       <div style={{transform: `scale(${p * pulse})`}}>
         <div style={{background: C.red, borderRadius: 30, padding: '20px 70px', border: `8px solid ${C.ink}`, boxShadow: `0 12px 0 ${C.ink}, 0 0 50px ${C.red}`}}>
           <div style={{fontFamily: DISPLAY, fontSize: 120, color: C.white, ...stroke(6)}}>FOLLOW</div>
         </div>
       </div>
-      <div style={{marginTop: 34, opacity: appear(t, 2.3), transform: `translateY(${(1 - appear(t, 2.3)) * 60}px)`}}>
+      <div style={{marginTop: 34, opacity: appear(t, 1.1), transform: `translateY(${(1 - appear(t, 1.1)) * 60}px)`}}>
         <Panel glow={C.cyan} style={{width: 860, textAlign: 'center'}}>
           <div style={{fontFamily: BODY, fontWeight: 700, fontSize: 34, color: C.cyan}}>NEXT EPISODE</div>
           <div style={{fontFamily: DISPLAY, fontSize: 58, color: C.white, lineHeight: 1.1}}>Why do games even have loading screens?</div>
@@ -619,10 +626,10 @@ const EndCard: React.FC = () => {
   );
 };
 
-const SCENES = [Hook, PerSec, Agenda, MoneyCompare, Score, Fps, Traffic, Recap, EndCard];
+const SCENES = [Hook, Counter, MoneyCompare, PerSec, Streamers, Viewers, Score, Fps, Recap, EndCard];
 
 // ---------- captions ----------
-const KEY = /^(GTA|6|3\.79|billion|dollars|forty-four|thousand|second|5|eight|hundred|sixteen|million|four|ninety-nine|Metacritic|Ocarina|thirty|frames|console|catch|busy|services|PC|follow|money|score|traffic|recap|Thursday|24|hours)$/i;
+const KEY = /^(insane|really|big|Kai|Cenat|IShowSpeed|million|record|watching|hundred|streaming|percent|GTA|6|3\.79|billion|dollars|forty-four|thousand|second|5|eight|hundred|sixteen|million|four|ninety-nine|Metacritic|Ocarina|thirty|frames|console|catch|busy|services|PC|follow|money|score|traffic|recap|Thursday|24|hours)$/i;
 const clean = (w: string) => w.replace(/[“”"]/g, '').replace(/[.,?!:]+$/, '');
 
 const Captions: React.FC<{words: (GWord & {who?: string})[]}> = ({words}) => {
@@ -660,15 +667,15 @@ const Captions: React.FC<{words: (GWord & {who?: string})[]}> = ({words}) => {
 
 // ---------- mascots ----------
 const EMO: [Emotion, Emotion][] = [
-  ['shocked', 'smug'], ['happy', 'thinking'], ['happy', 'smug'], ['shocked', 'smug'], ['happy', 'smug'],
-  ['confused', 'smug'], ['shocked', 'smug'], ['happy', 'smug'], ['happy', 'happy'],
+  ['shocked', 'shocked'], ['shocked', 'smug'], ['happy', 'smug'], ['shocked', 'shocked'], ['happy', 'happy'],
+  ['shocked', 'smug'], ['happy', 'smug'], ['confused', 'smug'], ['happy', 'happy'], ['happy', 'happy'],
 ];
 
 const Mascots: React.FC<{mouth: number[]; cm: number[]; bi: number}> = ({mouth, cm, bi}) => {
   const {f} = useT();
   const m = mouth[f] ?? 0;
   const c = cm[f] ?? 0;
-  const end = bi === 8;
+  const end = bi === 9;
   const [eb, ec] = EMO[bi];
   const hop = (k: number) => -Math.abs(Math.sin(f / 7 + k)) * (end ? 40 : 10);
   const size = end ? 340 : 230;
@@ -693,7 +700,18 @@ const Header: React.FC = () => {
       <div style={{background: C.ink, border: `4px solid ${C.cyan}`, borderRadius: 40, padding: '8px 26px', fontFamily: DISPLAY, fontSize: 42, color: C.white, boxShadow: `0 0 24px ${C.cyan}88`}}>
         BYTE <span style={{color: C.pink}}>&</span> COMPY
       </div>
-      <div style={{background: C.pink, borderRadius: 40, padding: '8px 26px', fontFamily: DISPLAY, fontSize: 42, color: C.white, transform: `rotate(${Math.sin(f / 10) * 3}deg)`, ...stroke(3)}}>LAUNCH WEEK</div>
+      <div style={{background: C.pink, borderRadius: 40, padding: '8px 26px', fontFamily: DISPLAY, fontSize: 42, color: C.white, transform: `rotate(${Math.sin(f / 10) * 3}deg)`, ...stroke(3)}}>INSANE NUMBERS</div>
+    </div>
+  );
+};
+
+const Ticker: React.FC = () => {
+  const {t} = useT();
+  const txt = '  ★ GTA 6  ★  $3.79B IN 24 HOURS  ★  99 METACRITIC  ★  RECORD LAUNCH  ★  ';
+  const row = txt.repeat(4);
+  return (
+    <div style={{position: 'absolute', left: 0, right: 0, top: 215, height: 52, background: C.red, overflow: 'hidden', borderTop: `4px solid ${C.ink}`, borderBottom: `4px solid ${C.ink}`}}>
+      <div style={{whiteSpace: 'nowrap', transform: `translateX(${-((t * 260) % 1500)}px)`, fontFamily: DISPLAY, fontSize: 38, color: C.white, lineHeight: '52px'}}>{row}</div>
     </div>
   );
 };
@@ -724,8 +742,10 @@ export const Gta6Launch: React.FC<Gta6Props> = ({audio, totalSec, words, lines, 
   let bi = 0;
   beats.forEach((b, k) => { if (t >= b) bi = k; });
   const since = t - beats[bi];
-  const hue = [0, 20, -15, 0, 15, -20, 10, 0, 15][bi] ?? 0;
-  const zoom = 1 + 0.012 * Math.sin(f / 40) + 0.03 * Math.max(0, 1 - since / 0.4);
+  const hue = [0, 20, -15, 0, 15, -20, 10, 0, 15, 5][bi] ?? 0;
+  let punch = 0;
+  for (const w of words) if (KEY.test(clean(w.w)) && t >= w.start && t < w.start + 0.22) punch = Math.max(punch, 1 - (t - w.start) / 0.22);
+  const zoom = 1 + 0.012 * Math.sin(f / 40) + 0.03 * Math.max(0, 1 - since / 0.4) + 0.025 * punch;
   return (
     <ScriptCtx.Provider value={{lines, beats}}>
       <AbsoluteFill style={{background: C.ink, overflow: 'hidden'}}>
@@ -747,6 +767,7 @@ export const Gta6Launch: React.FC<Gta6Props> = ({audio, totalSec, words, lines, 
         <Mascots mouth={mouth} cm={compyMouth} bi={bi} />
         <Captions words={words} />
         <Header />
+        <Ticker />
         <Progress total={totalSec} />
         <Transition since={since} bi={bi} />
       </AbsoluteFill>

@@ -2,12 +2,13 @@
  "id": "gta6-launch-record",
  "beats": [
   "hook",
+  "counter",
+  "compare",
   "persec",
-  "agenda",
-  "money",
+  "streamers",
+  "viewers",
   "score",
   "fps",
-  "traffic",
   "recap",
   "end"
  ],
@@ -15,85 +16,50 @@
   {
    "beat": 0,
    "who": "byte",
-   "text": "GTA 6 came out Thursday. In 24 hours it reportedly made three point seven nine billion dollars."
-  },
-  {
-   "beat": 0,
-   "who": "compy",
-   "text": "Reportedly. That's the publisher's own estimate. I'm just saying."
+   "text": "Ever wondered how big GTA 6 really is? Because the numbers are straight up insane."
   },
   {
    "beat": 1,
    "who": "byte",
-   "text": "About forty-four thousand dollars. Every. Single. Second."
-  },
-  {
-   "beat": 1,
-   "who": "compy",
-   "text": "My student loan wishes it moved that fast."
+   "text": "First twenty-four hours: three point seven nine billion dollars. That's the publisher's own estimate."
   },
   {
    "beat": 2,
    "who": "byte",
-   "text": "Today: the money, the score, the traffic jam."
+   "text": "That's about four and a half times what GTA 5 made on day one."
   },
   {
    "beat": 3,
    "who": "byte",
-   "text": "GTA 5's first day: about eight hundred sixteen million. This is roughly four and a half times that."
-  },
-  {
-   "beat": 3,
-   "who": "compy",
-   "text": "Eighty dollars a copy helps."
+   "text": "Roughly forty-four thousand dollars. Every. Single. Second."
   },
   {
    "beat": 4,
    "who": "byte",
-   "text": "Metacritic says ninety-nine, tying Ocarina of Time as the highest ever."
-  },
-  {
-   "beat": 4,
-   "who": "compy",
-   "text": "About a hundred and fifty critics, none started a fight. Suspicious."
+   "text": "And everybody's playing. Kai Cenat started a marathon aiming for a hundred percent completion. IShowSpeed says he's streaming ten hours a day."
   },
   {
    "beat": 5,
    "who": "byte",
-   "text": "One catch: thirty frames per second on every console."
-  },
-  {
-   "beat": 5,
-   "who": "compy",
-   "text": "Cinematic. A flipbook with a really good budget."
+   "text": "Streams Charts reportedly counted almost eight million people watching at once. A launch record, though the numbers are preliminary."
   },
   {
    "beat": 6,
    "who": "byte",
-   "text": "Launch night, PlayStation told some players: services are busy."
-  },
-  {
-   "beat": 6,
-   "who": "compy",
-   "text": "Relatable. That's my college registration portal every semester."
+   "text": "Critics? Ninety-nine on Metacritic. That ties Ocarina of Time for the highest score ever."
   },
   {
    "beat": 7,
    "who": "byte",
-   "text": "Recap. Money: three point seven nine billion, publisher's estimate."
-  },
-  {
-   "beat": 7,
-   "who": "compy",
-   "text": "Score: ninety-nine. Catch: thirty frames."
+   "text": "The only catch: thirty frames per second on every console."
   },
   {
    "beat": 8,
-   "who": "compy",
-   "text": "PC version? Not yet."
+   "who": "byte",
+   "text": "Recap: billions in a day, streamers everywhere, and a ninety-nine."
   },
   {
-   "beat": 8,
+   "beat": 9,
    "who": "byte",
    "text": "Follow for more. Next: why games have loading screens."
   }
