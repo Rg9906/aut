@@ -1,0 +1,101 @@
+{
+ "id": "gta6-launch-record",
+ "beats": [
+  "hook",
+  "persec",
+  "agenda",
+  "money",
+  "score",
+  "fps",
+  "traffic",
+  "recap",
+  "end"
+ ],
+ "lines": [
+  {
+   "beat": 0,
+   "who": "byte",
+   "text": "GTA 6 came out Thursday. In 24 hours it reportedly made three point seven nine billion dollars."
+  },
+  {
+   "beat": 0,
+   "who": "compy",
+   "text": "Reportedly. That's the publisher's own estimate. I'm just saying."
+  },
+  {
+   "beat": 1,
+   "who": "byte",
+   "text": "About forty-four thousand dollars. Every. Single. Second."
+  },
+  {
+   "beat": 1,
+   "who": "compy",
+   "text": "My student loan wishes it moved that fast."
+  },
+  {
+   "beat": 2,
+   "who": "byte",
+   "text": "Today: the money, the score, the traffic jam."
+  },
+  {
+   "beat": 3,
+   "who": "byte",
+   "text": "GTA 5's first day: about eight hundred sixteen million. This is roughly four and a half times that."
+  },
+  {
+   "beat": 3,
+   "who": "compy",
+   "text": "Eighty dollars a copy helps."
+  },
+  {
+   "beat": 4,
+   "who": "byte",
+   "text": "Metacritic says ninety-nine, tying Ocarina of Time as the highest ever."
+  },
+  {
+   "beat": 4,
+   "who": "compy",
+   "text": "About a hundred and fifty critics, none started a fight. Suspicious."
+  },
+  {
+   "beat": 5,
+   "who": "byte",
+   "text": "One catch: thirty frames per second on every console."
+  },
+  {
+   "beat": 5,
+   "who": "compy",
+   "text": "Cinematic. A flipbook with a really good budget."
+  },
+  {
+   "beat": 6,
+   "who": "byte",
+   "text": "Launch night, PlayStation told some players: services are busy."
+  },
+  {
+   "beat": 6,
+   "who": "compy",
+   "text": "Relatable. That's my college registration portal every semester."
+  },
+  {
+   "beat": 7,
+   "who": "byte",
+   "text": "Recap. Money: three point seven nine billion, publisher's estimate."
+  },
+  {
+   "beat": 7,
+   "who": "compy",
+   "text": "Score: ninety-nine. Catch: thirty frames."
+  },
+  {
+   "beat": 8,
+   "who": "compy",
+   "text": "PC version? Not yet."
+  },
+  {
+   "beat": 8,
+   "who": "byte",
+   "text": "Follow for more. Next: why games have loading screens."
+  }
+ ]
+}
