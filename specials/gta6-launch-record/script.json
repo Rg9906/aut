@@ -10,58 +10,156 @@
   "score",
   "fps",
   "recap",
+  "connect",
   "end"
  ],
  "lines": [
   {
    "beat": 0,
    "who": "byte",
-   "text": "Ever wondered how big GTA 6 really is? Because the numbers are straight up insane."
+   "text": "Ever wondered how big GTA 6 really is?",
+   "slow": 1,
+   "pause": 0.35
+  },
+  {
+   "beat": 0,
+   "who": "byte",
+   "text": "Because the numbers are straight up insane.",
+   "slow": 1,
+   "pause": 0.1
   },
   {
    "beat": 1,
    "who": "byte",
-   "text": "First twenty-four hours: three point seven nine billion dollars. That's the publisher's own estimate."
+   "text": "First twenty-four hours.",
+   "slow": 1,
+   "pause": 0.2
+  },
+  {
+   "beat": 1,
+   "who": "byte",
+   "text": "Three point seven nine billion dollars.",
+   "slow": 0.88,
+   "pause": 0.3
+  },
+  {
+   "beat": 1,
+   "who": "byte",
+   "text": "That's the publisher's own estimate.",
+   "slow": 1,
+   "pause": 0.1
   },
   {
    "beat": 2,
    "who": "byte",
-   "text": "That's about four and a half times what GTA 5 made on day one."
+   "text": "That's about four and a half times what GTA 5 made on day one.",
+   "slow": 1,
+   "pause": 0.1
   },
   {
    "beat": 3,
    "who": "byte",
-   "text": "Roughly forty-four thousand dollars. Every. Single. Second."
+   "text": "Forty-four thousand dollars.",
+   "slow": 1,
+   "pause": 0.25
+  },
+  {
+   "beat": 3,
+   "who": "byte",
+   "text": "Every. Single. Second.",
+   "slow": 0.8,
+   "pause": 0.45
+  },
+  {
+   "beat": 3,
+   "who": "byte",
+   "text": "Just think about that for a second.",
+   "slow": 0.85,
+   "pause": 0.55
   },
   {
    "beat": 4,
    "who": "byte",
-   "text": "And everybody's playing. Kai Cenat started a marathon aiming for a hundred percent completion. IShowSpeed says he's streaming ten hours a day."
+   "text": "And everybody's playing. Kai Cenat started a marathon aiming for a hundred percent completion. IShowSpeed says he's streaming ten hours a day.",
+   "slow": 1,
+   "pause": 0.1
   },
   {
    "beat": 5,
    "who": "byte",
-   "text": "Streams Charts reportedly counted almost eight million people watching at once. A launch record, though the numbers are preliminary."
+   "text": "Streams Charts reportedly counted almost eight million people watching at once. A launch record, though the numbers are preliminary.",
+   "slow": 1,
+   "pause": 0.1
   },
   {
    "beat": 6,
    "who": "byte",
-   "text": "Critics? Ninety-nine on Metacritic. That ties Ocarina of Time for the highest score ever."
+   "text": "Critics? Ninety-nine on Metacritic. That ties Ocarina of Time for the highest score ever.",
+   "slow": 1,
+   "pause": 0.1
   },
   {
    "beat": 7,
    "who": "byte",
-   "text": "The only catch: thirty frames per second on every console."
+   "text": "The only catch: thirty frames per second on every console.",
+   "slow": 1,
+   "pause": 0.3
   },
   {
    "beat": 8,
    "who": "byte",
-   "text": "Recap: billions in a day, streamers everywhere, and a ninety-nine."
+   "text": "Billions in a day.",
+   "slow": 1,
+   "pause": 0.25
+  },
+  {
+   "beat": 8,
+   "who": "byte",
+   "text": "Streamers everywhere.",
+   "slow": 1,
+   "pause": 0.25
+  },
+  {
+   "beat": 8,
+   "who": "byte",
+   "text": "And a ninety-nine.",
+   "slow": 1,
+   "pause": 0.45
   },
   {
    "beat": 9,
    "who": "byte",
-   "text": "Follow for more. Next: why games have loading screens."
+   "text": "Thirteen years of waiting.",
+   "slow": 0.9,
+   "pause": 0.35
+  },
+  {
+   "beat": 9,
+   "who": "byte",
+   "text": "Two delays.",
+   "slow": 0.9,
+   "pause": 0.45
+  },
+  {
+   "beat": 9,
+   "who": "byte",
+   "text": "And then millions of us, all at once, in the same place.",
+   "slow": 1,
+   "pause": 0.3
+  },
+  {
+   "beat": 9,
+   "who": "byte",
+   "text": "Whether you played it or just watched, you were there for it.",
+   "slow": 0.9,
+   "pause": 0.6
+  },
+  {
+   "beat": 10,
+   "who": "byte",
+   "text": "Follow, so you don't miss the next one. Next: why games have loading screens.",
+   "slow": 1,
+   "pause": 0.1
   }
  ]
 }

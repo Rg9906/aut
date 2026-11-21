@@ -18,13 +18,14 @@ def main(p):
     spans = []
     for ln in sc["lines"]:
         sp = DEFAULT_SPEAKERS[ln["who"]]
-        s, sr = k.create(ln["text"], voice=sp["voice"], speed=min(1.6, sp["speed"] * PACE), lang="en-us")
+        s, sr = k.create(ln["text"], voice=sp["voice"], speed=min(1.6, sp["speed"] * PACE * ln.get("slow", 1.0)), lang="en-us")
         s = trim_silence(pitch_shift(s.astype(np.float32), sp.get("pitch", 0)))
         d = len(s) / SR
         lines.append({"who": ln["who"], "text": ln["text"], "beat": ln["beat"], "start": round(t, 3), "end": round(t + d, 3)})
         words += [{**w, "who": ln["who"]} for w in word_timing(ln["text"], t, d)]
         spans.append((t, s, ln["who"]))
-        chunks += [s, gap]; t += d + 0.10
+        pz = np.zeros(int(ln.get('pause', 0.10) * SR), dtype=np.float32)
+        chunks += [s, pz]; t += d + ln.get('pause', 0.10)
     voice = np.concatenate(chunks); voice = voice / (float(np.max(np.abs(voice))) or 1) * 0.9
     raw, fx = out / "voice_raw.wav", out / "voice_fx.wav"
     sf.write(raw, voice, SR)
