@@ -1,0 +1,157 @@
+{
+ "id": "dune-banned-ai",
+ "beats": [
+  "hook",
+  "war",
+  "cause",
+  "rule",
+  "tenk",
+  "mentats",
+  "now",
+  "recap",
+  "connect",
+  "end"
+ ],
+ "lines": [
+  {
+   "beat": 0,
+   "who": "byte",
+   "text": "Ever wondered why Dune has no computers?",
+   "slow": 1,
+   "pause": 0.3
+  },
+  {
+   "beat": 0,
+   "who": "byte",
+   "text": "Because humanity banned AI. Completely.",
+   "slow": 1,
+   "pause": 0.1
+  },
+  {
+   "beat": 1,
+   "who": "byte",
+   "text": "In the story, there was a nearly century-long war.",
+   "slow": 1,
+   "pause": 0.15
+  },
+  {
+   "beat": 1,
+   "who": "byte",
+   "text": "Humans against thinking machines.",
+   "slow": 1,
+   "pause": 0.1
+  },
+  {
+   "beat": 2,
+   "who": "byte",
+   "text": "And it wasn't robots hunting us down.",
+   "slow": 1,
+   "pause": 0.2
+  },
+  {
+   "beat": 2,
+   "who": "byte",
+   "text": "People had handed their thinking over to machines, and a ruling class grew out of that.",
+   "slow": 1,
+   "pause": 0.1
+  },
+  {
+   "beat": 3,
+   "who": "byte",
+   "text": "So the rule became simple.",
+   "slow": 1,
+   "pause": 0.2
+  },
+  {
+   "beat": 3,
+   "who": "byte",
+   "text": "Never build a machine that imitates a human mind.",
+   "slow": 0.9,
+   "pause": 0.4
+  },
+  {
+   "beat": 4,
+   "who": "byte",
+   "text": "That ban lasts about ten thousand years.",
+   "slow": 0.9,
+   "pause": 0.25
+  },
+  {
+   "beat": 4,
+   "who": "byte",
+   "text": "Ten. Thousand. Years.",
+   "slow": 0.8,
+   "pause": 0.4
+  },
+  {
+   "beat": 5,
+   "who": "byte",
+   "text": "So humans were trained to be the computers.",
+   "slow": 1,
+   "pause": 0.2
+  },
+  {
+   "beat": 5,
+   "who": "byte",
+   "text": "They're called Mentats. Living calculators, with a sap juice habit.",
+   "slow": 1,
+   "pause": 0.1
+  },
+  {
+   "beat": 6,
+   "who": "byte",
+   "text": "Now look at your phone, and think about that.",
+   "slow": 0.95,
+   "pause": 0.5
+  },
+  {
+   "beat": 7,
+   "who": "byte",
+   "text": "A war on thinking machines.",
+   "slow": 1,
+   "pause": 0.25
+  },
+  {
+   "beat": 7,
+   "who": "byte",
+   "text": "Ten thousand years of no computers.",
+   "slow": 1,
+   "pause": 0.25
+  },
+  {
+   "beat": 7,
+   "who": "byte",
+   "text": "And people doing the math instead.",
+   "slow": 1,
+   "pause": 0.45
+  },
+  {
+   "beat": 8,
+   "who": "byte",
+   "text": "Dune Part Three lands December eighteenth, same day as Avengers Doomsday.",
+   "slow": 1,
+   "pause": 0.3
+  },
+  {
+   "beat": 8,
+   "who": "byte",
+   "text": "So here's my question. If you could ban one piece of technology, which one would it be?",
+   "slow": 0.95,
+   "pause": 0.3
+  },
+  {
+   "beat": 8,
+   "who": "byte",
+   "text": "Tell me in the comments. I read them.",
+   "slow": 1,
+   "pause": 0.5
+  },
+  {
+   "beat": 9,
+   "who": "byte",
+   "text": "If you liked this, hit like and subscribe for more. Next: why games have loading screens.",
+   "slow": 1,
+   "pause": 0.1
+  }
+ ]
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import {Composition} from 'remotion';
 import {Video, VideoProps} from './Video';
 import {Gta6, Gta6Props} from './gta6/Gta6';
+import {DuneSpecial} from './dune/DuneSpecial';
 import {Gta6Launch, Gta6Props as LaunchProps} from './gta6/Gta6Launch';
 
 export const FPS = 30;
@@ -50,6 +51,9 @@ export const Root: React.FC = () => {
       defaultProps={{audio: '', totalSec: 10, words: [], lines: [], mouth: [], compyMouth: [], beats: [0]} as LaunchProps}
       calculateMetadata={({props}) => ({durationInFrames: Math.ceil(props.totalSec * FPS)})}
     />
+    <Composition id="Dune" component={DuneSpecial} width={1080} height={1920} fps={FPS} durationInFrames={300}
+      defaultProps={{audio: '', totalSec: 10, words: [], lines: [], mouth: [], compyMouth: [], beats: [0]} as LaunchProps}
+      calculateMetadata={({props}) => ({durationInFrames: Math.ceil(props.totalSec * FPS)})} />
     <Composition
       id="Short"
       component={Video}
