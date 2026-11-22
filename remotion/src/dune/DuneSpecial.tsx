@@ -183,14 +183,14 @@ const Hook: React.FC = () => {
   const p3 = pop(f, fps, 1.9, {damping: 6, stiffness: 240, mass: 0.7});
   return (
     <Stage>
-      <div style={{transform: `scale(${p1})`}}><Big size={96}>EVER WONDERED WHY</Big></div>
+      <div style={{transform: `scale(${p1})`}}><Big size={92}>DID YOU KNOW</Big></div>
       <div style={{transform: `scale(${p2}) rotate(${-3 + (1 - p2) * 8}deg)`}}>
         <Big size={220} color={C.sun}>DUNE</Big>
-        <Big size={96}>HAS NO COMPUTERS?</Big>
+        <Big size={84}>PREDICTED THE AI WAR?</Big>
       </div>
       <div style={{transform: `scale(${p3}) rotate(${2 * Math.sin(f / 5)}deg)`, marginTop: 14}}>
         <div style={{background: C.red, border: `7px solid ${C.ink}`, borderRadius: 24, padding: '2px 40px', boxShadow: `0 8px 0 ${C.ink}`}}>
-          <div style={{fontFamily: DISPLAY, fontSize: 90, color: C.white, ...stroke(5)}}>AI WAS BANNED</div>
+          <div style={{fontFamily: DISPLAY, fontSize: 64, color: C.white, ...stroke(5)}}>SANDWORMS SAW IT COMING</div>
         </div>
       </div>
     </Stage>
@@ -380,12 +380,6 @@ const EndCard: React.FC = () => {
       <div style={{display: 'flex', gap: 24, transform: `scale(${p * pulse})`}}>
         <div style={{background: C.red, borderRadius: 30, padding: '16px 44px', border: `8px solid ${C.ink}`, boxShadow: `0 12px 0 ${C.ink}`}}><div style={{fontFamily: DISPLAY, fontSize: 84, color: C.white, ...stroke(6)}}>LIKE</div></div>
         <div style={{background: C.sun, borderRadius: 30, padding: '16px 44px', border: `8px solid ${C.ink}`, boxShadow: `0 12px 0 ${C.ink}`}}><div style={{fontFamily: DISPLAY, fontSize: 84, color: C.ink}}>SUBSCRIBE</div></div>
-      </div>
-      <div style={{marginTop: 34, opacity: appear(t, 1.1), transform: `translateY(${(1 - appear(t, 1.1)) * 60}px)`}}>
-        <Panel glow={C.cyan} style={{width: 860, textAlign: 'center'}}>
-          <div style={{fontFamily: BODY, fontWeight: 700, fontSize: 34, color: C.cyan}}>NEXT EPISODE</div>
-          <div style={{fontFamily: DISPLAY, fontSize: 58, color: C.white, lineHeight: 1.1}}>Why do games even have loading screens?</div>
-        </Panel>
       </div>
     </Stage>
   );

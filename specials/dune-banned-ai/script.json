@@ -16,14 +16,14 @@
   {
    "beat": 0,
    "who": "byte",
-   "text": "Ever wondered why Dune has no computers?",
+   "text": "Did you know Dune basically predicted the AI war against humanity?",
    "slow": 1,
    "pause": 0.3
   },
   {
    "beat": 0,
    "who": "byte",
-   "text": "Because humanity banned AI. Completely.",
+   "text": "Yes. The movie about sandworms. It saw this coming.",
    "slow": 1,
    "pause": 0.1
   },
@@ -149,7 +149,7 @@
   {
    "beat": 9,
    "who": "byte",
-   "text": "If you liked this, hit like and subscribe for more. Next: why games have loading screens.",
+   "text": "If you liked this, hit like and subscribe for more.",
    "slow": 1,
    "pause": 0.1
   }
