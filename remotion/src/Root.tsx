@@ -2,6 +2,7 @@ import React from 'react';
 import {Composition} from 'remotion';
 import {Video, VideoProps} from './Video';
 import {Gta6, Gta6Props} from './gta6/Gta6';
+import {DuneAI, DuneThumb, DuneProps} from './dune/DuneAI';
 import {Gta6Launch, Gta6Props as LaunchProps} from './gta6/Gta6Launch';
 
 export const FPS = 30;
@@ -50,6 +51,17 @@ export const Root: React.FC = () => {
       defaultProps={{audio: '', totalSec: 10, words: [], lines: [], mouth: [], compyMouth: [], beats: [0]} as LaunchProps}
       calculateMetadata={({props}) => ({durationInFrames: Math.ceil(props.totalSec * FPS)})}
     />
+    <Composition
+      id="DuneAI"
+      component={DuneAI}
+      width={1080}
+      height={1920}
+      fps={FPS}
+      durationInFrames={300}
+      defaultProps={{audio: '', totalSec: 10, words: [], lines: [], mouth: [], compyMouth: [], beats: [0]} as DuneProps}
+      calculateMetadata={({props}) => ({durationInFrames: Math.ceil(props.totalSec * FPS)})}
+    />
+    <Composition id="DuneThumb" component={DuneThumb} width={1280} height={720} fps={FPS} durationInFrames={1} />
     <Composition
       id="Short"
       component={Video}

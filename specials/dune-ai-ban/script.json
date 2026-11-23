@@ -1,0 +1,179 @@
+{
+ "id": "dune-ai-ban",
+ "beats": [
+  "hook",
+  "jihad",
+  "butler",
+  "timeline",
+  "mentat",
+  "computer",
+  "verdict",
+  "movie",
+  "recap",
+  "connect",
+  "end"
+ ],
+ "lines": [
+  {
+   "beat": 0,
+   "who": "byte",
+   "text": "Dune banned AI in nineteen sixty-five.",
+   "slow": 0.95,
+   "pause": 0.4
+  },
+  {
+   "beat": 0,
+   "who": "byte",
+   "text": "Not as a plot twist. As the foundation of the entire universe.",
+   "slow": 1,
+   "pause": 0.1
+  },
+  {
+   "beat": 1,
+   "who": "byte",
+   "text": "Long before the story starts, humanity fights a holy war against thinking machines.",
+   "slow": 1,
+   "pause": 0.2
+  },
+  {
+   "beat": 1,
+   "who": "byte",
+   "text": "It's called the Butlerian Jihad.",
+   "slow": 0.92,
+   "pause": 0.35
+  },
+  {
+   "beat": 2,
+   "who": "byte",
+   "text": "And that name? Real. Samuel Butler, eighteen sixty-three.",
+   "slow": 1,
+   "pause": 0.2
+  },
+  {
+   "beat": 2,
+   "who": "byte",
+   "text": "A letter to a New Zealand newspaper, warning machines might replace us as the dominant species.",
+   "slow": 1,
+   "pause": 0.1
+  },
+  {
+   "beat": 3,
+   "who": "byte",
+   "text": "Eighteen sixty-three. That's thirteen years before the telephone.",
+   "slow": 0.95,
+   "pause": 0.25
+  },
+  {
+   "beat": 3,
+   "who": "byte",
+   "text": "Somebody was already worried about AI.",
+   "slow": 0.9,
+   "pause": 0.45
+  },
+  {
+   "beat": 4,
+   "who": "byte",
+   "text": "So with machines banned, who does the maths?",
+   "slow": 1,
+   "pause": 0.2
+  },
+  {
+   "beat": 4,
+   "who": "byte",
+   "text": "People. Mentats. Human computers, trained to store data and calculate on demand.",
+   "slow": 1,
+   "pause": 0.2
+  },
+  {
+   "beat": 4,
+   "who": "byte",
+   "text": "Basically a laptop that needs lunch.",
+   "slow": 1,
+   "pause": 0.4
+  },
+  {
+   "beat": 5,
+   "who": "byte",
+   "text": "And here's the part that got me.",
+   "slow": 1,
+   "pause": 0.25
+  },
+  {
+   "beat": 5,
+   "who": "byte",
+   "text": "The word computer meant a person first. Oxford's earliest record is sixteen thirteen. One who computes.",
+   "slow": 1,
+   "pause": 0.35
+  },
+  {
+   "beat": 6,
+   "who": "byte",
+   "text": "So did Dune predict the AI wars?",
+   "slow": 1,
+   "pause": 0.2
+  },
+  {
+   "beat": 6,
+   "who": "byte",
+   "text": "Not exactly. It asked the question we're arguing about right now.",
+   "slow": 1,
+   "pause": 0.2
+  },
+  {
+   "beat": 6,
+   "who": "byte",
+   "text": "Dune's answer: ban it. Ours: ship it, fix it later.",
+   "slow": 0.95,
+   "pause": 0.45
+  },
+  {
+   "beat": 7,
+   "who": "byte",
+   "text": "And Dune Part Three lands December eighteenth.",
+   "slow": 1,
+   "pause": 0.3
+  },
+  {
+   "beat": 8,
+   "who": "byte",
+   "text": "A ban in fiction.",
+   "slow": 0.95,
+   "pause": 0.2
+  },
+  {
+   "beat": 8,
+   "who": "byte",
+   "text": "A warning from eighteen sixty-three.",
+   "slow": 0.95,
+   "pause": 0.2
+  },
+  {
+   "beat": 8,
+   "who": "byte",
+   "text": "And a job title that used to be human.",
+   "slow": 0.95,
+   "pause": 0.5
+  },
+  {
+   "beat": 9,
+   "who": "byte",
+   "text": "So be honest. If you could press the button and ban thinking machines, would you?",
+   "slow": 0.95,
+   "pause": 0.3
+  },
+  {
+   "beat": 9,
+   "who": "byte",
+   "text": "Pick a side in the comments.",
+   "slow": 1,
+   "pause": 0.5
+  },
+  {
+   "beat": 10,
+   "who": "byte",
+   "text": "Follow for more. Next: why games have loading screens.",
+   "slow": 1,
+   "pause": 0.1
+  }
+ ]
+}

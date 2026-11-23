@@ -32,7 +32,7 @@ def main(folder):
             print("set private:", old)
     body = {
         "snippet": {"title": meta["title"][:100], "description": meta["description"][:5000], "tags": meta.get("tags", []), "categoryId": meta.get("categoryId", "27")},
-        "status": {"privacyStatus": os.environ.get("PRIVACY", "private"), "selfDeclaredMadeForKids": False,
+        "status": {"privacyStatus": meta.get("privacy") or os.environ.get("PRIVACY", "private"), "selfDeclaredMadeForKids": False,
                    "containsSyntheticMedia": bool(meta.get("containsSyntheticMedia", False))},
     }
     media = MediaFileUpload(str(d / "final.mp4"), mimetype="video/mp4", chunksize=8 * 1024 * 1024, resumable=True)
@@ -42,6 +42,13 @@ def main(folder):
         status, resp = req.next_chunk()
         if status: print(f"uploaded {int(status.progress() * 100)}%")
     vid = resp["id"]
+    th = d / meta.get("thumbnail", "thumb.jpg")
+    if th.exists():
+        try:
+            yt.thumbnails().set(videoId=vid, media_body=MediaFileUpload(str(th), mimetype="image/jpeg")).execute()
+            print("thumbnail set")
+        except Exception as e:  # e.g. channel not verified for custom thumbnails
+            print("thumbnail FAILED:", e)
     print("video id:", vid, "privacy:", body["status"]["privacyStatus"], f"https://youtube.com/shorts/{vid}")
     rec.write_text(json.dumps({"youtube_id": vid}, indent=2))
     return 0
