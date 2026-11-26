@@ -3,7 +3,12 @@ name: daily-short
 on:
   schedule:
     - cron: "30 4 * * *"   # 10:00 IST daily
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      script:
+        description: "optional queue/<id>.json to publish instead of the next in line"
+        required: false
+        default: ""
 
 concurrency: daily-short
 
@@ -41,7 +46,8 @@ jobs:
       - name: Pick next queued script
         id: pick
         run: |
-          NEXT=$(python3 pipeline/next.py)
+          NEXT="${{ inputs.script }}"
+          [ -n "$NEXT" ] || NEXT=$(python3 pipeline/next.py)
           echo "script=$NEXT" >> "$GITHUB_OUTPUT"
 
       - name: Build + QC

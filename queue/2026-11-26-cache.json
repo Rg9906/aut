@@ -2,17 +2,19 @@
  "id": "2026-11-26-cache",
  "series": "Byte & Compy",
  "episode": 7,
- "title": "Caching (the two hard things in computer science)",
- "description": "Byte caches everything. Compy asks what happens when the data changes. A short tour of cache invalidation.\n\n#caching #webdev #programming #shorts",
+ "title": "Why websites show you OLD prices (Black Friday bug) #shorts",
+ "description": "Black Friday is tomorrow. Why can a website still show you yesterday's price? Caching, and the one hard problem that comes with it: knowing when a saved answer has gone stale.\n\n#blackfriday #caching #programming #coding #shorts",
  "tags": [
+  "black friday",
   "caching",
   "cache invalidation",
   "web development",
   "coding shorts",
-  "computer science"
+  "computer science",
+  "programming"
  ],
  "angle": "Caching makes things fast by remembering answers, and the hard part is knowing when a remembered answer has gone stale.",
- "hook": "There's an old joke that computer science has two hard problems. One of them is today's topic.",
+ "hook": "Black Friday starts tomorrow, and some sites will show you yesterday's price. Here's the bug behind it.",
  "speakers": {
   "byte": {
    "voice": "af_heart",
@@ -26,7 +28,7 @@
  "scenes": [
   {
    "speaker": "compy",
-   "narration": "There's an old joke that computer science has two hard problems. One of them is today's topic.",
+   "narration": "Black Friday starts tomorrow, and some sites will show you yesterday's price. Here's the bug behind it.",
    "emotions": {
     "byte": "confused",
     "compy": "smug"
@@ -34,8 +36,8 @@
    "visual": {
     "type": "titleCard",
     "props": {
-     "kicker": "TODAY'S QUESTION",
-     "title": "Caching",
+     "kicker": "BLACK FRIDAY BUG",
+     "title": "Old Prices?",
      "chips": [
       "Performance",
       "Web"
@@ -46,7 +48,7 @@
   },
   {
    "speaker": "byte",
-   "narration": "Naming things and cache invalidation. Today: why the second one earns its place.",
+   "narration": "It's called caching. And it's one of computer science's two famously hard problems.",
    "emotions": {
     "byte": "happy",
     "compy": "neutral"
@@ -57,8 +59,8 @@
      "heading": "In this episode",
      "items": [
       "What a cache is",
-      "Why it makes things fast",
-      "The stale data problem"
+      "Why it's fast",
+      "Why prices go stale"
      ]
     }
    },
@@ -136,7 +138,7 @@
   },
   {
    "speaker": "compy",
-   "narration": "Your profile photo changes. The cache still shows the old one. Nobody told it.",
+   "narration": "Price drops for Black Friday. The cache still shows yesterday's price. Nobody told it.",
    "emotions": {
     "byte": "neutral",
     "compy": "smug"
@@ -146,11 +148,11 @@
     "props": {
      "left": {
       "title": "Database",
-      "value": "new photo"
+      "value": "$49"
      },
      "right": {
       "title": "Cache",
-      "value": "old photo"
+      "value": "$99"
      },
      "footer": "both think they're right"
     }
@@ -159,7 +161,7 @@
   },
   {
    "speaker": "byte",
-   "narration": "Right, so we need to know when to throw the copy away.",
+   "narration": "So we need to know when to throw the old copy away.",
    "emotions": {
     "byte": "thinking",
     "compy": "neutral"
@@ -168,7 +170,7 @@
     "type": "bigText",
     "props": {
      "text": "stale data",
-     "sub": "a correct answer, once"
+     "sub": "a correct price, once"
     }
    },
    "fx": []
