@@ -26,7 +26,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Read privacy level (state/privacy: private | unlisted | public)
+      - name: "Read privacy level (state/privacy: private, unlisted or public)"
         run: echo "PRIVACY=$(tr -d '[:space:]' < state/privacy 2>/dev/null || echo private)" >> "$GITHUB_ENV"
 
       - name: Kill switch
