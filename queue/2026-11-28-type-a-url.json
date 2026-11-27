@@ -1,0 +1,263 @@
+{
+ "id": "2026-11-28-type-a-url",
+ "episode": 9,
+ "title": "What happens when you type a URL (and press Enter)",
+ "description": "Before a page appears, your browser does four jobs in a row. Byte and Compy walk through them.\n\n#networking #webdev #programming #shorts",
+ "tags": [
+  "dns",
+  "tcp",
+  "tls",
+  "http",
+  "how the internet works",
+  "coding shorts"
+ ],
+ "angle": "Typing a URL triggers a fixed chain: DNS lookup, TCP connection, TLS handshake, then the HTTP request, and each step must finish before the next.",
+ "hook": "You press Enter on a URL. What actually happens in the half second before the page shows up?",
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "You press Enter on a URL. What actually happens before the page shows up?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "TODAY'S QUESTION",
+     "title": "Typing a URL",
+     "chips": [
+      "Web",
+      "Networking"
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Four steps, in order. Name lookup, connection, encryption, then the actual request.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "Find the address",
+      "Connect and encrypt",
+      "Ask for the page"
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "Step one. The browser only knows the name. Computers need a number.",
+   "emotions": {
+    "byte": "confused",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "example.com",
+     "sub": "-> which IP address?"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "DNS is the phone book. The name goes in, an IP address comes out.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "lookup example.com",
+       "kind": "cmd"
+      },
+      {
+       "text": "93.184.x.x",
+       "kind": "out"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "Then it knocks on that address. Port 443 for secure sites.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "TCP",
+      "value": "open a connection"
+     },
+     "right": {
+      "title": "TLS",
+      "value": "encrypt it"
+     },
+     "footer": "port 443 for https"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "First a short handshake to connect, then another to check the certificate and encrypt.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "connect :443",
+       "kind": "cmd"
+      },
+      {
+       "text": "certificate verified",
+       "kind": "hl"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "Only now does it ask for the page?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "GET /about",
+     "sub": "finally"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Yes. The server answers with a status code and the page. Each step waits for the one before.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "GET /about",
+       "kind": "cmd"
+      },
+      {
+       "text": "200 OK",
+       "kind": "hl"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "And the browser repeats this for every image and script?",
+   "emotions": {
+    "byte": "confused",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "x 40",
+     "sub": "requests per page, give or take"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Same chain, many times. Which is why a slow DNS lookup makes everything feel slow.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Name, connect, encrypt, ask",
+     "code": "DNS > TCP > TLS > HTTP"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Follow for more. Next: null, the billion dollar mistake.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "Null, the billion dollar mistake",
+     "hint": "More Byte & Compy sketches coming"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "Loading a page follows the order: parse URL, DNS lookup, TCP connection (port 443 for https), TLS handshake, HTTP request, response, render",
+   "source": "https://gophertrunk.org/learn/networking/how-a-web-request-works/"
+  }
+ ],
+ "series": "Byte & Compy",
+ "speakers": {
+  "byte": {
+   "voice": "af_heart",
+   "speed": 1.08
+  },
+  "compy": {
+   "voice": "bm_george",
+   "speed": 0.98
+  }
+ },
+ "contains_synthetic_media": true
+}

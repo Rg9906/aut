@@ -1,0 +1,281 @@
+{
+ "id": "2026-11-30-race-condition",
+ "episode": 11,
+ "title": "Race conditions (the bug that vanishes)",
+ "description": "Two threads, one counter, and an answer that is sometimes wrong. Byte and Compy explain race conditions.\n\n#programming #concurrency #debugging #shorts",
+ "tags": [
+  "race condition",
+  "threads",
+  "concurrency",
+  "debugging",
+  "coding shorts"
+ ],
+ "angle": "Incrementing a shared counter is really load, add, store, so two threads can overwrite each other and one update is lost.",
+ "hook": "A counter that sometimes gives the wrong answer, and works fine when you add a print statement.",
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "The tests pass. Then they fail. Then they pass again. Why?",
+   "emotions": {
+    "byte": "confused",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "TODAY'S QUESTION",
+     "title": "Race conditions",
+     "chips": [
+      "Concurrency",
+      "Bugs"
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "What a race is, a two thread example, and the usual fix.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "What a race is",
+      "Two threads, one counter",
+      "The fix"
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "Counter plus plus is one step. How can it go wrong?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "count++",
+     "sub": "looks like one step"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "It isn't one step. It's three: load, add one, store.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "load count",
+       "kind": "cmd"
+      },
+      {
+       "text": "add 1",
+       "kind": "cmd"
+      },
+      {
+       "text": "store count",
+       "kind": "cmd"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "Fine. Two threads, count starts at 40.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "Thread A",
+      "value": "loads 40"
+     },
+     "right": {
+      "title": "Thread B",
+      "value": "loads 40"
+     },
+     "footer": "both read before either writes"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Both add one, both store 41. Two increments ran, one result.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "A stores 41",
+       "kind": "out"
+      },
+      {
+       "text": "B stores 41",
+       "kind": "out"
+      },
+      {
+       "text": "expected 42",
+       "kind": "err"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "So an update just vanished?",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "41, not 42",
+     "sub": "a lost update"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Yes. The result depends on which thread happens to go first. That's a race condition.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "timing A",
+      "value": "42"
+     },
+     "right": {
+      "title": "timing B",
+      "value": "41"
+     },
+     "footer": "same code, different answer"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "That explains why it only fails sometimes.",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "run 1: 42",
+       "kind": "out"
+      },
+      {
+       "text": "run 2: 42",
+       "kind": "out"
+      },
+      {
+       "text": "run 3: 41",
+       "kind": "err"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "The fix is to make the three steps indivisible, with a lock or an atomic operation.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Shared data needs a lock",
+     "code": "lock; count++; unlock"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Follow for more. Next: stack versus queue.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "Stack versus queue",
+     "hint": "More Byte & Compy sketches coming"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "A race condition exists when correctness depends on which of several concurrent operations happens first; an unsynchronized counter increment (load, add, store) can lose an update",
+   "source": "https://algomaster.io/learn/operating-systems/race-conditions-and-atomicity"
+  }
+ ],
+ "series": "Byte & Compy",
+ "speakers": {
+  "byte": {
+   "voice": "af_heart",
+   "speed": 1.08
+  },
+  "compy": {
+   "voice": "bm_george",
+   "speed": 0.98
+  }
+ },
+ "contains_synthetic_media": true
+}

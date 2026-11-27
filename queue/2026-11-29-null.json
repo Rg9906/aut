@@ -1,0 +1,269 @@
+{
+ "id": "2026-11-29-null",
+ "episode": 10,
+ "title": "Null, the billion dollar mistake",
+ "description": "One tiny idea from 1965 has caused decades of crashes. Byte and Compy explain null.\n\n#programming #null #coding #shorts",
+ "tags": [
+  "null",
+  "null pointer",
+  "tony hoare",
+  "programming history",
+  "coding shorts"
+ ],
+ "angle": "Tony Hoare added the null reference to ALGOL W in 1965 because it was easy to implement, and later called it his billion-dollar mistake.",
+ "hook": "One of the most common crashes in programming comes from a feature someone added because it was easy.",
+ "scenes": [
+  {
+   "speaker": "byte",
+   "narration": "Why does so much software crash on something that isn't there?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "titleCard",
+    "props": {
+     "kicker": "TODAY'S QUESTION",
+     "title": "Null",
+     "chips": [
+      "Languages",
+      "History"
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Where null came from, why it bites, and what newer languages do about it.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "agenda",
+    "props": {
+     "heading": "In this episode",
+     "items": [
+      "Where null came from",
+      "Why it crashes",
+      "The fix"
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "So what is null, exactly?",
+   "emotions": {
+    "byte": "confused",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "null",
+     "sub": "a reference to nothing"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "A variable that points nowhere. Perfectly legal until you try to use it.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "user = find('bob')",
+       "kind": "cmd"
+      },
+      {
+       "text": "user.name",
+       "kind": "cmd"
+      },
+      {
+       "text": "NullPointerException",
+       "kind": "err"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "Who decided that was a good idea?",
+   "emotions": {
+    "byte": "shocked",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "1965",
+     "sub": "ALGOL W"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "Tony Hoare. He added it because it was easy to implement, and later apologized.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "1965",
+      "value": "added, because easy"
+     },
+     "right": {
+      "title": "2009",
+      "value": "'my billion-dollar mistake'"
+     },
+     "footer": "Tony Hoare, QCon London"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "Apologized for a feature? Brave.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "bigText",
+    "props": {
+     "text": "~ $1,000,000,000",
+     "sub": "pain and damage, his estimate"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "The problem is the type says string but the value says nothing. Nobody checks until runtime.",
+   "emotions": {
+    "byte": "smug",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "terminal",
+    "props": {
+     "lines": [
+      {
+       "text": "name: String",
+       "kind": "cmd"
+      },
+      {
+       "text": "name = null",
+       "kind": "out"
+      },
+      {
+       "text": "crash, later",
+       "kind": "err"
+      }
+     ]
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "byte",
+   "narration": "So what do newer languages do?",
+   "emotions": {
+    "byte": "thinking",
+    "compy": "neutral"
+   },
+   "visual": {
+    "type": "compare",
+    "props": {
+     "left": {
+      "title": "old way",
+      "value": "any value may be null"
+     },
+     "right": {
+      "title": "new way",
+      "value": "absence is a visible type"
+     },
+     "footer": "Optional, Option, nullable"
+    }
+   },
+   "fx": []
+  },
+  {
+   "speaker": "compy",
+   "narration": "They make you handle absence in the code, so the compiler complains instead of your users.",
+   "emotions": {
+    "byte": "neutral",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "recap",
+    "props": {
+     "label": "TODAY'S RULE",
+     "rule": "Make 'nothing' explicit",
+     "code": "Option<User>"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  },
+  {
+   "speaker": "byte",
+   "narration": "Follow for more. Next: race conditions, the bug that vanishes.",
+   "emotions": {
+    "byte": "happy",
+    "compy": "smug"
+   },
+   "visual": {
+    "type": "endCard",
+    "props": {
+     "cta": "Follow",
+     "next": "Race conditions, the bug that vanishes",
+     "hint": "More Byte & Compy sketches coming"
+    }
+   },
+   "fx": [
+    {
+     "t": 0.0,
+     "type": "zoom"
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "text": "Tony Hoare invented the null reference in 1965 while designing a type system for references in ALGOL W, and called it his billion-dollar mistake (QCon London 2009)",
+   "source": "https://qconlondon.com/london-2009/qconlondon.com/london-2009/presentation/Null%2BReferences_%2BThe%2BBillion%2BDollar%2BMistake.html"
+  }
+ ],
+ "series": "Byte & Compy",
+ "speakers": {
+  "byte": {
+   "voice": "af_heart",
+   "speed": 1.08
+  },
+  "compy": {
+   "voice": "bm_george",
+   "speed": 0.98
+  }
+ },
+ "contains_synthetic_media": true
+}
